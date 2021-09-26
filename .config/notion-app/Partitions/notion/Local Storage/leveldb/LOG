@@ -1,0 +1,18 @@
+2021/09/22-00:18:05.848 f1f Reusing MANIFEST /home/r3dbl4d3/.config/notion-app/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
+2021/09/22-00:18:05.848 f1f Recovering log #24
+2021/09/22-00:18:05.850 f1f Reusing old log /home/r3dbl4d3/.config/notion-app/Partitions/notion/Local Storage/leveldb/000024.log 
+2021/09/22-00:19:07.207 1044 Level-0 table #28: started
+2021/09/22-00:19:07.219 1044 Level-0 table #28: 13547 bytes OK
+2021/09/22-00:19:07.233 1044 Delete type=0 #24
+2021/09/22-00:19:07.234 f90 Compacting 4@0 + 1@1 files
+2021/09/22-00:19:07.250 f90 Generated table #29@0: 116 keys, 16389 bytes
+2021/09/22-00:19:07.250 f90 Compacted 4@0 + 1@1 files => 16389 bytes
+2021/09/22-00:19:07.261 f90 compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/09/22-00:19:07.262 f90 Delete type=2 #18
+2021/09/22-00:19:07.263 f90 Delete type=2 #23
+2021/09/22-00:19:07.263 f90 Delete type=2 #21
+2021/09/22-00:19:07.263 f90 Delete type=2 #25
+2021/09/22-00:19:07.263 f90 Delete type=2 #28
+2021/09/22-00:48:14.820 f90 Level-0 table #31: started
+2021/09/22-00:48:14.850 f90 Level-0 table #31: 11209 bytes OK
+2021/09/22-00:48:14.861 f90 Delete type=0 #27

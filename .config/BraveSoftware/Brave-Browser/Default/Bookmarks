@@ -1,0 +1,40 @@
+{
+   "checksum": "502c8a64a59040f76cb2b52e44d0166c",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13276962042066579",
+            "guid": "92aaed8d-2cc5-4901-87d4-6cebf15b153e",
+            "id": "5",
+            "name": "Bash scripting cheatsheet",
+            "type": "url",
+            "url": "https://devhints.io/bash"
+         } ],
+         "date_added": "13276802344771446",
+         "date_modified": "13276962042066579",
+         "guid": "00000000-0000-4000-a000-000000000002",
+         "id": "1",
+         "name": "Bookmarks",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13276802344771450",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000003",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13276802344771453",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000004",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

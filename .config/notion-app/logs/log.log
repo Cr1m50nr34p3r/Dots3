@@ -1,0 +1,531 @@
+[2021-09-19 08:25:32.401] [info] Checking for update
+[2021-09-19 08:25:32.515] [info] Error reading /home/r3dbl4d3/.config/notion-app/cookies.json {
+  constructor: 'Error',
+  errno: -2,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: '/home/r3dbl4d3/.config/notion-app/cookies.json',
+  stack: "Error: /home/r3dbl4d3/.config/notion-app/cookies.json: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/cookies.json'\n" +
+    '    at Object.openSync (fs.js:466:3)\n' +
+    '    at Object.func [as openSync] (electron/js2c/asar_bundle.js:5:1812)\n' +
+    '    at Object.readFileSync (fs.js:368:35)\n' +
+    '    at Object.e.readFileSync (electron/js2c/asar_bundle.js:5:8592)\n' +
+    '    at Object.readFileSync (/opt/Notion/resources/app.asar/node_modules/jsonfile/index.js:61:22)\n' +
+    '    at JsonStore.loadSync (/opt/Notion/resources/app.asar/main/JsonStore.js:37:44)\n' +
+    '    at new JsonStore (/opt/Notion/resources/app.asar/main/JsonStore.js:14:14)\n' +
+    '    at Object.<anonymous> (/opt/Notion/resources/app.asar/main/schemeHandler.js:24:25)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1152:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1173:10)'
+}
+[2021-09-19 08:25:32.810] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:25:32.814] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-19 08:25:32.815] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'errorReadingPath',
+  error: {
+    name: 'Error',
+    message: "ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'",
+    stack: "Error: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'"
+  },
+  data: {
+    message: 'Error reading /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:25:32.816] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: {}
+}
+[2021-09-19 08:25:32.816] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionEmptyLatestVersion'
+}
+[2021-09-19 08:25:32.817] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: {}
+}
+[2021-09-19 08:26:03.985] [info] Checking for update
+[2021-09-19 08:26:04.175] [info] {
+  level: 'error',
+  from: 'main',
+  type: 'uncaughtException',
+  error: {
+    name: 'TypeError',
+    message: 'Error processing argument at index 0, conversion failure from ',
+    stack: 'TypeError: Error processing argument at index 0, conversion failure from \n' +
+      '    at BrowserWindow.setBounds (electron/js2c/browser_init.js:33:520)\n' +
+      '    at Object.createWindow (/opt/Notion/resources/app.asar/main/createWindow.js:63:16)\n' +
+      '    at handleActivate (/opt/Notion/resources/app.asar/main/main.js:71:36)\n' +
+      '    at App.<anonymous> (/opt/Notion/resources/app.asar/main/main.js:188:13)\n' +
+      '    at App.emit (events.js:315:20)'
+  }
+}
+[2021-09-19 08:26:04.369] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:26:04.375] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-19 08:26:04.376] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'errorReadingPath',
+  error: {
+    name: 'Error',
+    message: "ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'",
+    stack: "Error: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'"
+  },
+  data: {
+    message: 'Error reading /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:26:04.378] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: {}
+}
+[2021-09-19 08:26:04.378] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionEmptyLatestVersion'
+}
+[2021-09-19 08:26:04.379] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: {}
+}
+[2021-09-19 08:55:42.232] [info] Checking for update
+[2021-09-19 08:55:42.653] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:55:42.659] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-19 08:55:42.660] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'errorReadingPath',
+  error: {
+    name: 'Error',
+    message: "ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'",
+    stack: "Error: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'"
+  },
+  data: {
+    message: 'Error reading /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:55:42.661] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: {}
+}
+[2021-09-19 08:55:42.661] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionEmptyLatestVersion'
+}
+[2021-09-19 08:55:42.662] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: {}
+}
+[2021-09-19 08:56:29.998] [info] Checking for update
+[2021-09-19 08:56:30.363] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:56:30.375] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-19 08:56:30.377] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'errorReadingPath',
+  error: {
+    name: 'Error',
+    message: "ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'",
+    stack: "Error: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'"
+  },
+  data: {
+    message: 'Error reading /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:56:30.378] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: {}
+}
+[2021-09-19 08:56:30.379] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionEmptyLatestVersion'
+}
+[2021-09-19 08:56:30.380] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: {}
+}
+[2021-09-19 08:57:33.453] [info] Quitting...
+[2021-09-19 08:57:33.454] [info] Killing child process
+[2021-09-19 08:58:03.427] [info] Checking for update
+[2021-09-19 08:58:03.807] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:58:03.814] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-19 08:58:03.815] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'errorReadingPath',
+  error: {
+    name: 'Error',
+    message: "ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'",
+    stack: "Error: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'"
+  },
+  data: {
+    message: 'Error reading /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-19 08:58:03.816] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: {}
+}
+[2021-09-19 08:58:03.817] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionEmptyLatestVersion'
+}
+[2021-09-19 08:58:03.817] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: {}
+}
+[2021-09-19 09:01:59.683] [info] Quitting...
+[2021-09-19 09:01:59.685] [info] Killing child process
+[2021-09-21 00:35:36.876] [info] Checking for update
+[2021-09-21 00:35:37.252] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-21 00:35:37.258] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-21 00:35:37.260] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'errorReadingPath',
+  error: {
+    name: 'Error',
+    message: "ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'",
+    stack: "Error: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'"
+  },
+  data: {
+    message: 'Error reading /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-21 00:35:37.260] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: {}
+}
+[2021-09-21 00:35:37.261] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionEmptyLatestVersion'
+}
+[2021-09-21 00:35:37.261] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: {}
+}
+[2021-09-21 23:46:41.031] [info] Checking for update
+[2021-09-21 23:46:41.451] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-21 23:46:41.456] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-21 23:46:41.457] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'errorReadingPath',
+  error: {
+    name: 'Error',
+    message: "ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'",
+    stack: "Error: ENOENT: no such file or directory, open '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'"
+  },
+  data: {
+    message: 'Error reading /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-21 23:46:41.458] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: {}
+}
+[2021-09-21 23:46:41.458] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionEmptyLatestVersion'
+}
+[2021-09-21 23:46:41.459] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: {}
+}
+[2021-09-21 23:56:41.155] [info] { level: 'info', from: 'AssetCache', type: 'checkingForAppUpdate' }
+[2021-09-21 23:56:41.987] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'appUpdateAvailable',
+  data: { version: '23.9.7.6' }
+}
+[2021-09-21 23:56:46.469] [info] { level: 'info', from: 'AssetCache', type: 'checkingForAppUpdate2' }
+[2021-09-21 23:56:46.469] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'appUpdateDownloadComplete',
+  data: { version: '23.9.7.6' }
+}
+[2021-09-21 23:56:46.470] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'installingAppUpdate',
+  data: { version: '23.9.7.6' }
+}
+[2021-09-22 00:06:41.166] [info] { level: 'info', from: 'AssetCache', type: 'checkingForAppUpdate' }
+[2021-09-22 00:06:41.837] [info] { level: 'info', from: 'AssetCache', type: 'noAppUpdateAvailable2' }
+[2021-09-22 00:07:25.549] [info] Quitting...
+[2021-09-22 00:07:25.550] [info] Killing child process
+[2021-09-22 00:18:05.505] [info] Checking for update
+[2021-09-22 00:18:05.931] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'latestVersionPath',
+  data: {
+    message: 'latestVersion.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/latestVersion.json'
+  }
+}
+[2021-09-22 00:18:05.941] [error] Error: Error: ENOENT: no such file or directory, open '/opt/Notion/resources/app-update.yml'
+[2021-09-22 00:18:05.946] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentVersionLoaded',
+  data: { version: '23.9.7.6' }
+}
+[2021-09-22 00:18:05.947] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersions',
+  data: {
+    message: 'Sync versions: assets.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets.json headers.json path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/headers.json'
+  }
+}
+[2021-09-22 00:18:05.962] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'currentSyncedAssetsJson',
+  data: { version: '23.9.7.6' }
+}
+[2021-09-22 00:18:06.815] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionSameSkippingSync'
+}
+[2021-09-22 00:18:06.816] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest2',
+  data: {
+    message: 'Performing file request: /, abs path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/index-ko-KR-40c8205a821f982d5186.html'
+  }
+}
+[2021-09-22 00:18:06.964] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'syncVersionSameSkippingSync'
+}
+[2021-09-22 00:18:06.966] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest2',
+  data: {
+    message: 'Performing file request: /, abs path /home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/index-ko-KR-40c8205a821f982d5186.html'
+  }
+}
+[2021-09-22 00:18:07.133] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/396-87411f5655c9214b2429.js',
+    url: '/396-87411f5655c9214b2429.js'
+  }
+}
+[2021-09-22 00:18:07.135] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/app-2130be9d2b2cb05ce070.js',
+    url: '/app-2130be9d2b2cb05ce070.js'
+  }
+}
+[2021-09-22 00:18:07.140] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/app-cb108f427b1dcdf7c0c5.css',
+    url: '/app-cb108f427b1dcdf7c0c5.css'
+  }
+}
+[2021-09-22 00:18:07.144] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/print.b31f28aa.css',
+    url: '/print.b31f28aa.css'
+  }
+}
+[2021-09-22 00:18:07.201] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/396-87411f5655c9214b2429.js',
+    url: '/396-87411f5655c9214b2429.js'
+  }
+}
+[2021-09-22 00:18:07.203] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/app-2130be9d2b2cb05ce070.js',
+    url: '/app-2130be9d2b2cb05ce070.js'
+  }
+}
+[2021-09-22 00:18:07.206] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/app-cb108f427b1dcdf7c0c5.css',
+    url: '/app-cb108f427b1dcdf7c0c5.css'
+  }
+}
+[2021-09-22 00:18:07.210] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/print.b31f28aa.css',
+    url: '/print.b31f28aa.css'
+  }
+}
+[2021-09-22 00:18:09.254] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/markdown-linkify-it-094886b3cb82e25de265.js',
+    url: '/markdown-linkify-it-094886b3cb82e25de265.js'
+  }
+}
+[2021-09-22 00:18:09.298] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/markdown-linkify-it-094886b3cb82e25de265.js',
+    url: '/markdown-linkify-it-094886b3cb82e25de265.js'
+  }
+}
+[2021-09-22 00:18:10.489] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/177-e90412bb6ce8d64073e7.js',
+    url: '/177-e90412bb6ce8d64073e7.js'
+  }
+}
+[2021-09-22 00:18:10.492] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/postRender-086348c6f63255e534f5.js',
+    url: '/postRender-086348c6f63255e534f5.js'
+  }
+}
+[2021-09-22 00:18:12.427] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/177-e90412bb6ce8d64073e7.js',
+    url: '/177-e90412bb6ce8d64073e7.js'
+  }
+}
+[2021-09-22 00:18:12.429] [info] {
+  level: 'info',
+  from: 'AssetCache',
+  type: 'performingFileRequest',
+  data: {
+    absolutePath: '/home/r3dbl4d3/.config/notion-app/notionAssetCache-v2/23.9.7.6/assets/postRender-086348c6f63255e534f5.js',
+    url: '/postRender-086348c6f63255e534f5.js'
+  }
+}
+[2021-09-22 00:28:05.637] [info] { level: 'info', from: 'AssetCache', type: 'checkingForAppUpdate' }
+[2021-09-22 00:28:06.061] [info] { level: 'info', from: 'AssetCache', type: 'noAppUpdateAvailable2' }
+[2021-09-22 00:38:05.648] [info] { level: 'info', from: 'AssetCache', type: 'checkingForAppUpdate' }
+[2021-09-22 00:38:06.002] [info] { level: 'info', from: 'AssetCache', type: 'noAppUpdateAvailable2' }
+[2021-09-22 00:48:05.661] [info] { level: 'info', from: 'AssetCache', type: 'checkingForAppUpdate' }
+[2021-09-22 00:48:06.586] [info] { level: 'info', from: 'AssetCache', type: 'noAppUpdateAvailable2' }
+[2021-09-22 00:56:47.970] [info] Quitting...
+[2021-09-22 00:56:47.970] [info] Killing child process

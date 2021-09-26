@@ -1,0 +1,72 @@
+[2021-09-19 08:55:43.763] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 8,
+  frameRoutingId: 4
+}
+[2021-09-19 08:55:43.835] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 12,
+  frameRoutingId: 4
+}
+[2021-09-19 08:56:22.603] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 12,
+  frameRoutingId: 4
+}
+[2021-09-19 08:56:23.333] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 12,
+  frameRoutingId: 4
+}
+[2021-09-19 08:56:23.904] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 12,
+  frameRoutingId: 4
+}
+[2021-09-19 08:56:24.512] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 12,
+  frameRoutingId: 4
+}
+[2021-09-19 08:56:30.909] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 17,
+  frameRoutingId: 4
+}
+[2021-09-19 08:56:31.113] [info] Failed to load: {
+  isTrusted: false,
+  errorCode: -2,
+  errorDescription: '',
+  validatedURL: 'notion://www.notion.so/',
+  isMainFrame: true,
+  frameProcessId: 21,
+  frameRoutingId: 4
+}

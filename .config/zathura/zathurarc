@@ -1,0 +1,5 @@
+set recolor   
+set recolor-lightcolor \#1b1f27
+#set recolor-keephue
+set default-bg \#1b1f27
+set guioptions none
