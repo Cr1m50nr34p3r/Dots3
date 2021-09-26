@@ -25,3 +25,6 @@
 [submodule "/home/r3dbl4d3/ZSH/Plugins/zsh-syntax-highlighting"]
 	path = /home/r3dbl4d3/ZSH/Plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "/home/r3dbl4d3/.config/nvim/NvChad"]
+	path = /home/r3dbl4d3/.config/nvim/NvChad
+	url = https://github.com/NvChad/NvChad
