@@ -32,6 +32,7 @@ alias connect="nmcli connection up"
 alias fzi="paru -S --noconfirm \$(paru -Sl | awk '{print \$2}' |fzf -m --preview='paru -Si {} ' --preview-window=':hidden' --bind='?:toggle-preview')"
 alias fzr="paru -Rsn \$(paru -Qe | awk '{print \$1}' | fzf -m --preview='paru -Qi {} ' --preview-window=':hidden' --bind='?:toggle-preview' )"
 alias fzk="sudo kill \$(ps -eo pid,euser,comm,\%cpu,\%mem,etime | fzf -m --preview-window=':hidden' | awk '{print \$1}')"
+alias frm="~/Scripts/fzrm/frm.sh f"
 # ls
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
 alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
@@ -44,7 +45,7 @@ alias clock='tty-clock -cs'
 alias doom='~/.emacs.d/bin/doom'
 alias toggle-mic='amixer set Capture toggle'
 alias mount-sd='sudo mount /dev/sda1 /mnt/SD'
-alias get-token="cat ~/token.md | xclip -select clipboard"
+alias get-token="alias cat=cat && cat ~/token.md  | tr '\n' ' ' | sed 's/ //g' | xclip -select clipboard"
 alias cln="clear && neofetch"
 alias srczsh="source ~/.zshrc"
 alias mtrx="unimatrix -u 10 -l u"
@@ -64,6 +65,9 @@ fzv () {
 fzz () {
 	fname=$(cd $HOME && fd -t f -H | fzf)
         zathura $fname &	
+}
+fzo () {
+	cd $HOME && xdg-open $(find -type f | fzf --preview="cat {}" --tac --prompt="Select file: " --bind="?:toggle-preview")
 }
 #
 ##################
