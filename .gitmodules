@@ -1,0 +1,18 @@
+[submodule ".config/awesome/awesome-wm-widgets"]
+	path = .config/awesome/awesome-wm-widgets
+	url = https://github.com/streetturtle/awesome-wm-widgets
+[submodule ".config/awesome/awesome-buttons"]
+	path = .config/awesome/awesome-buttons
+	url = https://github.com/streetturtle/awesome-buttons
+[submodule ".config/nvim/NvChad"]
+	path = .config/nvim/NvChad
+	url = https://github.com/NvChad/NvChad
+[submodule "/home/r3dbl4d3/ZSH/Themes/dzhi-zsh-theme"]
+	path = /home/r3dbl4d3/ZSH/Themes/dzhi-zsh-theme
+	url = https://github.com/pentago/dzhi-zsh-theme
+[submodule "/home/r3dbl4d3/.config/awesome/awesome-wm-widgets"]
+	path = /home/r3dbl4d3/.config/awesome/awesome-wm-widgets
+	url = https://github.com/streetturtle/awesome-wm-widgets
+[submodule "/home/r3dbl4d3/.config/awesome/awesome-buttons"]
+	path = /home/r3dbl4d3/.config/awesome/awesome-buttons
+	url = https://github.com/streetturtle/awesome-buttons
