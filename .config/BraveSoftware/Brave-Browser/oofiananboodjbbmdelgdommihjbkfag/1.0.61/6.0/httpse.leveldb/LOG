@@ -1,7 +1,7 @@
-2021/09/27-22:50:52.915 3657 Recovering log #3
-2021/09/27-22:50:53.248 3657 Level-0 table #5: started
-2021/09/27-22:50:53.355 3657 Level-0 table #5: 2784294 bytes OK
-2021/09/27-22:50:53.360 3657 Recovering log #68
-2021/09/27-22:50:53.381 3657 Delete type=0 #3
-2021/09/27-22:50:53.382 3657 Delete type=3 #2
-2021/09/27-22:50:53.382 3657 Delete type=0 #68
+2021/09/27-22:59:24.735 5bdc Recovering log #3
+2021/09/27-22:59:25.055 5bdc Level-0 table #5: started
+2021/09/27-22:59:25.151 5bdc Level-0 table #5: 2784294 bytes OK
+2021/09/27-22:59:25.156 5bdc Recovering log #69
+2021/09/27-22:59:25.177 5bdc Delete type=0 #69
+2021/09/27-22:59:25.177 5bdc Delete type=0 #3
+2021/09/27-22:59:25.177 5bdc Delete type=3 #2
