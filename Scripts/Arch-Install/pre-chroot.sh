@@ -18,15 +18,20 @@ mkfs.ext4 /dev/$root_part
 mount /dev/$root_part /mnt
 printf "do you have a Swap: "
 read is_swap
-if ["$is_swap"=="n" ]
-then
-    echo "Not making swap partition and moving on"
-else
-    printf "Name of Swap Partition: "
-    read swap_part
-    mkswap /dev/$swap_part
-    swapon /dev/$swap_part
-fi
+case $is_swap in
+    'y' | 'Y' | '')
+        printf "Name of Swap Partition: "
+        read swap_part
+        mkswap /dev/$swap_part
+        swapon /dev/$swap_part
+        ;;
+    'n' | 'N')
+        echo "OK NOT MAKING SWAP PARTITION"
+        ;;
+    *)
+        echo "please enter answer as Y/n"
+        ;;
+esac
 clear
 echo "INSTALLING BASE SYSTEM"
 pacstrap /mnt base linux linux-firmware
