@@ -15,7 +15,6 @@ M.ui = {
       enabled = false,
       fav_themes = {
          "onedark",
-         "aquarium",
          "gruvchad",
       },
    },
@@ -65,6 +64,7 @@ M.options = {
    update_url = "https://github.com/NvChad/NvChad",
    update_branch = "main",
 }
+
 -- these are plugin related options
 M.options.plugin = {
    autosave = false, -- autosave on changed text or insert mode leave
@@ -132,7 +132,7 @@ M.mappings = {
       new_window = "<leader>w",
    },
 
-  -- update nvchad from nvchad, chadness 101
+   -- update nvchad from nvchad, chadness 101
    update_nvchad = "<leader>uu",
 }
 
@@ -212,6 +212,13 @@ M.custom.mappings = {
    --    "<leader>cc",
    --    "gg0vG$d",
    -- },
+}
+
+M.plugins = {
+   lspconfig = {
+      -- servers = {"html", "cssls"}
+      servers = {},
+   },
 }
 
 return M

@@ -20,7 +20,7 @@ else
         xorg
         xorg-xinit
         nitrogen
-        picom
+        picom-jonaburg-git
         awesome
         kitty
         zsh

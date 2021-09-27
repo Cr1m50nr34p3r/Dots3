@@ -1,3 +1,6 @@
-2021/09/25-23:26:54.826 3 Reusing MANIFEST /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/Session Storage/MANIFEST-000001
-2021/09/25-23:26:54.828 3 Recovering log #66
-2021/09/25-23:26:54.830 3 Reusing old log /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/Session Storage/000066.log 
+2021/09/27-21:26:21.514 5 Reusing MANIFEST /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/Session Storage/MANIFEST-000001
+2021/09/27-21:26:21.529 5 Recovering log #76
+2021/09/27-21:26:21.531 5 Reusing old log /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/Session Storage/000076.log 
+2021/09/27-21:26:29.663 3 Level-0 table #80: started
+2021/09/27-21:26:29.679 3 Level-0 table #80: 15133 bytes OK
+2021/09/27-21:26:29.694 3 Delete type=0 #76

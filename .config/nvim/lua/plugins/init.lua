@@ -82,6 +82,7 @@ return packer.startup(function()
 
    use {
       "nvim-treesitter/nvim-treesitter",
+      branch = "0.5-compat",
       event = "BufRead",
       config = function()
          require "plugins.configs.treesitter"
@@ -115,21 +116,17 @@ return packer.startup(function()
    }
 
    -- lsp stuff
+
    use {
-      "kabouzeid/nvim-lspinstall",
+      "neovim/nvim-lspconfig",
       opt = true,
       setup = function()
-         require("core.utils").packer_lazy_load "nvim-lspinstall"
+         require("core.utils").packer_lazy_load "nvim-lspconfig"
          -- reload the current file so lsp actually starts for it
          vim.defer_fn(function()
             vim.cmd "silent! e %"
          end, 0)
       end,
-   }
-
-   use {
-      "neovim/nvim-lspconfig",
-      after = "nvim-lspinstall",
       config = function()
          require "plugins.configs.lspconfig"
       end,
@@ -169,11 +166,8 @@ return packer.startup(function()
       "jdhao/better-escape.vim",
       disable = not plugin_status.esc_insertmode,
       event = "InsertEnter",
-      config = function()
-         require("plugins.configs.others").better_escape()
-      end,
       setup = function()
-         require("core.mappings").better_escape()
+         require("plugins.configs.others").better_escape()
       end,
    }
 
@@ -329,11 +323,6 @@ return packer.startup(function()
    }
 
    use {
-     "mattn/emmet-vim",
-     ft = {"html", "css", "js", "htm"},
-   }
-
-   use {
       "tpope/vim-fugitive",
       disable = not plugin_status.vim_fugitive,
       cmd = {
@@ -348,10 +337,4 @@ return packer.startup(function()
          require("core.mappings").vim_fugitive()
       end,
    }
-
-  use {
-    'andweeb/presence.nvim'
-  }
-
-
 end)

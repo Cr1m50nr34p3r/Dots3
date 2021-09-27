@@ -13,7 +13,7 @@ configuration {
   hide-scrollbar: true;
   sidebar-mode: false;
   auto-select: false;
-  theme: "nord.rasi";
+  theme: "doom-one.rasi";
 }
 
 /*

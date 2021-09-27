@@ -73,7 +73,7 @@ M.misc = function()
       -- terminal mappings --
       local term_maps = maps.terminal
       -- get out of terminal mode
-      map("t", term_maps.esc_termmode, "<C-\\><C->")
+      map("t", term_maps.esc_termmode, "<C-\\><C-n>")
       -- hide a term from within terminal mode
       map("t", term_maps.esc_hide_termmode, "<C-\\><C-n> :lua require('core.utils').close_buffer() <CR>")
       -- pick a hidden term
@@ -119,10 +119,6 @@ M.misc = function()
 end
 
 -- below are all plugin related mappings
-
-M.better_escape = function()
-   vim.g.better_escape_shortcut = plugin_maps.better_escape.esc_insertmode or { "" }
-end
 
 M.bufferline = function()
    local m = plugin_maps.bufferline
