@@ -57,13 +57,13 @@ alias mkusb="dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress"
 ### FUNCTIONS ###
 #################
 fzd () {
-	 cd $(find -type d . $HOME | fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')
+	 cd $(find $HOME . -type d| fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')
 }
 fzv () {
-	 sudo vim $(find -type d . $HOME | fzf --tac --preview='cat {}' --bind='?:toggle-preview') 
+	 sudo vim $(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview') 
 }
 fzo () {
-	 xdg-open $(find -type f . $HOME | fzf --preview="cat {}" --tac --prompt="Select file: " --bind="?:toggle-preview")
+	 xdg-open $(find $HOME . -type f  | fzf --preview="cat {}" --tac --prompt="Select file: " --bind="?:toggle-preview")
 }
 ##################
 ### AUTO-START ###
