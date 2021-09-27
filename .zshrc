@@ -34,8 +34,8 @@ alias fzr="paru -Rsn \$(paru -Qe | awk '{print \$1}' | fzf -m --preview='paru -Q
 alias fzk="sudo kill \$(ps -eo pid,euser,comm,\%cpu,\%mem,etime | fzf -m --preview-window=':hidden' | awk '{print \$1}')"
 alias frm="~/Scripts/fzrm/frm.sh f"
 # ls
-alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ls='exa -l --color=always --group-directories-first --icons' # preferred listing
+alias la='exa -la --color=always --group-directories-first --icons'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first --icons'  # long format
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
@@ -57,19 +57,14 @@ alias mkusb="dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress"
 ### FUNCTIONS ###
 #################
 fzd () {
-	cd $HOME && cd $(fd -t d -H | fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')
+	 cd $(find -type d . $HOME | fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')
 }
 fzv () {
-	cd $HOME && sudo vim $(fd -t f -H | fzf --tac --preview='cat {}' --bind='?:toggle-preview') 
-}
-fzz () {
-	fname=$(cd $HOME && fd -t f -H | fzf)
-        zathura $fname &	
+	 sudo vim $(find -type d . $HOME | fzf --tac --preview='cat {}' --bind='?:toggle-preview') 
 }
 fzo () {
-	cd $HOME && xdg-open $(find -type f | fzf --preview="cat {}" --tac --prompt="Select file: " --bind="?:toggle-preview")
+	 xdg-open $(find -type f . $HOME | fzf --preview="cat {}" --tac --prompt="Select file: " --bind="?:toggle-preview")
 }
-#
 ##################
 ### AUTO-START ###
 #################
