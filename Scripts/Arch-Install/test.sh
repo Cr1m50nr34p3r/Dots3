@@ -1,68 +1,9 @@
 #!/bin/bash
-packages=(
-    xorg
-    xorg-xinit
-    nitrogen
-    picom
-    awesome
-    kitty
-    zsh
-    neofetch
-    vim
-    base-devel
-    bluez
-    bluez-utils
-    blueman
-    alsa-utils
-    pulseaudio
-    pulseaudio-alsa
-    pulseaudio-bluetooth
-    fzf
-    maim
-    xclip
-    tree
-    exa
-    bat
-    fd
-    zathura
-    emacs
-    dunst
-    mpv
-    dolphin
-    ranger
-    sxiv
-    zathura-pdf-mupdf
-    neovim
-    pamixer
-    pandoc
-    pavucontrol
-    procs
-    rofi
-    starship
-    fuse2
-    fuse3
-    ripgrep
-    lightdm
-    lightdm-webkit2-greeter
-    ncdu
-    wget
-    emacs
-    bandwhich
-    acpi
-    brave-bin
-    figlet
-    xcp
-    tty-clock
-    nerd-fonts-jetbrains-mono
-    todoist-appimage
-    notion-app
-    ytop
-    lightdm-webkit-theme-aether
-    zip
-    atom
-    pup
-    python-pip
-    tmux
-
-)
-paru -S --needed --noconfirm "${packages[@]}"
+declare -A files
+files['zsh']='ZSH .zshrc'
+files['emacs']='.doom.d'
+word_count () {
+    echo $1 | wc
+}
+selected=$( echo ${!files[@]} | xargs -n 1 | fzf -m )
+word_count "$selected"

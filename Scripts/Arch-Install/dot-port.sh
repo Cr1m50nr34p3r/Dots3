@@ -16,6 +16,8 @@ files['zsh']='.zshrc ZSH'
 files['fish']='.config/fish'
 files['emacs']='.doom.d'
 files['nvim']='.config/nvim'
+files['vim']='.vimrc'
+
 ### FUNCTIONS
 word_count () {
     echo $1 | wc | awk '{print $2}'
@@ -23,17 +25,17 @@ word_count () {
 ####################################################################################
 
 selected=$( echo ${!files[@]} | xargs -n 1 | fzf -m )
-NumConfig=$( word_count $selected )
+NumConfig=$( word_count "$selected" )
 if (( $NumConfig > 1 ))
 then
     for config in $selected
     do
-        NumFile=$(word_count $config)
+        NumFile=$(word_count ${files[$config]})
         (( $NumFile == 1 )) && cp -r $1/${files[$config]} $HOME/${files[$config]} || echo $config | xargs -n 1 | xargs -I dir cp -r $1/dir $HOME/dir
     done
 elif (( $NumConfig == 1 ))
 then
-    NumFile=$(word_count $config)
-    (( $NumFile == 1 )) && cp -r $1/${files[$selected]} $HOME/${files[$selected]} || echo $config | xargs -n 1 | xargs -I dir cp -r $1/dir $HOME/dir
+    NumFile=$( word_count "${files[$selected]}" )
+    (( $NumFile == 1 )) && cp -r $1/${files[$selected]} $HOME/${files[$selected]} || echo ${files[$selected]} | xargs -n 1 | xargs -I dir cp -r $1/dir $HOME
 
 fi
