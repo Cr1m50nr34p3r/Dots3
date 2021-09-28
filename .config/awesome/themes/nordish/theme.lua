@@ -95,11 +95,11 @@ theme.taglist_shape                             = gears.shape.rounded_rect
 theme.taglist_spacing				= 2
 
 -- Sets the border to zero
-theme.border_width                              = 0
+theme.border_width                              = 1
 
 -- If the border is not zero, it'll show 
 -- These colors 
-theme.border_normal                             = colors.orange 
+theme.border_normal                             = colors.orange
 theme.border_focus                              = colors.green
 theme.border_marked                             = colors.green
 
