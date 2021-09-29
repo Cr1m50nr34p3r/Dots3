@@ -335,14 +335,14 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "t", function () awful.util.spawn( "telegram-desktop" ) end,
         {description = "telegram", group = "apps"}),
       
-    -- Abre nautilus
+    -- Ranger
     awful.key({ modkey }, "e", function () awful.util.spawn( "kitty -e ranger" ) end,
-        {description = "Vifm - File Manager", group = "apps"}),
+        {description = "File Manager", group = "apps"}),
         
     
     -- Abre microsoft teams
     awful.key({ modkey }, "c", function () awful.spawn.with_shell( "brave classroom.google.com/u/1/h" ) end,
-        {description = "Microsoft teams / work", group = "apps"}),
+        {description = "Google Classroom", group = "apps"}),
     
     -- Abre Office
     awful.key({ modkey }, "g", function () awful.util.spawn( "libreoffice" ) end,
