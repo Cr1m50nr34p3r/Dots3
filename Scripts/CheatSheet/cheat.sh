@@ -6,13 +6,13 @@ languages=(
     'bash'
     'js'
     'git'
+    'awk'
 )
 utils=(
     'xargs'
     'find'
     'sed'
     'grep'
-    'awk'
     'tr'
     'cut'
 )

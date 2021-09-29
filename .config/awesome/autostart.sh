@@ -22,7 +22,7 @@ run picom
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run numlockx on
 run volumeicon
-run nitrogen --restore
+#run nitrogen --restore
 run dunst
 #you can set wallpapers in themes as well
 

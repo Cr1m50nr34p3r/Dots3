@@ -1,7 +1,0 @@
-2021/09/28-12:23:14.634 3fac Recovering log #3
-2021/09/28-12:23:15.019 3fac Level-0 table #5: started
-2021/09/28-12:23:15.192 3fac Level-0 table #5: 2784294 bytes OK
-2021/09/28-12:23:15.199 3fac Recovering log #75
-2021/09/28-12:23:15.224 3fac Delete type=0 #75
-2021/09/28-12:23:15.224 3fac Delete type=0 #3
-2021/09/28-12:23:15.224 3fac Delete type=3 #2

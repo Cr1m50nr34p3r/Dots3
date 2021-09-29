@@ -1,10 +1,24 @@
 #!/bin/sh
 set -euo pipefail
 
-
-echo "UPDATING SYSTEM CLOCK"
+echo "#############################"
+echo "### UPDATING SYSTEM CLOCK ###"
+echo "#############################"
 timedatectl set-ntp true
-echo "PARTITIONING"
+mirror_msg () {
+    echo "########################"
+    echo "### UPDATING MIRRORS ###"
+    echo "########################"
+
+}
+mirror_msg
+pacman -Syy reflector rsync
+clear
+mirror_msg
+reflector -c "India,*" --save /etc/pacman.d/mirrorlist
+echo "####################"
+echo "### PARTITIONING ###"
+echo "####################"
 printf "Whiich Drive do u wanna partition"
 read disk
 cfdisk /dev/$disk
@@ -19,21 +33,27 @@ mount /dev/$root_part /mnt
 printf "do you have a Swap: "
 read is_swap
 case $is_swap in
-    'y' | 'Y' | '')
-        printf "Name of Swap Partition: "
-        read swap_part
-        mkswap /dev/$swap_part
-        swapon /dev/$swap_part
-        ;;
-    'n' | 'N')
-        echo "OK NOT MAKING SWAP PARTITION"
-        ;;
-    *)
-        echo "please enter answer as Y/n"
-        ;;
-esac
+'y' | 'Y' | '')
+	printf "Name of Swap Partition: "
+	read swap_part
+	mkswap /dev/$swap_part
+	swapon /dev/$swap_part
+	;;
+'n' | 'N')
+	printf "Name of Swap Partition: "
+    read swap_part
+    mkswap /dev/$swap_part
+    swapon /dev/$swap_part	
+if ["$is_swap"=="n" ]
+then
+    echo "Not making swap partition and moving on"
+else
+    
+fi
 clear
-echo "INSTALLING BASE SYSTEM"
+echo "##############################"
+echo "### INSTALLING BASE SYSTEM ###"
+echo "##############################"
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 clear

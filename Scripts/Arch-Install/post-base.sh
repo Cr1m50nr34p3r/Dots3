@@ -90,6 +90,7 @@ else
         case $is_driver in
         "y" | "Y" | "")
             paru -S --noconfirm --needed ${drivers[$1]}
+	    sleep 1
             clear
             ;;
         "n" | "N")
@@ -112,7 +113,28 @@ else
     echo ""
     echo "SYNCING DATABASE"
     echo ""
-    sudo pacman -Sy
+    sudo pacman -Syy
+    clear
+    printf "Update Mirrors (THIS MAY TAKE AN HOUR OR 2 ) : "
+    read up_mirror
+    case $up_mirror in
+	    'y' | 'Y' )
+		    clear
+		    echo "UPDATING MIRRORS"
+		    sudo pacman -S reflector rsync
+		    clear
+		    echo "UPDATING MIRRORS"
+		    sudo reflector --verbose -p https --sort rate --threads 4 --save /etc/pacman.d/mirrorlist
+		    clear
+		    ;;
+	    *)
+		    echo "NOT UPDATING MIRRORS AND CONTINUING"
+		    clear
+		    ;;
+   esac
+
+	   	   
+
     echo "INSTALLING PARU ...."
     sudo pacman -S --noconfirm --needed  base-devel
     clear
