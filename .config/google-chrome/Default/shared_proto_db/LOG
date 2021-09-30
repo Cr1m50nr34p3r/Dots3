@@ -1,2 +1,3 @@
-2021/09/28-18:21:49.873 1de96 Creating DB /home/r3dbl4d3/.config/google-chrome/Default/shared_proto_db since it was missing.
-2021/09/28-18:21:49.913 1de96 Reusing MANIFEST /home/r3dbl4d3/.config/google-chrome/Default/shared_proto_db/MANIFEST-000001
+2021/09/29-19:01:19.774 269c Reusing MANIFEST /home/r3dbl4d3/.config/google-chrome/Default/shared_proto_db/MANIFEST-000001
+2021/09/29-19:01:19.774 269c Recovering log #3
+2021/09/29-19:01:19.774 269c Reusing old log /home/r3dbl4d3/.config/google-chrome/Default/shared_proto_db/000003.log 

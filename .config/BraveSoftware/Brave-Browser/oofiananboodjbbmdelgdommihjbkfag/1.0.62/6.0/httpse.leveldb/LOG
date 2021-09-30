@@ -1,7 +1,7 @@
-2021/09/29-15:36:48.887 60e7 Recovering log #3
-2021/09/29-15:36:49.363 60e7 Level-0 table #5: started
-2021/09/29-15:36:49.489 60e7 Level-0 table #5: 2784294 bytes OK
-2021/09/29-15:36:49.496 60e7 Recovering log #17
-2021/09/29-15:36:49.521 60e7 Delete type=0 #3
-2021/09/29-15:36:49.521 60e7 Delete type=3 #2
-2021/09/29-15:36:49.521 60e7 Delete type=0 #17
+2021/09/30-22:51:05.711 1a6d Recovering log #3
+2021/09/30-22:51:06.760 1a6d Level-0 table #5: started
+2021/09/30-22:51:06.941 1a6d Level-0 table #5: 2784294 bytes OK
+2021/09/30-22:51:06.951 1a6d Recovering log #44
+2021/09/30-22:51:06.981 1a6d Delete type=0 #3
+2021/09/30-22:51:06.981 1a6d Delete type=3 #2
+2021/09/30-22:51:06.981 1a6d Delete type=0 #44

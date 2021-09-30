@@ -28,3 +28,6 @@
 [submodule "/home/r3dbl4d3/.config/nvim/NvChad"]
 	path = /home/r3dbl4d3/.config/nvim/NvChad
 	url = https://github.com/NvChad/NvChad
+[submodule "/home/r3dbl4d3/Scripts/Wallpaper"]
+	path = /home/r3dbl4d3/Scripts/Wallpaper
+	url = https://github.com/akshatgarg789/Wallpaper_scrape
