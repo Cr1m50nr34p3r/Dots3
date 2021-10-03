@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-echo "SETTING TIME ZONE"
+echo '#########################'
+echo '### SETTING TIME ZONE ###'
+echo '#########################'
 echo ""
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 hwclock --systohc
 clear
-echo "GENERATING LOCALES"
+echo '##########################'
+echo "### GENERATING LOCALES ###"
+echo '##########################'
 echo ""
 sed 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8'
 locale-gen
 clear
-echo "STARTING NETWORK CONFIGURATION"
+echo '######################################'
+echo "### STARTING NETWORK CONFIGURATION ###"
+echo '######################################'
 echo ""
 printf "Hostname: "
 read hostname
@@ -25,11 +30,15 @@ echo "INITRAMFS"
 echo ""
 mkinitcpio -P
 clear
-echo "CHANGING ROOT PASSWORD"
+echo '##############################'
+echo "### CHANGING ROOT PASSWORD ###"
+echo '##############################'
 echo ""
 passwd
 clear
-echo "ADDING NEW USER"
+echo '#######################'
+echo "### ADDING NEW USER ###"
+echo '#######################'
 echo ""
 printf "Username: "
 read username
@@ -46,21 +55,31 @@ clear
 echo "setup sudo "
 visudo
 clear
-echo "SETTING UP GRUB"
-echo ""
+grub_msg () {
+	echo '#######################'
+	echo "### SETTING UP GRUB ###"
+	echo '#######################'
+	echo ""
+}
+grub_msg
 pacman -S --noconfirm grub efibootmgr os-prober dosfstools mtools
 clear
+grub_msg
+echo "Creating EFI directory ...."
 mkdir /boot/EFI
 echo ""
 printf "Name of EFI Partition: "
 read efi_part
+echo "Mounting EFI partition"
 mount /dev/$efi_part /boot/EFI
+echo "Installing grub"
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 clear
-echo "INSTALLING BASIC STUFF"
+echo '##############################'
+echo "### INSTALLING BASIC STUFF ###"
+echo '##############################'
 pacman -S --noconfirm --needed vim networkmanager git
-clear
 systemctl enable NetworkManager
 clear
 echo "#########################################"

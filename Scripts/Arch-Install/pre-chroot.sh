@@ -1,6 +1,4 @@
 #!/bin/sh
-set -euo pipefail
-
 echo "#############################"
 echo "### UPDATING SYSTEM CLOCK ###"
 echo "#############################"
@@ -9,6 +7,7 @@ mirror_msg () {
     echo "########################"
     echo "### UPDATING MIRRORS ###"
     echo "########################"
+    echo ""
 
 }
 mirror_msg
@@ -16,12 +15,18 @@ pacman -Syy reflector rsync
 clear
 mirror_msg
 reflector -c "India,*" --save /etc/pacman.d/mirrorlist
-echo "####################"
-echo "### PARTITIONING ###"
-echo "####################"
+reflector --sort rate --threads 4 -l 200 | grep '^Server' >> /etc/pacman.d/mirrorlist 
+part_msg () {
+	echo "####################"
+	echo "### PARTITIONING ###"
+	echo "####################"
+	echo ""
+}
+part_msg
 printf "Whiich Drive do u wanna partition"
 read disk
 cfdisk /dev/$disk
+clear &&  part_msg
 echo "FORMATTING AND MOUNTING PARTITIONS"
 printf "What is your EFI  partition: "
 read efi_part
@@ -40,16 +45,7 @@ case $is_swap in
 	swapon /dev/$swap_part
 	;;
 'n' | 'N')
-	printf "Name of Swap Partition: "
-    read swap_part
-    mkswap /dev/$swap_part
-    swapon /dev/$swap_part	
-if ["$is_swap"=="n" ]
-then
     echo "Not making swap partition and moving on"
-else
-    
-fi
 clear
 echo "##############################"
 echo "### INSTALLING BASE SYSTEM ###"

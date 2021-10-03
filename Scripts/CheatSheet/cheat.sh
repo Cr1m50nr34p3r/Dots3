@@ -15,7 +15,10 @@ utils=(
     'grep'
     'tr'
     'cut'
+    'curl'
+    'dd'
 )
+
 case $1 in
 "r" | "R")
 	
