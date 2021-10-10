@@ -80,6 +80,8 @@ else
         pup
         python-pip
         tmux
+        connman
+        ntfs-3g
 
     )
     ### FUNCTIONS
@@ -111,7 +113,10 @@ else
     echo "############################################################"
     sleep 3
     echo ""
-    echo "SYNCING DATABASE"
+    clear
+    echo "########################"
+    echo "### SYNCING DATABASE ###"
+    echo "########################"
     echo ""
     sudo pacman -Syy
     clear
@@ -120,11 +125,18 @@ else
     case $up_mirror in
 	    'y' | 'Y' )
 		    clear
-		    echo "UPDATING MIRRORS"
+		    miror_msg () {
+    		    	echo "########################"
+		    	echo "### UPDATING MIRRORS ###"
+    		    	echo "########################"
+			echo ""
+		}
+		    mirror_msg
 		    sudo pacman -S reflector rsync
 		    clear
-		    echo "UPDATING MIRRORS"
-		    sudo reflector --verbose -p https --sort rate --threads 4 --save /etc/pacman.d/mirrorlist
+		    mirror_msg
+		    sudo reflector -c 'India' --save /etc/pacman.d/mirrorlist
+		    sudo reflector  --sort rate --threads 4 -l 200 | grep '^Server' >> /etc/pacman.d/mirrorlist
 		    clear
 		    ;;
 	    *)
@@ -132,49 +144,72 @@ else
 		    clear
 		    ;;
    esac
+   paru_msg () {
+    	echo "#######################"
+    	echo "### INSTALLING PARU ###"
+    	echo "#######################"
+	echo ""
+   }
+   paru_msg
+   sudo pacman -S --noconfirm --needed  base-devel
+   clear
+   paru_msg
+   git clone https://aur.archlinux.org/paru.git
+   clear
+   paru_msg
+   pushd paru
+   makepkg -si
+   clear
+   popd
 
-	   	   
+   echo "INSTALLING DRIVERS"
+   echo ""
+   sudo paru -S --needed --noconfirm xf86-video-vesa mesa mesa-libgl
+   clear
+   for driver in "${!drivers[@]}"
+   do
+       install_driver $driver
+   done
+   echo "INSTALLING OTHER PACKAGES"
+   paru -S --needed --noconfirm "${packages[@]}"
+   echo ""
+   clear
+   echo "INSTALLING DOOM EMACS"
+   echo ""
+   git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+   clear
+   ~/.emacs.d/bin/doom install
+   clear
+   ~/.emacs.d/bin/doom sync
+   echo "SETTING UP XORG"
+   touch .xinitrc
+   echo "exec awesome" >> .xinitrc
+   echo "ENABLING SERVICES ...."
+   sudo systemctl enable lightdm
+   sudo systemctl enable bluetooth
+   sudo systemctl enable connman
+   clear
+   echo "########################################"
+   echo "### SETTING UP CONNMAN RESUME SERVCE ###"
+   echo "########################################"
 
-    echo "INSTALLING PARU ...."
-    sudo pacman -S --noconfirm --needed  base-devel
-    clear
-    echo ""
-    git clone https://aur.archlinux.org/paru.git
-    clear
-    pushd paru
-    makepkg -si
-    clear
-    popd
+   sudo touch /etc/systemd/system/connman-resume.service
 
-    echo "INSTALLING DRIVERS"
-    echo ""
-    sudo paru -S --needed --noconfirm xf86-video-vesa mesa mesa-libgl
-    clear
-    for driver in "${!drivers[@]}"
-    do
-        install_driver $driver
-    done
-    echo "INSTALLING OTHER PACKAGES"
-    paru -S --needed --noconfirm "${packages[@]}"
-    echo ""
-    clear
-    echo "INSTALLING DOOM EMACS"
-    echo ""
-    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-    clear
-    ~/.emacs.d/bin/doom install
-    clear
-    ~/.emacs.d/bin/doom sync
-    echo "SETTING UP XORG"
-    touch .xinitrc
-    echo "exec awesome" >> .xinitrc
-    echo "ENABLING SERVICES ...."
-    sudo systemctl enable lightdm
-    sudo systemctl enable bluetooth
-    clear
-    echo "#############################"
-    echo "### ARCH INSTALL COMPLETE ###"
-    echo "#############################"
-
+   sudo echo "[Unit]" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "Description=Restart connman on resume." >>  /etc/systemd/system/connman-resume.service
+   sudo echo "After=suspend.target" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "[Service]" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "Type=oneshot" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "RemainAfterExit=no" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "ExecStart=/usr/bin/systemctl restart connman" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "ExecStart=/usr/bin/echo connman-resume: Successfully restarted connman" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "[Install]" >>  /etc/systemd/system/connman-resume.service
+   sudo echo "WantedBy=suspend.target" >>  /etc/systemd/system/connman-resume.service
+   sudo systemctl enable connman-resume
+   echo "#############################"
+   echo "### ARCH INSTALL COMPLETE ###"
+   echo "#############################"
 fi
 popd

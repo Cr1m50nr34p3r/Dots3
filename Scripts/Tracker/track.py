@@ -16,16 +16,19 @@ current_time= "{:02d}:{:02d}".format(time_now.hour,time_now.minute)
 # initiate argeparse
 parser=argparse.ArgumentParser()
 parser.add_argument('-n', default="unnamed", help="name of the task", type=str)
-parser.add_argument('-c',default=False,help="Check logs",type=bool)
-parser.add_argument('-r',default=False,help="Read logs",type=bool)
-parser.add_argument('-s',default=False,help="start stopwatch",type=bool)
+parser.add_argument('-c',default=False,help="print logs of a given date by default checks for current date use with -d to change date",type=bool)
+parser.add_argument('-r',default=False,help="Read logs of a given date and print number of args use with -n arg by default checks for current date",type=bool)
+parser.add_argument('-s',help="start stopwatch",type=bool)
 parser.add_argument('-d',default=current_date,help="date to check for",type=str)
 args=parser.parse_args()
 start=args.s
+start=True
 name=args.n
 check=args.c
 date=args.d
 read_l=args.r
+if check or read_l:
+    start=False
 # initiate file
 if path.isdir(logs_dir)==False:
     root_dir=path.realpath(f"{logs_dir}/..")

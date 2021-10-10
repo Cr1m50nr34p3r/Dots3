@@ -11,7 +11,7 @@ echo '##########################'
 echo "### GENERATING LOCALES ###"
 echo '##########################'
 echo ""
-sed 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8'
+sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 clear
 echo '######################################'
@@ -62,7 +62,7 @@ grub_msg () {
 	echo ""
 }
 grub_msg
-pacman -S --noconfirm grub efibootmgr os-prober dosfstools mtools
+pacman -S --noconfirm os-prober grub efibootmgr dosfstools mtools
 clear
 grub_msg
 echo "Creating EFI directory ...."
@@ -79,7 +79,7 @@ clear
 echo '##############################'
 echo "### INSTALLING BASIC STUFF ###"
 echo '##############################'
-pacman -S --noconfirm --needed vim networkmanager git
+pacman -S --noconfirm --needed vim networkmanager git connman
 systemctl enable NetworkManager
 clear
 echo "#########################################"

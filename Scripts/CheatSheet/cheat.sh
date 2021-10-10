@@ -17,6 +17,8 @@ utils=(
     'cut'
     'curl'
     'dd'
+    'pandoc'
+    'imagemagick'
 )
 
 case $1 in
