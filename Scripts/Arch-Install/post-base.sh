@@ -10,6 +10,7 @@ else
     
     ############################################################################################
     ### Variables
+    username=$(whoami)
     # Drivers
     declare -A drivers
     drivers['intel']="xf86-video-intel"
@@ -192,22 +193,23 @@ else
    echo "########################################"
    echo "### SETTING UP CONNMAN RESUME SERVCE ###"
    echo "########################################"
+   sudo su
+   touch /etc/systemd/system/connman-resume.service
 
-   sudo touch /etc/systemd/system/connman-resume.service
-
-   sudo echo "[Unit]" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "Description=Restart connman on resume." >>  /etc/systemd/system/connman-resume.service
-   sudo echo "After=suspend.target" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "[Service]" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "Type=oneshot" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "RemainAfterExit=no" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "ExecStart=/usr/bin/systemctl restart connman" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "ExecStart=/usr/bin/echo connman-resume: Successfully restarted connman" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "[Install]" >>  /etc/systemd/system/connman-resume.service
-   sudo echo "WantedBy=suspend.target" >>  /etc/systemd/system/connman-resume.service
-   sudo systemctl enable connman-resume
+   echo "[Unit]" >>  /etc/systemd/system/connman-resume.service
+   echo "Description=Restart connman on resume." >>  /etc/systemd/system/connman-resume.service
+   echo "After=suspend.target" >>  /etc/systemd/system/connman-resume.service
+   echo "" >>  /etc/systemd/system/connman-resume.service
+   echo "[Service]" >>  /etc/systemd/system/connman-resume.service
+   echo "Type=oneshot" >>  /etc/systemd/system/connman-resume.service
+   echo "RemainAfterExit=no" >>  /etc/systemd/system/connman-resume.service
+   echo "ExecStart=/usr/bin/systemctl restart connman" >>  /etc/systemd/system/connman-resume.service
+   echo "ExecStart=/usr/bin/echo connman-resume: Successfully restarted connman" >>  /etc/systemd/system/connman-resume.service
+   echo "" >>  /etc/systemd/system/connman-resume.service
+   echo "[Install]" >>  /etc/systemd/system/connman-resume.service
+   echo "WantedBy=suspend.target" >>  /etc/systemd/system/connman-resume.service
+   su $username 
+   systemctl enable connman-resume
    echo "#############################"
    echo "### ARCH INSTALL COMPLETE ###"
    echo "#############################"
