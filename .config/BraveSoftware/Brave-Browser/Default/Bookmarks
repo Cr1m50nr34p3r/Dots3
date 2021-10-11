@@ -1,5 +1,5 @@
 {
-   "checksum": "502c8a64a59040f76cb2b52e44d0166c",
+   "checksum": "57fb02ff6e7afe3530a10de526e695bf",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -9,10 +9,24 @@
             "name": "Bash scripting cheatsheet",
             "type": "url",
             "url": "https://devhints.io/bash"
+         }, {
+            "date_added": "13277734867285431",
+            "guid": "ca98a869-5220-4e7c-8233-6333dfce6b5e",
+            "id": "7",
+            "name": "Efficient Image Resizing With ImageMagick — Smashing Magazine",
+            "type": "url",
+            "url": "https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/"
+         }, {
+            "date_added": "13277761762592774",
+            "guid": "2041a84c-2ce3-4b18-850b-82d2396d9c72",
+            "id": "9",
+            "name": "CBSE Class 11 Syllabus 2021-22 (New) Term-wise & Subject-wise PDF: All Subjects - NCERT Based CBSE Curriculum for CBSE Academic Session 2021-22",
+            "type": "url",
+            "url": "https://www.jagranjosh.com/articles/cbse-class-11-syllabus-2021-22-new-download-subject-wise-pdf-1617604123-1"
          } ],
          "date_added": "13276802344771446",
-         "date_modified": "13276962042066579",
-         "guid": "00000000-0000-4000-a000-000000000002",
+         "date_modified": "13278153050330367",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks",
          "type": "folder"
@@ -21,7 +35,7 @@
          "children": [  ],
          "date_added": "13276802344771450",
          "date_modified": "0",
-         "guid": "00000000-0000-4000-a000-000000000003",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
          "id": "2",
          "name": "Other bookmarks",
          "type": "folder"
@@ -30,7 +44,7 @@
          "children": [  ],
          "date_added": "13276802344771453",
          "date_modified": "0",
-         "guid": "00000000-0000-4000-a000-000000000004",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
          "id": "3",
          "name": "Mobile bookmarks",
          "type": "folder"

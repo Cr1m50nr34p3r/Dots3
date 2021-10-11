@@ -1,5 +1,4 @@
-2021/09/30-22:35:39.207 5b8 Reusing MANIFEST /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/09/30-22:35:39.208 5b8 Recovering log #10
-2021/09/30-22:35:39.222 5b8 Reusing old log /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000010.log 
-2021/09/30-22:35:39.222 5b8 Delete type=2 #11
-2021/09/30-22:35:39.222 5b8 Delete type=2 #8
+2021/10/08-13:43:03.288 10ec Reusing MANIFEST /home/crims0nbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/10/08-13:43:03.288 10ec Recovering log #18
+2021/10/08-13:43:03.323 10ec Reusing old log /home/crims0nbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000018.log 
+2021/10/08-13:43:03.323 10ec Delete type=0 #3

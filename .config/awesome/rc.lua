@@ -288,6 +288,10 @@ root.buttons(my_table.join(
 
 -- {{{ Key bindings
 globalkeys = my_table.join(
+    -- Open searched file with zathura
+    awful.key({modkey,'Shift'},'z', function () awful.spawn.with_shell("~/Scripts/ZOpen/zopen.sh r") end,
+        {description = "Open searched file with zathura", group = "apps"}),
+
     -- Screenshot entire screen
     awful.key({modkey},'Print', function () awful.spawn.with_shell( "maim  | tee ~/Media/Pictures/Screenshots/$(date +%s).png | xclip -select clipboard -t image/png") end,
         {description = "Screen shot selected area", group = "Utilities"}),
@@ -826,7 +830,7 @@ awful.rules.rules = {
           "Arandr",
           "Arcolinux-welcome-app.py",
           "Blueberry",
-          "Galculator",
+	  "Galculator",
           "Gnome-font-viewer",
           "Gpick",
           "Imagewriter",
@@ -843,7 +847,8 @@ awful.rules.rules = {
           "pinentry",
           "veromix",
           "xtightvncviewer",
-          "Xfce4-terminal"},
+          "Xfce4-terminal",
+  	  },
 
         name = {
           "Event Tester",  -- xev.

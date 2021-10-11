@@ -10,6 +10,7 @@ else
     
     ############################################################################################
     ### Variables
+    # username
     username=$(whoami)
     # Drivers
     declare -A drivers
@@ -83,6 +84,7 @@ else
         tmux
         connman
         ntfs-3g
+	unimatrix
 
     )
     ### FUNCTIONS
@@ -193,9 +195,10 @@ else
    echo "########################################"
    echo "### SETTING UP CONNMAN RESUME SERVCE ###"
    echo "########################################"
-   sudo su
-   touch /etc/systemd/system/connman-resume.service
 
+   sudo touch /etc/systemd/system/connman-resume.service
+   echo "switching to root user..."
+   sudo su
    echo "[Unit]" >>  /etc/systemd/system/connman-resume.service
    echo "Description=Restart connman on resume." >>  /etc/systemd/system/connman-resume.service
    echo "After=suspend.target" >>  /etc/systemd/system/connman-resume.service
@@ -208,8 +211,9 @@ else
    echo "" >>  /etc/systemd/system/connman-resume.service
    echo "[Install]" >>  /etc/systemd/system/connman-resume.service
    echo "WantedBy=suspend.target" >>  /etc/systemd/system/connman-resume.service
-   su $username 
-   systemctl enable connman-resume
+   echo "switching back to $username"
+   su $username
+   sudo systemctl enable connman-resume
    echo "#############################"
    echo "### ARCH INSTALL COMPLETE ###"
    echo "#############################"

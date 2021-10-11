@@ -1,2 +1,3 @@
-2021/09/21-00:36:50.636 297 Creating DB /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb since it was missing.
-2021/09/21-00:36:50.670 297 Reusing MANIFEST /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/10/10-17:23:49.492 706e Reusing MANIFEST /home/crims0nbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/10/10-17:23:49.493 706e Recovering log #3
+2021/10/10-17:23:49.493 706e Reusing old log /home/crims0nbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb/000003.log 

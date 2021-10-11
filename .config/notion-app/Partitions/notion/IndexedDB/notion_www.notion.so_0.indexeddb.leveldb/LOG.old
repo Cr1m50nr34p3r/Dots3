@@ -1,3 +1,21 @@
-2021/09/21-23:46:44.085 4402 Reusing MANIFEST /home/r3dbl4d3/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
-2021/09/21-23:46:44.085 4402 Recovering log #3
-2021/09/21-23:46:44.088 4402 Reusing old log /home/r3dbl4d3/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/000003.log 
+2021/10/10-21:10:32.752 5cf9 Reusing MANIFEST /home/crims0nbl4d3/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2021/10/10-21:10:32.752 5cf9 Recovering log #17
+2021/10/10-21:10:32.786 5cf9 Reusing old log /home/crims0nbl4d3/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/000017.log 
+2021/10/10-22:05:08.350 5e15 Level-0 table #22: started
+2021/10/10-22:05:08.406 5e15 Level-0 table #22: 838723 bytes OK
+2021/10/10-22:05:08.417 5e15 Delete type=0 #17
+2021/10/10-22:06:04.307 5cf9 Compacting 1@1 + 1@2 files
+2021/10/10-22:06:04.347 5cf9 Generated table #23@1: 453 keys, 19471 bytes
+2021/10/10-22:06:04.347 5cf9 Compacted 1@1 + 1@2 files => 19471 bytes
+2021/10/10-22:06:04.359 5cf9 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/10/10-22:06:04.359 5cf9 Delete type=2 #19
+2021/10/10-22:06:04.359 5cf9 Delete type=2 #22
+2021/10/10-23:05:09.519 5d68 Level-0 table #25: started
+2021/10/10-23:05:09.572 5d68 Level-0 table #25: 804283 bytes OK
+2021/10/10-23:05:09.586 5d68 Delete type=0 #21
+2021/10/10-23:05:39.899 5e15 Compacting 1@1 + 1@2 files
+2021/10/10-23:05:39.940 5e15 Generated table #26@1: 464 keys, 20109 bytes
+2021/10/10-23:05:39.940 5e15 Compacted 1@1 + 1@2 files => 20109 bytes
+2021/10/10-23:05:39.951 5e15 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/10/10-23:05:39.951 5e15 Delete type=2 #25
+2021/10/10-23:05:39.951 5e15 Delete type=2 #23

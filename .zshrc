@@ -9,14 +9,15 @@
 ### SETTINGS ###
 ################
 setopt autocd extendedglob nomatch notify 
+export MAKEFLAGS="-j$(( $nprocs+1 ))"
 ###############
 ### PLUGINS ###
 ###############
-source $HOME/ZSH/Themes/dzhi-zsh-theme/dzhi.zsh-theme
-source $HOME/ZSH/Plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source $HOME/ZSH/Plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $HOME/ZSH/Plugins/auto-notify/auto-notify.plugin.zsh
+source $HOME/.config/ZSH/Themes/dzhi-zsh-theme/dzhi.zsh-theme
+source $HOME/.config/ZSH/Plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+ZSH_AUTOSUGGEST_STRATEGY=( completion history)
+source $HOME/.config/ZSH/Plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $HOME/.config/ZSH/Plugins/auto-notify/auto-notify.plugin.zsh
 #############
 ### ALIAS ###
 #############
@@ -45,7 +46,7 @@ alias clock='tty-clock -cs'
 alias doom='~/.emacs.d/bin/doom'
 alias toggle-mic='amixer set Capture toggle'
 alias mount-sd='sudo mount /dev/sda1 /mnt/SD'
-alias get-token="alias cat=cat && cat ~/token.md  | tr '\n' ' ' | sed 's/ //g' | xclip -select clipboard"
+alias get-token="alias cat=cat && cat ~/.token.md  | tr '\n' ' ' | sed 's/ //g' | xclip -select clipboard"
 alias cln="clear && neofetch"
 alias srczsh="source ~/.zshrc"
 alias mtrx="unimatrix -u 10 -l u"
@@ -54,6 +55,10 @@ alias decrypt="gpg --decrypt --pinentry-mode loopback --armor "
 alias cht="~/Scripts/CheatSheet/cheat.sh f"
 alias dotfile="/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME"
 alias mkusb="dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress"
+alias clogs="echo "\# $(date +%d-%m-%y ) " > ~/.dlogs/.Personal/$( date +%d-%m-%y ).md"
+alias probe_wifi="sudo modprobe -r mwifiex_pcie ; sudo modprobe mwifiex_pcie"
+alias pacunlock="sudo rm /var/lib/pacman/db.lck"
+alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1/g' "
 #################
 ### FUNCTIONS ###
 #################
@@ -66,6 +71,9 @@ fzv () {
 fzo () {
 	 xdg-open $(find $HOME . -type f  | fzf --preview="cat {}" --tac --prompt="Select file: " --bind="?:toggle-preview")
 }
+i () {
+	paru -S $(paru -F $1 | head -n 1 | cut -d '/' -f2 | cut -d ' ' -f1)
+}
 ##################
 ### AUTO-START ###
 #################
@@ -73,3 +81,4 @@ eval "$(starship init zsh)"
 blueon
 clear
 neofetch
+[[ ! -e ~/.dlogs/.Personal/$(date +%d-%m-%y).md ]] && touch ~/.dlogs/.Personal/$(date +%d-%m-%y).md && clogs || echo "eernkjnrefonrbeonbeonvonoen"
