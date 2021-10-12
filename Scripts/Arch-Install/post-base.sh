@@ -85,8 +85,40 @@ else
         connman
         ntfs-3g
 	unimatrix
+	pyenv
+	xdotools
+	cmake 
+	rhash
+	jsoncpp
+	dart
+	nim
+	nimsuggest-git
+	python-black
+	python-pyflakes
+	python-pipenv
+	python-nose
+	python-pytest
+	shellcheck
+	imagemagick
+	mbsync
+	mu
+
 
     )
+    pip_packages=(
+	    jedi
+	    autopep8
+	    flake8
+	    ipython
+	    importmagic
+	    yapf
+	    black
+	    pyflakes
+	    isort
+	    pipenv
+	    nose
+	    pytest
+	    )
     ### FUNCTIONS
     install_driver () {
 
@@ -176,6 +208,9 @@ else
    echo "INSTALLING OTHER PACKAGES"
    paru -S --needed --noconfirm "${packages[@]}"
    echo ""
+   clear
+   echo "INSTALLING PIP PACKAGES"
+   pip install "${pip_packages[@]}"
    clear
    echo "INSTALLING DOOM EMACS"
    echo ""

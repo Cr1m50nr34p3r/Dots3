@@ -1,0 +1,10 @@
+[2021-10-11 19:13:39.360] [sharedprocess] [info] [logs cleanup]: Starting to clean up old logs.
+[2021-10-11 19:13:53.440] [sharedprocess] [info] Installing extension: arcticicestudio.nord-visual-studio-code
+[2021-10-11 19:13:56.973] [sharedprocess] [info] Downloaded extension: arcticicestudio.nord-visual-studio-code /home/crims0nbl4d3/.config/Code - OSS/CachedExtensionVSIXs/arcticicestudio.nord-visual-studio-code-0.15.0
+[2021-10-11 19:13:57.038] [sharedprocess] [info] Extracted extension to /home/crims0nbl4d3/.vscode-oss/extensions/.02f5a127-628a-4932-9f03-6ce0c24d4b9b: arcticicestudio.nord-visual-studio-code
+[2021-10-11 19:13:57.051] [sharedprocess] [info] Renamed to /home/crims0nbl4d3/.vscode-oss/extensions/arcticicestudio.nord-visual-studio-code-0.15.0
+[2021-10-11 19:13:57.054] [sharedprocess] [info] Extracting completed. arcticicestudio.nord-visual-studio-code
+[2021-10-11 19:13:57.067] [sharedprocess] [info] Extension installed successfully: arcticicestudio.nord-visual-studio-code
+[2021-10-11 19:13:59.354] [sharedprocess] [info] [code cache cleanup]: Starting to clean up old code cache folders.
+[2021-10-11 19:13:59.356] [sharedprocess] [info] [storage cleanup]: Starting to clean up storage folders.
+[2021-10-11 19:14:09.376] [sharedprocess] [info] [language pack cache cleanup]: Starting to clean up unused language packs.

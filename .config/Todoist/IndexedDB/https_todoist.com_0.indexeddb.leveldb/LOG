@@ -1,0 +1,15 @@
+2021/10/12-00:56:21.792 2a27 Reusing MANIFEST /home/crims0nbl4d3/.config/Todoist/IndexedDB/https_todoist.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/10/12-00:56:21.793 2a27 Recovering log #4
+2021/10/12-00:56:21.793 2a27 Reusing old log /home/crims0nbl4d3/.config/Todoist/IndexedDB/https_todoist.com_0.indexeddb.leveldb/000004.log 
+2021/10/12-00:57:43.968 2a29 Level-0 table #8: started
+2021/10/12-00:57:43.978 2a29 Level-0 table #8: 1128 bytes OK
+2021/10/12-00:57:43.989 2a29 Delete type=0 #4
+2021/10/12-00:57:43.990 2a29 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/10/12-00:57:43.990 2a29 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01 \x03\x00\xe0\xa5\x1f\x0d\xc7wB\x00\x01[\x00s\x00t\x00a\x00t\x00i\x00c\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00d\x003\x00p\x00t\x00y\x00y\x00x\x00y\x002\x00a\x00t\x009\x00u\x00i\x00.\x00c\x00l\x00o\x00u\x00d\x00f\x00r\x00o\x00n\x00t\x00.\x00n\x00e\x00t\x00/\x00a\x00s\x00s\x00e\x00t\x00s\x00/\x00t\x00h\x00e\x00m\x00e\x00_\x00d\x00a\x00r\x00k\x00.\x00s\x00v\x00g\x00s\x00.\x00b\x00e\x000\x00f\x007\x000\x00b\x004\x004\x001\x00b\x00b\x00e\x004\x00d\x00d\x00d\x00c\x00a\x00a\x00.\x00j\x00s' @ 99 : 1
+2021/10/12-00:57:43.990 2a29 Compacting 1@1 + 1@2 files
+2021/10/12-00:57:44.003 2a29 Generated table #9@1: 30 keys, 1248 bytes
+2021/10/12-00:57:44.003 2a29 Compacted 1@1 + 1@2 files => 1248 bytes
+2021/10/12-00:57:44.014 2a29 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/10/12-00:57:44.015 2a29 Delete type=2 #5
+2021/10/12-00:57:44.015 2a29 Delete type=2 #8
+2021/10/12-00:57:44.016 2a29 Manual compaction at level-1 from '\x00\x01\x01 \x03\x00\xe0\xa5\x1f\x0d\xc7wB\x00\x01[\x00s\x00t\x00a\x00t\x00i\x00c\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00d\x003\x00p\x00t\x00y\x00y\x00x\x00y\x002\x00a\x00t\x009\x00u\x00i\x00.\x00c\x00l\x00o\x00u\x00d\x00f\x00r\x00o\x00n\x00t\x00.\x00n\x00e\x00t\x00/\x00a\x00s\x00s\x00e\x00t\x00s\x00/\x00t\x00h\x00e\x00m\x00e\x00_\x00d\x00a\x00r\x00k\x00.\x00s\x00v\x00g\x00s\x00.\x00b\x00e\x000\x00f\x007\x000\x00b\x004\x004\x001\x00b\x00b\x00e\x004\x00d\x00d\x00d\x00c\x00a\x00a\x00.\x00j\x00s' @ 99 : 1 .. (end); will stop at (end)

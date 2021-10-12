@@ -1,1 +1,6 @@
-2021/10/11-11:04:05.943 b5b Reusing MANIFEST /home/crims0nbl4d3/.config/Todoist/Local Storage/leveldb/MANIFEST-000001
+2021/10/12-00:07:54.360 1184a Reusing MANIFEST /home/crims0nbl4d3/.config/Todoist/Local Storage/leveldb/MANIFEST-000001
+2021/10/12-00:07:54.361 1184a Recovering log #4
+2021/10/12-00:07:54.361 1184a Reusing old log /home/crims0nbl4d3/.config/Todoist/Local Storage/leveldb/000004.log 
+2021/10/12-00:08:56.908 1185e Level-0 table #8: started
+2021/10/12-00:08:56.939 1185e Level-0 table #8: 67652 bytes OK
+2021/10/12-00:08:56.951 1185e Delete type=0 #4

@@ -1,0 +1,30 @@
+2021/10/11-21:47:47.780 66a Reusing MANIFEST /home/crims0nbl4d3/.config/notion-app/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
+2021/10/11-21:47:47.789 66a Recovering log #95
+2021/10/11-21:47:47.790 66a Reusing old log /home/crims0nbl4d3/.config/notion-app/Partitions/notion/Local Storage/leveldb/000095.log 
+2021/10/11-21:50:52.163 66b Level-0 table #99: started
+2021/10/11-21:50:52.177 66b Level-0 table #99: 15720 bytes OK
+2021/10/11-21:50:52.190 66b Delete type=0 #95
+2021/10/11-21:52:55.837 66b Level-0 table #101: started
+2021/10/11-21:52:55.848 66b Level-0 table #101: 15600 bytes OK
+2021/10/11-21:52:55.859 66b Delete type=0 #98
+2021/10/11-22:08:07.899 66a Level-0 table #103: started
+2021/10/11-22:08:07.911 66a Level-0 table #103: 14116 bytes OK
+2021/10/11-22:08:07.923 66a Delete type=0 #100
+2021/10/11-22:08:07.923 66b Compacting 4@0 + 1@1 files
+2021/10/11-22:08:07.934 66b Generated table #104@0: 264 keys, 25721 bytes
+2021/10/11-22:08:07.934 66b Compacted 4@0 + 1@1 files => 25721 bytes
+2021/10/11-22:08:07.945 66b compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/10/11-22:08:07.945 66b Delete type=2 #96
+2021/10/11-22:08:07.945 66b Delete type=2 #101
+2021/10/11-22:08:07.945 66b Delete type=2 #103
+2021/10/11-22:08:07.945 66b Delete type=2 #93
+2021/10/11-22:08:07.945 66b Delete type=2 #99
+2021/10/11-22:28:07.900 66b Level-0 table #106: started
+2021/10/11-22:28:07.931 66b Level-0 table #106: 11229 bytes OK
+2021/10/11-22:28:07.942 66b Delete type=0 #102
+2021/10/11-22:48:07.901 66a Level-0 table #108: started
+2021/10/11-22:48:07.933 66a Level-0 table #108: 11233 bytes OK
+2021/10/11-22:48:07.944 66a Delete type=0 #105
+2021/10/11-23:08:07.899 66a Level-0 table #110: started
+2021/10/11-23:08:07.930 66a Level-0 table #110: 11242 bytes OK
+2021/10/11-23:08:07.942 66a Delete type=0 #107

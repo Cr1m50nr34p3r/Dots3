@@ -1,7 +1,7 @@
 
 [Default Applications]
 x-scheme-handler/notion=notion-app.desktop
-text=emacs.desktop
+text=code.desktop
 text/plain=emacs.desktop
 image/png=sxiv.desktop
 image/jpeg=sxiv.desktop

@@ -9,3 +9,9 @@
     at SimpleURLLoaderWrapper.<anonymous> (electron/js2c/browser_init.js:105:6536)
     at SimpleURLLoaderWrapper.emit (events.js:315:20)
     at SimpleURLLoaderWrapper.EventEmitter.emit (domain.js:483:12)
+[2021-10-11 21:48:05.401] [info] Checking for update
+[2021-10-11 21:48:13.663] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-12 00:07:54.492] [info] Checking for update
+[2021-10-12 00:07:55.968] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-12 00:56:18.589] [info] Checking for update
+[2021-10-12 00:56:20.089] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
