@@ -1,7 +1,0 @@
-2021/09/29-18:02:26.574 5de Reusing MANIFEST /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.deviantart.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/09/29-18:02:26.575 5de Recovering log #3
-2021/09/29-18:02:26.587 5de Reusing old log /home/r3dbl4d3/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.deviantart.com_0.indexeddb.leveldb/000003.log 
-2021/09/29-19:47:31.860 1638 Level-0 table #5: started
-2021/09/29-19:47:31.874 1638 Level-0 table #5: 147231 bytes OK
-2021/09/29-19:47:31.886 1638 Delete type=0 #3
-2021/09/29-19:47:31.887 3bf9 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

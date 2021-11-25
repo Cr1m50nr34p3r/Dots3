@@ -1,0 +1,53 @@
+00:00:00.001018 main     VirtualBox XPCOM Server 6.1.28 r147628 linux.amd64 (Oct 20 2021 21:54:22) release log
+00:00:00.001020 main     Log opened 2021-11-16T16:38:02.228195000Z
+00:00:00.001020 main     Build Type: release
+00:00:00.001022 main     OS Product: Linux
+00:00:00.001023 main     OS Release: 5.14.16-arch1-1
+00:00:00.001025 main     OS Version: #1 SMP PREEMPT Tue, 02 Nov 2021 22:22:59 +0000
+00:00:00.001040 main     DMI Product Name: Surface Pro 4
+00:00:00.001047 main     DMI Product Version: 124000000000000000000000D:0B:09F:1C:03P:38
+00:00:00.001051 main     Firmware type: UEFI
+00:00:00.001354 main     Secure Boot: Disabled
+00:00:00.001386 main     Host RAM: 3847MB (3.7GB) total, 2539MB (2.4GB) available
+00:00:00.001389 main     Executable: /usr/lib/virtualbox/VBoxSVC
+00:00:00.001389 main     Process ID: 10274
+00:00:00.001390 main     Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.002652 main     IPC socket path: /tmp/.vbox-sh1n164m1-ipc/ipcd
+00:00:00.108091 nspr-2   VirtualBox: object creation starts
+00:00:00.108269 nspr-2   Home directory: '/home/sh1n164m1/.config/VirtualBox'
+00:00:00.108786 nspr-2   Loading settings file "/home/sh1n164m1/.config/VirtualBox/VirtualBox.xml" with version "1.14-linux"
+00:00:00.125339 nspr-2   Successfully initialised host USB using sysfs
+00:00:00.151474 nspr-2   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link status for mlan0: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:00.152790 nspr-2   HostDnsMonitor: initializing
+00:00:00.153093 nspr-2   NAT: resolv.conf: nameserver 192.168.1.1
+00:00:00.153130 nspr-2   HostDnsMonitor: updating information
+00:00:00.153158 nspr-2   HostDnsMonitor: old information
+00:00:00.153163 nspr-2     no server entries
+00:00:00.153168 nspr-2     no domain set
+00:00:00.153171 nspr-2     no search string entries
+00:00:00.153175 nspr-2   HostDnsMonitor: new information
+00:00:00.153179 nspr-2     server 1: 192.168.1.1
+00:00:00.153183 nspr-2     no domain set
+00:00:00.153187 nspr-2     no search string entries
+00:00:00.186941 nspr-2   VD: VDInit finished with VINF_SUCCESS
+00:00:00.191769 nspr-2   Loading settings file "/home/sh1n164m1/VMs/CrimsonBlade/CrimsonBlade.vbox" with version "1.17-linux"
+00:00:00.192793 nspr-2   OCI: Local config file '/home/sh1n164m1/.config/VirtualBox/oci_config' does not exist
+00:00:00.192818 nspr-2   OCI: Original config file '/home/sh1n164m1/.oci/config' does not exist
+00:00:00.192824 nspr-2   OCI: Reading profiles finished with status NS_OK
+00:00:00.192831 nspr-2   ExtPack: Created cloud provider 'OCI' (hrc=NS_OK)
+00:00:00.192848 nspr-2   VirtualBox: object created
+00:00:00.199606 nspr-2   Launched VM: 2886005520 pid: 10306 (0x2842) frontend: GUI/Qt name: CrimsonBlade
+00:00:01.383078 nspr-5   Load [/usr/lib/virtualbox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxHostWebcam.so] vrc=VINF_SUCCESS
+00:00:01.454126 nspr-5   ERROR [COM]: aRC=VBOX_E_IPRT_ERROR (0x80bb0005) aIID={85632c68-b5bb-4316-a900-5eb28d3413df} aComponent={SessionMachine} aText={Saved screenshot data is not available (VERR_NOT_SUPPORTED)}, preserve=false aResultDetail=-37
+00:00:01.482764 nspr-5   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link status for mlan0: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:02:35.745313 nspr-2   Saving settings file "/home/sh1n164m1/VMs/CrimsonBlade/CrimsonBlade.vbox" with version "1.17-linux"
+00:02:36.922298 nspr-2   Saving settings file "/home/sh1n164m1/VMs/CrimsonBlade/CrimsonBlade.vbox" with version "1.17-linux"
+00:02:42.389563 nspr-2   Saving settings file "/home/sh1n164m1/VMs/CrimsonBlade/CrimsonBlade.vbox" with version "1.17-linux"
+00:02:42.475982 nspr-6   Saving settings file "/home/sh1n164m1/VMs/CrimsonBlade/CrimsonBlade.vbox" with version "1.17-linux"
+00:02:48.048533 main     VirtualBox: object deletion starts
+00:02:48.048637 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={ad47ad09-787b-44ab-b343-a082a3f2dfb1} aComponent={MediumWrap} aText={Medium '/home/sh1n164m1/VMs/CrimsonBlade/Kali-Linux-2021.3-vbox-amd64-disk001.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+00:02:48.056653 main     HostDnsMonitor: shutting down ...
+00:02:48.072741 main     HostDnsMonitor: shut down
+00:02:48.429396 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={d0a0163f-e254-4e5b-a1f2-011cf991c38d} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+00:02:53.073441 main     {00007f71ac018730} HostPowerServiceLinux::~HostPowerServiceLinux: RTThreadWait() for 5000 ms failed with VERR_TIMEOUT
+00:02:53.074362 main     VirtualBox: object deleted

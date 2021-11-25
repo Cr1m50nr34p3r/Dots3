@@ -10,9 +10,9 @@ else
     
     ############################################################################################
     ### Variables
-    # username
-    username=$(whoami)
-    # Drivers
+   # USERNAME
+   username="$USER"
+   # Drivers
     declare -A drivers
     drivers['intel']="xf86-video-intel"
     drivers['amd']="xf86-video-ati"
@@ -86,13 +86,13 @@ else
         ntfs-3g
 	unimatrix
 	pyenv
-	xdotools
+	xdotool
 	cmake 
 	rhash
 	jsoncpp
 	dart
 	nim
-	nimsuggest-git
+	#nimsuggest-git
 	python-black
 	python-pyflakes
 	python-pipenv
@@ -100,10 +100,9 @@ else
 	python-pytest
 	shellcheck
 	imagemagick
-	mbsync
-	mu
-
-
+	#mbsync
+	#mu
+	dash
     )
     pip_packages=(
 	    jedi
@@ -145,9 +144,9 @@ else
     echo "############################################################"
     echo "### BEFORE RUNNING THE SCRIPT ENABLE MULTILIB REPOSITORY ###"
     echo "### FOR FASTER SETUP ALSO ENABLE PARALLEL DOWNLOADS ########"
+    echo "### ( SET PARALLEL TO $(( $(nproc)+1 )) ) #################"
     echo "############################################################"
     sleep 3
-    echo ""
     clear
     echo "########################"
     echo "### SYNCING DATABASE ###"
@@ -160,7 +159,7 @@ else
     case $up_mirror in
 	    'y' | 'Y' )
 		    clear
-		    miror_msg () {
+		    mirror_msg () {
     		    	echo "########################"
 		    	echo "### UPDATING MIRRORS ###"
     		    	echo "########################"
@@ -170,8 +169,7 @@ else
 		    sudo pacman -S reflector rsync
 		    clear
 		    mirror_msg
-		    sudo reflector -c 'India' --save /etc/pacman.d/mirrorlist
-		    sudo reflector  --sort rate --threads 4 -l 200 | grep '^Server' >> /etc/pacman.d/mirrorlist
+		    sudo reflector  --sort rate --threads $(( $( nproc ) + 1 ))  -l 200 --save /etc/pacman.d/mirrorlist
 		    clear
 		    ;;
 	    *)

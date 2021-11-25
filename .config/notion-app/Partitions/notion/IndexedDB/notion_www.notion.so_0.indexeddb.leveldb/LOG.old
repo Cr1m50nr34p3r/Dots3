@@ -1,3 +1,15 @@
-2021/10/11-21:48:02.385 66b Reusing MANIFEST /home/crims0nbl4d3/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
-2021/10/11-21:48:02.388 66b Recovering log #24
-2021/10/11-21:48:02.467 66b Reusing old log /home/crims0nbl4d3/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/000024.log 
+2021/11/16-21:55:38.949 1c9b Reusing MANIFEST /home/sh1n164m1/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2021/11/16-21:55:38.949 1c9b Recovering log #24
+2021/11/16-21:55:38.975 1c9b Reusing old log /home/sh1n164m1/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/000024.log 
+2021/11/16-23:41:51.460 414d Level-0 table #29: started
+2021/11/16-23:41:51.479 414d Level-0 table #29: 237560 bytes OK
+2021/11/16-23:41:51.495 414d Delete type=0 #24
+2021/11/16-23:41:51.496 5f7b Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/11/16-23:41:51.496 5f7b Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x02"\x01$\x007\x006\x007\x00f\x009\x006\x00e\x001\x00-\x000\x00d\x00c\x005\x00-\x004\x00d\x002\x003\x00-\x00b\x006\x006\x007\x00-\x00b\x00a\x00d\x00c\x003\x008\x004\x005\x004\x00d\x003\x001\x00\x03\x00\x00\x00\x00\x00\xa0`@' @ 262427 : 1
+2021/11/16-23:41:51.496 5f7b Compacting 1@1 + 1@2 files
+2021/11/16-23:41:51.513 5f7b Generated table #30@1: 533 keys, 18572 bytes
+2021/11/16-23:41:51.513 5f7b Compacted 1@1 + 1@2 files => 18572 bytes
+2021/11/16-23:41:51.536 5f7b compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/11/16-23:41:51.537 5f7b Delete type=2 #26
+2021/11/16-23:41:51.537 5f7b Delete type=2 #29
+2021/11/16-23:41:51.537 5f7b Manual compaction at level-1 from '\x00\x02\x02"\x01$\x007\x006\x007\x00f\x009\x006\x00e\x001\x00-\x000\x00d\x00c\x005\x00-\x004\x00d\x002\x003\x00-\x00b\x006\x006\x007\x00-\x00b\x00a\x00d\x00c\x003\x008\x004\x005\x004\x00d\x003\x001\x00\x03\x00\x00\x00\x00\x00\xa0`@' @ 262427 : 1 .. (end); will stop at (end)

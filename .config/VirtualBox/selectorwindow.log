@@ -1,0 +1,18 @@
+00:00:00.457776 VirtualBox GUI VM Selector Window 6.1.28 r147628 linux.amd64 (Oct 20 2021 21:54:22) release log
+00:00:00.457779 Log opened 2021-11-18T16:00:26.340876000Z
+00:00:00.457780 Build Type: release
+00:00:00.457782 OS Product: Linux
+00:00:00.457783 OS Release: 5.14.16-arch1-1
+00:00:00.457785 OS Version: #1 SMP PREEMPT Tue, 02 Nov 2021 22:22:59 +0000
+00:00:00.457804 DMI Product Name: Surface Pro 4
+00:00:00.457814 DMI Product Version: 124000000000000000000000D:0B:09F:1C:03P:38
+00:00:00.457819 Firmware type: UEFI
+00:00:00.457853 Secure Boot: Disabled
+00:00:00.457886 Host RAM: 3847MB (3.7GB) total, 3172MB (3.0GB) available
+00:00:00.457889 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.457889 Process ID: 1084
+00:00:00.457890 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.457912 Qt version: 5.15.2
+00:00:00.469047 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.927286 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 20x55 x 2694x1747
+00:00:00.952521 GUI: UIMediumEnumerator: Medium-enumeration finished!

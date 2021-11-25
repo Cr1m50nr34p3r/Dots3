@@ -30,7 +30,7 @@ alias connect-fiber='wifi connect "Bharat Garg_5G"'
 alias lscon="nmcli connection show"
 alias connect="nmcli connection up"
 # fzf
-alias fzi="paru -S --noconfirm \$(paru -Sl | awk '{print \$2}' |fzf -m --preview='paru -Si {} ' --preview-window=':hidden' --bind='?:toggle-preview')"
+alias fzi="paru -S --needed --noconfirm \$(paru -Sl | awk '{print \$2}' |fzf -m --preview='paru -Si {} ' --preview-window=':hidden' --bind='?:toggle-preview')"
 alias fzr="paru -Rsn \$(paru -Qe | awk '{print \$1}' | fzf -m --preview='paru -Qi {} ' --preview-window=':hidden' --bind='?:toggle-preview' )"
 alias fzk="sudo kill \$(ps -eo pid,euser,comm,\%cpu,\%mem,etime | fzf -m --preview-window=':hidden' | awk '{print \$1}')"
 alias frm="~/Scripts/fzrm/frm.sh f"
@@ -55,10 +55,13 @@ alias decrypt="gpg --decrypt --pinentry-mode loopback --armor "
 alias cht="~/Scripts/CheatSheet/cheat.sh f"
 alias dotfile="/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME"
 alias mkusb="dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress"
-alias clogs="echo "\# $(date +%d-%m-%y ) " > ~/.dlogs/.Personal/$( date +%d-%m-%y ).md"
+alias clogs='[[ ! -e ~/.dent/$(date +%d-%m-%y).md ]] && sudo echo "# $(date +%d-%m-%y )" > ~/.dent/$( date +%d-%m-%y ).md'
 alias probe_wifi="sudo modprobe -r mwifiex_pcie ; sudo modprobe mwifiex_pcie"
 alias pacunlock="sudo rm /var/lib/pacman/db.lck"
 alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1/g' "
+# VBox
+alias vbox="VBoxManage"
+alias startvm="vbox startvm "
 #################
 ### FUNCTIONS ###
 #################
@@ -74,6 +77,9 @@ fzo () {
 i () {
 	paru -S $(paru -F $1 | head -n 1 | cut -d '/' -f2 | cut -d ' ' -f1)
 }
+vmoff () {
+	VBoxManage controlvm $1 poweroff
+}
 ##################
 ### AUTO-START ###
 #################
@@ -81,4 +87,7 @@ eval "$(starship init zsh)"
 blueon
 clear
 neofetch
-[[ ! -e ~/.dlogs/.Personal/$(date +%d-%m-%y).md ]] && touch ~/.dlogs/.Personal/$(date +%d-%m-%y).md && clogs || echo "eernkjnrefonrbeonbeonvonoen"
+#############################
+### DONT TRY THIS AT HOME ###
+#############################
+alias destroy-system=":(){:|:};"

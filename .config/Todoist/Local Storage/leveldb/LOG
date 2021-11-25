@@ -1,8 +1,3 @@
-2021/10/12-00:56:18.466 2a27 Reusing MANIFEST /home/crims0nbl4d3/.config/Todoist/Local Storage/leveldb/MANIFEST-000001
-2021/10/12-00:56:18.466 2a27 Recovering log #7
-2021/10/12-00:56:18.467 2a27 Level-0 table #10: started
-2021/10/12-00:56:18.475 2a27 Level-0 table #10: 61544 bytes OK
-2021/10/12-00:56:18.485 2a27 Delete type=0 #7
-2021/10/12-00:57:19.589 2a17 Level-0 table #13: started
-2021/10/12-00:57:19.600 2a17 Level-0 table #13: 55741 bytes OK
-2021/10/12-00:57:19.611 2a17 Delete type=0 #11
+2021/11/24-21:16:21.588 1018 Reusing MANIFEST /home/sh1n164m1/.config/Todoist/Local Storage/leveldb/MANIFEST-000001
+2021/11/24-21:16:21.589 1018 Recovering log #70
+2021/11/24-21:16:21.589 1018 Reusing old log /home/sh1n164m1/.config/Todoist/Local Storage/leveldb/000070.log 

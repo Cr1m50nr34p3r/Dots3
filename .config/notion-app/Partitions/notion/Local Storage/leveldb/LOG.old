@@ -1,30 +1,45 @@
-2021/10/11-21:47:47.780 66a Reusing MANIFEST /home/crims0nbl4d3/.config/notion-app/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
-2021/10/11-21:47:47.789 66a Recovering log #95
-2021/10/11-21:47:47.790 66a Reusing old log /home/crims0nbl4d3/.config/notion-app/Partitions/notion/Local Storage/leveldb/000095.log 
-2021/10/11-21:50:52.163 66b Level-0 table #99: started
-2021/10/11-21:50:52.177 66b Level-0 table #99: 15720 bytes OK
-2021/10/11-21:50:52.190 66b Delete type=0 #95
-2021/10/11-21:52:55.837 66b Level-0 table #101: started
-2021/10/11-21:52:55.848 66b Level-0 table #101: 15600 bytes OK
-2021/10/11-21:52:55.859 66b Delete type=0 #98
-2021/10/11-22:08:07.899 66a Level-0 table #103: started
-2021/10/11-22:08:07.911 66a Level-0 table #103: 14116 bytes OK
-2021/10/11-22:08:07.923 66a Delete type=0 #100
-2021/10/11-22:08:07.923 66b Compacting 4@0 + 1@1 files
-2021/10/11-22:08:07.934 66b Generated table #104@0: 264 keys, 25721 bytes
-2021/10/11-22:08:07.934 66b Compacted 4@0 + 1@1 files => 25721 bytes
-2021/10/11-22:08:07.945 66b compacted to: files[ 0 1 1 0 0 0 0 ]
-2021/10/11-22:08:07.945 66b Delete type=2 #96
-2021/10/11-22:08:07.945 66b Delete type=2 #101
-2021/10/11-22:08:07.945 66b Delete type=2 #103
-2021/10/11-22:08:07.945 66b Delete type=2 #93
-2021/10/11-22:08:07.945 66b Delete type=2 #99
-2021/10/11-22:28:07.900 66b Level-0 table #106: started
-2021/10/11-22:28:07.931 66b Level-0 table #106: 11229 bytes OK
-2021/10/11-22:28:07.942 66b Delete type=0 #102
-2021/10/11-22:48:07.901 66a Level-0 table #108: started
-2021/10/11-22:48:07.933 66a Level-0 table #108: 11233 bytes OK
-2021/10/11-22:48:07.944 66a Delete type=0 #105
-2021/10/11-23:08:07.899 66a Level-0 table #110: started
-2021/10/11-23:08:07.930 66a Level-0 table #110: 11242 bytes OK
-2021/10/11-23:08:07.942 66a Delete type=0 #107
+2021/11/16-21:55:35.572 1d0d Reusing MANIFEST /home/sh1n164m1/.config/notion-app/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
+2021/11/16-21:55:35.572 1d0d Recovering log #157
+2021/11/16-21:55:35.572 1d0d Reusing old log /home/sh1n164m1/.config/notion-app/Partitions/notion/Local Storage/leveldb/000157.log 
+2021/11/16-21:56:36.986 1d14 Level-0 table #161: started
+2021/11/16-21:56:36.998 1d14 Level-0 table #161: 15667 bytes OK
+2021/11/16-21:56:37.018 1d14 Delete type=0 #157
+2021/11/16-22:05:44.079 1d0b Level-0 table #163: started
+2021/11/16-22:05:44.111 1d0b Level-0 table #163: 17136 bytes OK
+2021/11/16-22:05:44.128 1d0b Delete type=0 #160
+2021/11/16-22:05:44.128 1d14 Compacting 4@0 + 1@1 files
+2021/11/16-22:05:44.142 1d14 Generated table #164@0: 346 keys, 31550 bytes
+2021/11/16-22:05:44.142 1d14 Compacted 4@0 + 1@1 files => 31550 bytes
+2021/11/16-22:05:44.157 1d14 compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/11/16-22:05:44.158 1d14 Delete type=2 #153
+2021/11/16-22:05:44.158 1d14 Delete type=2 #155
+2021/11/16-22:05:44.158 1d14 Delete type=2 #158
+2021/11/16-22:05:44.158 1d14 Delete type=2 #161
+2021/11/16-22:05:44.158 1d14 Delete type=2 #163
+2021/11/16-22:25:52.029 1d14 Level-0 table #166: started
+2021/11/16-22:25:52.060 1d14 Level-0 table #166: 12010 bytes OK
+2021/11/16-22:25:52.077 1d14 Delete type=0 #162
+2021/11/16-22:45:52.031 2cb5 Level-0 table #168: started
+2021/11/16-22:45:52.063 2cb5 Level-0 table #168: 11917 bytes OK
+2021/11/16-22:45:52.080 2cb5 Delete type=0 #165
+2021/11/16-23:05:52.031 414d Level-0 table #170: started
+2021/11/16-23:05:52.062 414d Level-0 table #170: 11917 bytes OK
+2021/11/16-23:05:52.078 414d Delete type=0 #167
+2021/11/16-23:25:52.030 414d Level-0 table #172: started
+2021/11/16-23:25:52.062 414d Level-0 table #172: 11916 bytes OK
+2021/11/16-23:25:52.078 414d Delete type=0 #169
+2021/11/16-23:25:52.079 414c Compacting 4@0 + 1@1 files
+2021/11/16-23:25:52.090 414c Generated table #173@0: 346 keys, 31556 bytes
+2021/11/16-23:25:52.090 414c Compacted 4@0 + 1@1 files => 31556 bytes
+2021/11/16-23:25:52.105 414c compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/11/16-23:25:52.106 414c Delete type=2 #164
+2021/11/16-23:25:52.106 414c Delete type=2 #166
+2021/11/16-23:25:52.106 414c Delete type=2 #168
+2021/11/16-23:25:52.106 414c Delete type=2 #170
+2021/11/16-23:25:52.106 414c Delete type=2 #172
+2021/11/16-23:41:54.160 414c Level-0 table #175: started
+2021/11/16-23:41:54.168 414c Level-0 table #175: 11916 bytes OK
+2021/11/16-23:41:54.183 414c Delete type=0 #171
+2021/11/16-23:42:04.447 414d Level-0 table #177: started
+2021/11/16-23:42:04.481 414d Level-0 table #177: 21959 bytes OK
+2021/11/16-23:42:04.500 414d Delete type=0 #174

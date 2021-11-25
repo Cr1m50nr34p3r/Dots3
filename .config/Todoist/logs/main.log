@@ -15,3 +15,77 @@
 [2021-10-12 00:07:55.968] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
 [2021-10-12 00:56:18.589] [info] Checking for update
 [2021-10-12 00:56:20.089] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-12 22:00:01.476] [info] Checking for update
+[2021-10-12 22:00:02.345] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-13 03:42:30.234] [info] Checking for update
+[2021-10-13 03:42:32.061] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-13 05:09:03.728] [info] Checking for update
+[2021-10-13 05:09:14.302] [error] Error: Error: net::ERR_INTERNET_DISCONNECTED
+    at SimpleURLLoaderWrapper.<anonymous> (electron/js2c/browser_init.js:105:6536)
+    at SimpleURLLoaderWrapper.emit (events.js:315:20)
+    at SimpleURLLoaderWrapper.EventEmitter.emit (domain.js:483:12)
+[2021-10-13 05:10:19.200] [info] Checking for update
+[2021-10-13 05:10:20.059] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-13 19:00:53.329] [info] Checking for update
+[2021-10-13 19:00:54.154] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-14 21:14:31.850] [info] Checking for update
+[2021-10-14 21:14:33.212] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-14 21:51:07.278] [info] Checking for update
+[2021-10-14 21:51:08.063] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-15 02:45:26.225] [info] Checking for update
+[2021-10-15 02:45:32.612] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-15 20:12:19.722] [info] Checking for update
+[2021-10-15 20:12:20.572] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-16 15:11:04.606] [info] Checking for update
+[2021-10-16 15:11:15.101] [error] Error: Error: net::ERR_INTERNET_DISCONNECTED
+    at SimpleURLLoaderWrapper.<anonymous> (electron/js2c/browser_init.js:105:6536)
+    at SimpleURLLoaderWrapper.emit (events.js:315:20)
+    at SimpleURLLoaderWrapper.EventEmitter.emit (domain.js:483:12)
+[2021-10-16 15:12:02.301] [info] Checking for update
+[2021-10-16 15:12:03.145] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-04 15:50:13.520] [info] Checking for update
+[2021-10-04 15:50:22.118] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-18 19:46:25.778] [info] Checking for update
+[2021-10-18 19:46:26.593] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-10-18 22:43:58.008] [info] Checking for update
+[2021-10-18 22:43:58.857] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-05 22:19:01.956] [info] Checking for update
+[2021-11-05 22:19:02.796] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-05 22:21:43.494] [info] Checking for update
+[2021-11-05 22:21:44.413] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-09 21:48:04.648] [info] Checking for update
+[2021-11-09 21:48:07.840] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-15 21:55:36.076] [info] Checking for update
+[2021-11-15 21:55:36.911] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-15 23:19:08.464] [info] Checking for update
+[2021-11-15 23:19:09.525] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-16 21:55:06.034] [info] Checking for update
+[2021-11-16 21:55:07.426] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-16 21:55:25.601] [info] Checking for update
+[2021-11-16 21:55:26.516] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-16 22:58:31.275] [info] Checking for update
+[2021-11-16 22:58:32.421] [info] Update for version 1.0.1 is not available (latest version: 1.0.1, downgrade is disallowed).
+[2021-11-20 21:43:56.578] [info] Checking for update
+[2021-11-20 21:43:57.607] [info] Found version 1.0.2 (url: Todoist-1.0.2.AppImage)
+[2021-11-20 21:43:57.608] [info] Downloading update from Todoist-1.0.2.AppImage
+[2021-11-20 21:44:00.375] [info] File has 355 changed blocks
+[2021-11-20 21:44:00.401] [info] Full: 82,754.74 KB, To download: 7,471.08 KB (9%)
+[2021-11-20 21:44:08.031] [info] New version 1.0.2 has been downloaded to /home/sh1n164m1/.cache/todoist-updater/pending/Todoist-1.0.2.AppImage
+[2021-11-20 21:45:23.293] [info] Auto install update on quit
+[2021-11-20 21:45:23.294] [info] Install: isSilent: true, isForceRunAfter: false
+[2021-11-20 21:45:23.296] [error] Error: Error: EACCES: permission denied, unlink '/opt/todoist-appimage/todoist-appimage.AppImage'
+    at unlinkSync (fs.js:1140:3)
+    at AppImageUpdater.doInstall (/tmp/.mount_todois6ZJnOb/resources/app.asar/node_modules/electron-updater/out/AppImageUpdater.js:146:24)
+    at AppImageUpdater.install (/tmp/.mount_todois6ZJnOb/resources/app.asar/node_modules/electron-updater/out/BaseUpdater.js:71:19)
+    at /tmp/.mount_todois6ZJnOb/resources/app.asar/node_modules/electron-updater/out/BaseUpdater.js:104:12
+    at App.<anonymous> (/tmp/.mount_todois6ZJnOb/resources/app.asar/node_modules/electron-updater/out/ElectronAppAdapter.js:62:44)
+    at Object.onceWrapper (events.js:422:26)
+    at App.emit (events.js:327:22)
+    at App.EventEmitter.emit (domain.js:483:12)
+    at App.emitter.emit (/tmp/.mount_todois6ZJnOb/resources/app.asar/node_modules/@sentry/electron/dist/main/integrations/electron.js:63:25)
+    at App.<anonymous> (/tmp/.mount_todois6ZJnOb/resources/app.asar/webpack/electron/electron.js:1:33050)
+[2021-11-22 15:53:37.595] [info] Checking for update
+[2021-11-22 15:53:38.380] [info] Found version 1.0.2 (url: Todoist-1.0.2.AppImage)
+[2021-11-22 15:53:38.381] [info] Downloading update from Todoist-1.0.2.AppImage
+[2021-11-24 21:16:21.745] [info] Checking for update
+[2021-11-24 21:16:22.838] [info] Update for version 1.0.2 is not available (latest version: 1.0.2, downgrade is disallowed).

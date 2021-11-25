@@ -1,3 +1,6 @@
-2021/10/12-00:05:18.847 1162c Reusing MANIFEST /home/crims0nbl4d3/.config/notion-app/Partitions/notion/Session Storage/MANIFEST-000001
-2021/10/12-00:05:18.847 1162c Recovering log #3
-2021/10/12-00:05:18.848 1162c Reusing old log /home/crims0nbl4d3/.config/notion-app/Partitions/notion/Session Storage/000003.log 
+2021/11/16-21:55:38.890 1c9b Reusing MANIFEST /home/sh1n164m1/.config/notion-app/Partitions/notion/Session Storage/MANIFEST-000001
+2021/11/16-21:55:38.890 1c9b Recovering log #3
+2021/11/16-21:55:38.892 1c9b Reusing old log /home/sh1n164m1/.config/notion-app/Partitions/notion/Session Storage/000003.log 
+2021/11/16-23:42:56.549 414d Level-0 table #5: started
+2021/11/16-23:42:56.560 414d Level-0 table #5: 11480 bytes OK
+2021/11/16-23:42:56.575 414d Delete type=0 #3

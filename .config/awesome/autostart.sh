@@ -13,7 +13,7 @@ function run {
 
 #autorandr horizontal
 run nm-applet
-#run caffeine
+run caffeine -a
 run pamac-tray
 run variety
 run xfce4-power-manager

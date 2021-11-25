@@ -1,7 +1,0 @@
-2021/10/12-14:05:14.739 5fe Recovering log #3
-2021/10/12-14:05:15.006 5fe Level-0 table #5: started
-2021/10/12-14:05:15.119 5fe Level-0 table #5: 2784294 bytes OK
-2021/10/12-14:05:15.124 5fe Recovering log #86
-2021/10/12-14:05:15.146 5fe Delete type=3 #2
-2021/10/12-14:05:15.146 5fe Delete type=0 #86
-2021/10/12-14:05:15.146 5fe Delete type=0 #3
