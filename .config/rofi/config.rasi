@@ -1,4 +1,4 @@
-configuration {
+/*configuration {
   terminal: "kitty";
   modi: "combi,window,drun,ssh";
   combi-modi: "drun,window";
@@ -13,9 +13,9 @@ configuration {
   hide-scrollbar: true;
   sidebar-mode: false;
   auto-select: false;
-  theme: "doom-one.rasi";
 }
-
+*/
+@theme "nord"
 /*
  * vim: ft=css sw=2 ts=2
  */

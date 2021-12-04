@@ -1,0 +1,46 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icons/icon19.png",
+      "default_title": "Just Read"
+   },
+   "commands": {
+      "open-just-read": {
+         "description": "Open the Just Read format for the current page",
+         "suggested_key": {
+            "default": "Ctrl+Shift+L"
+         }
+      },
+      "select-text": {
+         "description": "Enable user text selection mode using Just Read",
+         "suggested_key": {
+            "default": "Ctrl+Shift+K"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "messager.js" ],
+      "matches": [ "https://justread.link/*" ]
+   } ],
+   "description": "A feature-packed, customizable reader extension.",
+   "differential_fingerprint": "1.941d2c9ad3d473161d52668eb06a0c869e3a61b3417805b7cd5ae0304a659743",
+   "homepage_url": "https://github.com/ZachSaucier/Just-Read",
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp3r0dOhXJK1UhXruDX1BFsL+MBX11KgMIX+A7QID2XnHjcZzSAFu3cziBcVckuTscw4tbc6i/hE5hHMeJODTmhjYalBPPXPsaCaGqe9cBbfqEl22Y5Xy442EJ/3HTqx7+omQqo6+SoDvnEjtie7Y/qkeg8dR3AdJB4YWAVgTuu1RTjc5RcjkcFbad11X64cKdX8mCiHHED2yKRXFK+FJq3PeFpQSGVDttyug/iSRhVtS3e7lg/kYjvJET8G7CbGCGMvgg4JG+tTCpX8Eey1iqEdARH5YesMo8OTwm6bzrpwuuA0lgOePbKdo8ojUHhoTlktfb9l+B6MlY5JF8FDMZwIDAQAB",
+   "manifest_version": 2,
+   "name": "Just Read",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "options.html"
+   },
+   "permissions": [ "tabs", "*://*/*", "contextMenus", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "5.1.10",
+   "web_accessible_resources": [ "print.svg", "required-styles.css", "default-styles.css", "dark-styles.css", "hide-segments.css", "page.css", "options.js", "options.css", "fonts/*" ]
+}

@@ -20,6 +20,10 @@ setopt nonomatch           # hide error message if there is no match for the pat
 setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
+WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
+# hide EOL sign ('%')
+PROMPT_EOL_MARK=""
+
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -45,13 +49,12 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-###############
+##############
 ### PLUGINS ###
 ###############
 source $HOME/.config/ZSH/Themes/dzhi-zsh-theme/dzhi.zsh-theme
-# source $HOME/.config/ZSH/Plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-# ZSH_AUTOSUGGEST_STRATEGY=( completion history)
+source $HOME/.config/ZSH/Plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history)
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     . ~/.config/zsh-autosuggestions/zsh-autosuggestions.zsh
     # change suggestion color
@@ -102,6 +105,7 @@ alias clogs='[[ ! -e ~/.dent/$(date +%d-%m-%y).md ]] && sudo echo "# $(date +%d-
 alias probe_wifi="sudo modprobe -r mwifiex_pcie ; sudo modprobe mwifiex_pcie"
 alias pacunlock="sudo rm /var/lib/pacman/db.lck"
 alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1/g' "
+alias rofi="rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher.rasi"
 # VBox
 alias vbox="VBoxManage"
 alias startvm="vbox startvm "
@@ -126,11 +130,12 @@ vmoff () {
 ##################
 ### AUTO-START ###
 #################
-eval "$(starship init zsh)"
 blueon
 clear
 neofetch
+eval "$(starship init zsh)"
 #############################
 ### DONT TRY THIS AT HOME ###
 #############################
 alias destroy-system=":(){:|:};"
+
