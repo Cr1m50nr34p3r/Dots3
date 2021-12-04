@@ -1,2 +1,0 @@
-*.bluehost.com
-*.bluehost.in
