@@ -31,3 +31,6 @@
 [submodule "/home/r3dbl4d3/Scripts/Wallpaper"]
 	path = /home/r3dbl4d3/Scripts/Wallpaper
 	url = https://github.com/akshatgarg789/Wallpaper_scrape
+[submodule ".config/ZSH/Plugins/zsh-autosuggestions"]
+	path = .config/ZSH/Plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
