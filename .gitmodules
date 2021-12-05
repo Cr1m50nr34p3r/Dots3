@@ -7,29 +7,29 @@
 [submodule ".config/nvim/NvChad"]
 	path = .config/nvim/NvChad
 	url = https://github.com/NvChad/NvChad
-[submodule "/home/r3dbl4d3/ZSH/Themes/dzhi-zsh-theme"]
-	path = /home/r3dbl4d3/ZSH/Themes/dzhi-zsh-theme
+[submodule "ZSH/Themes/dzhi-zsh-theme"]
+	path = ZSH/Themes/dzhi-zsh-theme
 	url = https://github.com/pentago/dzhi-zsh-theme
-[submodule "/home/r3dbl4d3/.config/awesome/awesome-wm-widgets"]
-	path = /home/r3dbl4d3/.config/awesome/awesome-wm-widgets
+[submodule ".config/awesome/awesome-wm-widgets"]
+	path = .config/awesome/awesome-wm-widgets
 	url = https://github.com/streetturtle/awesome-wm-widgets
-[submodule "/home/r3dbl4d3/.config/awesome/awesome-buttons"]
-	path = /home/r3dbl4d3/.config/awesome/awesome-buttons
+[submodule ".config/awesome/awesome-buttons"]
+	path = .config/awesome/awesome-buttons
 	url = https://github.com/streetturtle/awesome-buttons
-[submodule "/home/r3dbl4d3/ZSH/Plugins/auto-notify"]
-	path = /home/r3dbl4d3/ZSH/Plugins/auto-notify
+[submodule "ZSH/Plugins/auto-notify"]
+	path = /home/r3db:%l4d3/ZSH/Plugins/auto-notify
 	url = https://github.com/MichaelAquilina/zsh-auto-notify
-[submodule "/home/r3dbl4d3/ZSH/Plugins/zsh-autosuggestions"]
-	path = /home/r3dbl4d3/ZSH/Plugins/zsh-autosuggestions
+[submodule "ZSH/Plugins/zsh-autosuggestions"]
+	path = ZSH/Plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "/home/r3dbl4d3/ZSH/Plugins/zsh-syntax-highlighting"]
-	path = /home/r3dbl4d3/ZSH/Plugins/zsh-syntax-highlighting
+[submodule "ZSH/Plugins/zsh-syntax-highlighting"]
+	path = ZSH/Plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "/home/r3dbl4d3/.config/nvim/NvChad"]
-	path = /home/r3dbl4d3/.config/nvim/NvChad
+[submodule ".config/nvim/NvChad"]
+	path = .config/nvim/NvChad
 	url = https://github.com/NvChad/NvChad
-[submodule "/home/r3dbl4d3/Scripts/Wallpaper"]
-	path = /home/r3dbl4d3/Scripts/Wallpaper
+[submodule "Scripts/Wallpaper"]
+	path = Scripts/Wallpaper
 	url = https://github.com/akshatgarg789/Wallpaper_scrape
 [submodule ".config/ZSH/Plugins/zsh-autosuggestions"]
 	path = .config/ZSH/Plugins/zsh-autosuggestions
