@@ -34,3 +34,6 @@
 [submodule ".config/ZSH/Plugins/zsh-autosuggestions"]
 	path = .config/ZSH/Plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".config/ZSH/Plugins/auto-notify"]
+	path = .config/ZSH/Plugins/auto-notify
+	url = https://github.com/MichaelAquilina/zsh-auto-notify
