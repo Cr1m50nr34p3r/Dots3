@@ -112,6 +112,7 @@ alias mv='mv -v'
 alias cp='cp -v'
 alias rsync='rsync -Ph'
 alias mkdir='mkdir -v'
+alias rmdir='rmdir -v'
 # VBox
 alias vbox="VBoxManage"
 alias startvm="vbox startvm "
