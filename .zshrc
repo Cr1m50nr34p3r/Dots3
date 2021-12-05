@@ -110,7 +110,7 @@ alias rofi="rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config
 alias rm='rm -v'
 alias mv='mv -v'
 alias cp='cp -v'
-alias rsync='rsync -h'
+alias rsync='rsync -Ph'
 
 # VBox
 alias vbox="VBoxManage"
