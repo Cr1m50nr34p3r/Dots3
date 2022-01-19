@@ -40,6 +40,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
+Plug 'raimondi/delimitmate'
 call plug#end()
 """"""""""""""""""""""""""
 """ SETTING UP NORD THEME
