@@ -79,14 +79,17 @@ endif
 """""""""""""""""""""
 """ BASIC KEYBINDINGS
 """""""""""""""""""""
-" PAINS
+" PANES
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>wp :wincmd p<CR>
+nnoremap <leader>p :wincmd p<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <leader>wv :vnew<CR>
+nnoremap <leader>wo :only<CR>
+nnoremap <leader>wc :close<CR>
 " NERDTREE
 nnoremap <leader>t :NERDTree<CR>
 nnoremap <leader>tc :NERDTreeClose<CR>
@@ -98,6 +101,8 @@ nnoremap <leader>f :FZF<CR>
 " LINE NUMBERING
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>an :set nu!<CR>
+" TERMINAL
+nnoremap <leader>sh :term<CR>
 """"""""""""""
 """ LANGUAGES
 """"""""""""""
@@ -116,4 +121,5 @@ let g:vim_markdown_autowrite = 1
 """""""""""""
 """ STARTUPS
 """""""""""""
-autocmd VimEnter * NERDTree
+autocmd WinNew * wincmd L
+autocmd VimEnter * NERDTree | wincmd p
