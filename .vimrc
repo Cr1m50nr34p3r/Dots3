@@ -21,6 +21,7 @@ set relativenumber
 set nu
 set nohlsearch
 set signcolumn=yes
+NERDTree
 """"""""""""
 """ PLUGINS 
 """"""""""""
