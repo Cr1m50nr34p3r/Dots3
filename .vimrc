@@ -26,6 +26,7 @@ set signcolumn=yes
 """"""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'jremmen/vim-ripgrep'
+"Plug 'JamshedVesuna/vim-markdown-preview' 
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
@@ -41,6 +42,8 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'raimondi/delimitmate'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 """"""""""""""""""""""""""
 """ SETTING UP NORD THEME
@@ -104,4 +107,9 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " BASH
 nnoremap bs i#!/bin/bash/<ESC>o
 nnoremap sh :!chmod +x % && source %
-
+" MARKDOWN
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_autowrite = 1
