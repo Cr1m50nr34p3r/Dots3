@@ -21,7 +21,6 @@ set relativenumber
 set nu
 set nohlsearch
 set signcolumn=yes
-NERDTree
 """"""""""""
 """ PLUGINS 
 """"""""""""
@@ -114,3 +113,7 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_no_extensions_in_markdown = 1
 let g:vim_markdown_autowrite = 1
+"""""""""""""
+""" STARTUPS
+"""""""""""""
+autocmd VimEnter * NERDTree
