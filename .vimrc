@@ -98,7 +98,7 @@ nnoremap <leader>tc :NERDTreeClose<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 " SEARCHING
 nnoremap <leader>ps :Rg<SPACE>
-nnoremap <leader>f :FZF<CR>
+nnoremap <leader>f  :FZF ~<CR>
 " LINE NUMBERING
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>an :set nu!<CR>

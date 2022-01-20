@@ -10,7 +10,7 @@
 ################
 ## Global Variables
 export MAKEFLAGS="-j$(( $nprocs+1 ))"
-export FZF_DEFAULT_COMMAND="find -L -type f"
+export FZF_DEFAULT_COMMAND="find -L -type f -exec readlink -f {} +;"
 ## Options
 setopt extendedglob
 setopt autocd              # change directory just by typing its name
