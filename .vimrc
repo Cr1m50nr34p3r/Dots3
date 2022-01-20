@@ -26,6 +26,7 @@ set signcolumn=yes
 """"""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'jremmen/vim-ripgrep'
+Plug 'kovetskiy/vim-bash'
 "Plug 'JamshedVesuna/vim-markdown-preview' 
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
@@ -45,9 +46,10 @@ Plug 'raimondi/delimitmate'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 call plug#end()
-""""""""""""""""""""""""""
-""" SETTING UP NORD THEME
-""""""""""""""""""""""""""
+"""""""""""""""""""""
+""" SETTING UP UTILS 
+"""""""""""""""""""""
+" NORD THEME
 set termguicolors
 colorscheme nord
 let g:nord_cursor_line_number_background = 1
@@ -62,9 +64,7 @@ augroup nord-theme-overrides
   " Use 'nord7' as foreground color for Vim comment titles.
   autocmd ColorScheme nord highlight vimCommentTitle ctermfg=14 guifg=#8FBCBB
 augroup END
-""""""""""""""""""""""""""
-""" SETTING U COMPLETE ME
-""""""""""""""""""""""""""
+" YOUCOMPLETEME
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo <CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
@@ -90,6 +90,7 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <leader>wv :vnew<CR>
 nnoremap <leader>wo :only<CR>
 nnoremap <leader>wc :close<CR>
+
 " NERDTREE
 nnoremap <leader>t :NERDTree<CR>
 nnoremap <leader>tc :NERDTreeClose<CR>
@@ -103,6 +104,10 @@ nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>an :set nu!<CR>
 " TERMINAL
 nnoremap <leader>sh :term<CR>
+" WRITING AND QUITTING
+nnoremap <leader>q :wqa<CR>
+nnoremap <leader>q! :qa!<CR>
+nnoremap src :w<bar>so %<CR>
 """"""""""""""
 """ LANGUAGES
 """"""""""""""
@@ -110,7 +115,7 @@ nnoremap <leader>sh :term<CR>
 let python_highlight_all=1
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " BASH
-nnoremap bs i#!/bin/bash/<ESC>o
+nnoremap bs i#!/bin/bash<ESC>o
 nnoremap sh :!chmod +x % && source %
 " MARKDOWN
 let g:vim_markdown_toc_autofit = 1
