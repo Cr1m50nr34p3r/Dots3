@@ -9,8 +9,10 @@
 ### SETTINGS ###
 ################
 ## Global Variables
-export MAKEFLAGS="-j$(( $nprocs+1 ))"
+export winroot="/mnt/Windows/Users/aksha"
+export MAKEFLAGS="-j$(( $(nproc)+1 ))"
 export FZF_DEFAULT_COMMAND="find -L -type f -exec readlink -f {} +;"
+export EDITOR="vim"
 ## Options
 setopt extendedglob
 setopt autocd              # change directory just by typing its name
@@ -88,7 +90,7 @@ alias ll='exa -l --color=always --group-directories-first --icons'  # long forma
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
 # misc
-alias cat='bat --style header --style rules --style snip --style changes --style header'
+#alias cat='bat --style header --style rules --style snip --style changes --style header'
 alias clock='tty-clock -cs'
 alias doom='~/.emacs.d/bin/doom'
 alias toggle-mic='amixer set Capture toggle'
@@ -107,6 +109,7 @@ alias probe_wifi="sudo modprobe -r mwifiex_pcie ; sudo modprobe mwifiex_pcie"
 alias pacunlock="sudo rm /var/lib/pacman/db.lck"
 alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1/g' "
 alias rofi="rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher.rasi"
+alias zathura="zathura --fork"
 # verbose
 alias rm='rm -v'
 alias mv='mv -v'
@@ -121,17 +124,34 @@ alias startvm="vbox startvm "
 ### FUNCTIONS ###
 #################
 fzd () {
-	 cd $(find $HOME . -type d| fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')
+	 cd "$(find $HOME . -type d| fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')"
 }
 fzv () {
-	 sudo vim $(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview') 
-}
-fzo () {
-	 xdg-open $(find $HOME . -type f  | fzf --preview="cat {}" --tac --prompt="Select file: " --bind="?:toggle-preview")
+	 vim "$(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview')"
 }
 i () {
 	paru -S $(paru -F $1 | head -n 1 | cut -d '/' -f2 | cut -d ' ' -f1)
 }
+run () {
+    (setsid "$@" &)
+}
+
+fzo () {
+	 run xdg-open "$(find $HOME . -type f  | fzf --preview='cat {}' --tac --prompt='Select file: ' --bind='?:toggle-preview')"
+}
+# Study Alias
+fzpdf () {
+     zathura --fork $(find "$HOME/Study" -iname "*.pdf" | fzf -m --prompt="Select PDF: " )
+}
+study () {
+    run todoist >>/dev/null
+    run notion-snap >>/dev/null
+    fzpdf 
+    cln 
+    track -s 1 -n $1
+    exit
+}
+# VM Alias
 vmoff () {
 	VBoxManage controlvm $1 poweroff
 }

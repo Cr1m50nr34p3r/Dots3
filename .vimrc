@@ -3,6 +3,7 @@
 """"""""""""""""""
 syntax on
 set background=dark
+set autochdir
 set noerrorbells
 set tabstop=4
 set shiftwidth=4
@@ -26,31 +27,48 @@ set signcolumn=yes
 """"""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'jremmen/vim-ripgrep'
-Plug 'kovetskiy/vim-bash'
-"Plug 'JamshedVesuna/vim-markdown-preview' 
 Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'Lyuts/vim-rtags'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdtree'
-Plug 'valloric/youcompleteme'
+Plug 'preservim/nerdcommenter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Code Completions
+Plug 'valloric/youcompleteme'
+Plug 'leafgarland/typescript-vim'
+Plug 'ervandew/supertab'
+" Bash
+Plug 'kovetskiy/vim-bash'
+" Lua
+Plug 'wolfgangmehner/lua-support'
+" Python
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
+Plug 'davidhalter/jedi-vim'
+" Bracket Handling
 Plug 'raimondi/delimitmate'
+" Tab handling
 Plug 'godlygeek/tabular'
+" Markdown
 Plug 'plasticboy/vim-markdown'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+" Snippets
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+" PDF
+Plug 'lynnard/pandoc-preview.vim'
+Plug 'makerj/vim-pdf'
 call plug#end()
 """""""""""""""""""""
 """ SETTING UP UTILS 
 """""""""""""""""""""
 " NORD THEME
-set termguicolors
+"set termguicolors
 colorscheme nord
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
@@ -69,6 +87,15 @@ let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo <CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" PDF PREVIEW
+ let g:pandoc_preview_pdf_cmd = "zathura"  
 """""""""""""""
 """ BASIC VARS
 """""""""""""""
@@ -105,9 +132,53 @@ nnoremap <leader>an :set nu!<CR>
 " TERMINAL
 nnoremap <leader>sh :term<CR>
 " WRITING AND QUITTING
-nnoremap <leader>q :wqa<CR>
-nnoremap <leader>q! :qa!<CR>
+nnoremap <leader>q :wqall<CR>
+nnoremap <leader>q! :wqall!<CR>
 nnoremap src :w<bar>so %<CR>
+" Bracket Handling
+
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {<CR>}<Esc>O
+"autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
+"inoremap ) <c-r>=ClosePair(')')<CR>
+"inoremap ] <c-r>=ClosePair(']')<CR>
+"inoremap } <c-r>=CloseBracket()<CR>
+"inoremap " <c-r>=QuoteDelim('"')<CR>
+"inoremap ' <c-r>=QuoteDelim("'")<CR>
+
+"function ClosePair(char)
+ "if getline('.')[col('.') - 1] == a:char
+ "return "\<Right>"
+ "else
+ "return a:char
+ "endif
+"endf
+
+"function CloseBracket()
+ "if match(getline(line('.') + 1), '\s*}') < 0
+ "return "\<CR>}"
+ "else
+ "return "\<Esc>j0f}a"
+ "endif
+"endf
+
+"function QuoteDelim(char)
+ "let line = getline('.')
+ "let col = col('.')
+ "if line[col - 2] == "\\"
+ ""Inserting a quoted quotation mark into the string
+ "return a:char
+ "elseif line[col - 1] == a:char
+ ""Escaping out of the string
+ "return "\<Right>"
+ "else
+ ""Starting a string
+ "return a:char.a:char."\<Esc>i"
+ "endif
+"endf
+" PDF
+ nnoremap <leader>pv :PandocPreview<cr>
 """"""""""""""
 """ LANGUAGES
 """"""""""""""
