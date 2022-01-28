@@ -129,12 +129,29 @@ fzd () {
 fzv () {
 	 vim "$(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview')"
 }
-fzo () {
-	 xdg-open "$(find $HOME . -type f  | fzf --preview='cat {}' --tac --prompt='Select file: ' --bind='?:toggle-preview')"
-}
 i () {
 	paru -S $(paru -F $1 | head -n 1 | cut -d '/' -f2 | cut -d ' ' -f1)
 }
+run () {
+    (setsid "$@" &)
+}
+
+fzo () {
+	 run xdg-open "$(find $HOME . -type f  | fzf --preview='cat {}' --tac --prompt='Select file: ' --bind='?:toggle-preview')"
+}
+# Study Alias
+fzpdf () {
+     zathura --fork $(find "$HOME/Study" -iname "*.pdf" | fzf -m --prompt="Select PDF: " )
+}
+study () {
+    run todoist >>/dev/null
+    run notion-snap >>/dev/null
+    fzpdf 
+    cln 
+    track -s 1 -n $1
+    exit
+}
+# VM Alias
 vmoff () {
 	VBoxManage controlvm $1 poweroff
 }
