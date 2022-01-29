@@ -90,7 +90,7 @@ alias ll='exa -l --color=always --group-directories-first --icons'  # long forma
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
 # misc
-#alias cat='bat --style header --style rules --style snip --style changes --style header'
+alias cat='bat --style header --style rules --style snip --style changes --style header'
 alias clock='tty-clock -cs'
 alias doom='~/.emacs.d/bin/doom'
 alias toggle-mic='amixer set Capture toggle'
@@ -108,7 +108,6 @@ alias clogs='[[ ! -e ~/.dent/$(date +%d-%m-%y).md ]] && sudo echo "# $(date +%d-
 alias probe_wifi="sudo modprobe -r mwifiex_pcie ; sudo modprobe mwifiex_pcie"
 alias pacunlock="sudo rm /var/lib/pacman/db.lck"
 alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1/g' "
-alias rofi="rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher.rasi"
 alias zathura="zathura --fork"
 # verbose
 alias rm='rm -v'
