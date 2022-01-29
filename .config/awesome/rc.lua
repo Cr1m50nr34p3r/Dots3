@@ -328,6 +328,8 @@ globalkeys = my_table.join(
         {description = "Screen shot selected area", group = "Utilities"}),
     awful.key({modkey,'Mod1'},'c', function () awful.spawn.with_shell( "~/Scripts/CheatSheet/cheat.sh r") end,
         {description = "Cheat Sheat Script", group = "Utilities"}),
+    awful.key({modkey,'Mod1'},'p', function () awful.spawn.with_shell( "~/Scripts/Pirate/pirate.sh") end,
+        {description = "Pirating Script", group = "Utilities"}),
     
 
     -- Shutdown
