@@ -35,3 +35,4 @@ run dunst
 #run ckb-next -b
 #run discord
 #run telegram-desktop
+# SET screen scale to 120%
