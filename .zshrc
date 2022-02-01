@@ -109,6 +109,8 @@ alias probe_wifi="sudo modprobe -r mwifiex_pcie ; sudo modprobe mwifiex_pcie"
 alias pacunlock="sudo rm /var/lib/pacman/db.lck"
 alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1/g' "
 alias zathura="zathura --fork"
+alias dr="df -h | head -n 1 && df -h | grep nvme"
+
 # verbose
 alias rm='rm -v'
 alias mv='mv -v'
