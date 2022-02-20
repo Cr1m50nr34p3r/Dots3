@@ -153,6 +153,7 @@ nnoremap <leader>sh :term<CR>
 " WRITING AND QUITTING
 nnoremap <leader>q :wqall<CR>
 nnoremap <leader>q! :wqall!<CR>
+nnoremap <leader>qq :qall!<CR>
 nnoremap src :w<bar>so %<CR>
 " Nice to Haves
  nnoremap <Leader>o o<Esc>0"_D
