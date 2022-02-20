@@ -1,9 +1,15 @@
+""""""""""_"""""""""""""""     
+"""__   _(_)_ __ ___  """"
+"""\ \ / / | '_ ` _ \ """"
+""""\ V /| | | | | | |""""
+"""""\_/ |_|_| |_| |_|""""
+""""""""""""""""""""""""""
 """"""""""""""""""
 """ BASIC OPTIONS
 """"""""""""""""""
 syntax on
 set background=dark
-set autochdir
+set modifiable
 set noerrorbells
 set tabstop=4
 set shiftwidth=4
@@ -26,17 +32,27 @@ set signcolumn=yes
 """ PLUGINS 
 """"""""""""
 call plug#begin('~/.vim/plugged')
+" basic
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'Lyuts/vim-rtags'
+" FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Undo tree
 Plug 'mbbill/undotree'
+" File Tree
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+" Commenter
 Plug 'preservim/nerdcommenter'
+" Therme
 Plug 'arcticicestudio/nord-vim'
+" Status Bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Indents
+Plug 'yggdroot/indentline'
 " Code Completions
 Plug 'valloric/youcompleteme'
 Plug 'leafgarland/typescript-vim'
@@ -94,6 +110,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+" INDENTS
+let g:indentLine_char = '|'
+
 " PDF PREVIEW
  let g:pandoc_preview_pdf_cmd = "zathura"  
 """""""""""""""
@@ -135,6 +154,12 @@ nnoremap <leader>sh :term<CR>
 nnoremap <leader>q :wqall<CR>
 nnoremap <leader>q! :wqall!<CR>
 nnoremap src :w<bar>so %<CR>
+" Nice to Haves
+ nnoremap <Leader>o o<Esc>0"_D
+ nnoremap <Leader>O O<Esc>0"_D
+ " Indents
+ nnoremap <S-Tab> <<
+ inoremap <S-Tab> <C-d>
 " Bracket Handling
 
 "inoremap ( ()<Esc>i
@@ -205,3 +230,5 @@ let g:vim_markdown_json_frontmatter=1
 """""""""""""
 autocmd WinNew * wincmd L
 autocmd VimEnter * NERDTree | wincmd p
+set autochdir
+
