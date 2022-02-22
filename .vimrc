@@ -126,14 +126,22 @@ endif
 """ BASIC KEYBINDINGS
 """""""""""""""""""""
 " PANES
-nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>h :wincmd h<CR> 
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>p :wincmd p<CR>
+nnoremap <leader>H :wincmd H<CR> 
+nnoremap <leader>J :wincmd J<CR>
+nnoremap <leader>K :wincmd K<CR>
+nnoremap <leader>L :wincmd L<CR>
+nnoremap <leader>R :wincmd R<CR>
+
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <leader>wv :vnew<CR>
+nnoremap <leader>wh :split<CR>
+
 nnoremap <leader>wo :only<CR>
 nnoremap <leader>wc :close<CR>
 
@@ -149,7 +157,10 @@ nnoremap <leader>f  :FZF ~<CR>
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>an :set nu!<CR>
 " TERMINAL
-nnoremap <leader>sh :term<CR>
+nnoremap <leader>sh :vert term<CR>
+nnoremap <silent> <C-w>+ :vertical resize +5<CR>
+nnoremap <silent> <C-w>- :vertical resize -5<CR>
+
 " WRITING AND QUITTING
 nnoremap <leader>q :wqall<CR>
 nnoremap <leader>q! :wqall!<CR>
@@ -229,7 +240,7 @@ let g:vim_markdown_json_frontmatter=1
 """""""""""""
 """ STARTUPS
 """""""""""""
-autocmd WinNew * wincmd L
+autocmd WinNew :term  wincmd L
 autocmd VimEnter * NERDTree | wincmd p
 set autochdir
 
