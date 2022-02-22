@@ -13,6 +13,10 @@ export winroot="/mnt/Windows/Users/aksha"
 export MAKEFLAGS="-j$(( $(nproc)+1 ))"
 export FZF_DEFAULT_COMMAND="find -L -type f -exec readlink -f {} +;"
 export EDITOR="vim"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
+export TERM=xterm-256color
+
 ## Options
 setopt extendedglob
 setopt autocd              # change directory just by typing its name
@@ -95,7 +99,7 @@ alias clock='tty-clock -cs'
 alias doom='~/.emacs.d/bin/doom'
 alias toggle-mic='amixer set Capture toggle'
 alias mount-sd='sudo mount /dev/sda1 /mnt/SD'
-alias get-token="alias cat=cat && cat ~/.token.md  | tr '\n' ' ' | sed 's/ //g' | xclip -select clipboard"
+alias git-token="cat ~/.token.md  | tr -d '\n' | xclip -select clipboard"
 alias cln="clear && neofetch"
 alias srczsh="source ~/.zshrc"
 alias mtrx="unimatrix -u 10 -l u"
@@ -110,7 +114,7 @@ alias pacunlock="sudo rm /var/lib/pacman/db.lck"
 alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1/g' "
 alias zathura="zathura --fork"
 alias dr="df -h | head -n 1 && df -h | grep nvme"
-
+alias btop="btop --utf-force"
 # verbose
 alias rm='rm -v'
 alias mv='mv -v'
@@ -131,7 +135,7 @@ fzv () {
 	 vim "$(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview')"
 }
 i () {
-	paru -S $(paru -F $1 | head -n 1 | cut -d '/' -f2 | cut -d ' ' -f1)
+	paru -S $(paru -F $@ | head -n 1 | cut -d '/' -f2 | cut -d ' ' -f1)
 }
 run () {
     (setsid "$@" &)
@@ -140,9 +144,12 @@ run () {
 fzo () {
 	 run xdg-open "$(find $HOME . -type f  | fzf --preview='cat {}' --tac --prompt='Select file: ' --bind='?:toggle-preview')"
 }
+comhist () {
+    cat .zsh_history | fzf --tac | tr -d '\n' | xclip -select clipboard
+}
 # Study Alias
 fzpdf () {
-     zathura --fork $(find "$HOME/Study" -iname "*.pdf" | fzf -m --prompt="Select PDF: " )
+     zathura --fork "$(find "$HOME/Study" -iname "*.pdf" | fzf -m --prompt="Select PDF: " )"
 }
 study () {
     run todoist >>/dev/null
