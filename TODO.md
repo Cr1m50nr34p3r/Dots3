@@ -1,7 +1,8 @@
-# Features
-[ ] Markdown syntax
-[ ] Markdown preview
-[ ] schedule macros
-# In Progress
-# Done
+# Dotfiles
+### Features
+- [ ] Markdown syntax
+- [ ] Markdown preview
+- [ ] schedule macros
+### In Progress
+### Done
 
