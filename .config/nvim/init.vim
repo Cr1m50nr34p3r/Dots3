@@ -30,6 +30,7 @@ set nohlsearch
 set signcolumn=yes
 set completeopt=menu,menuone,noselect
 set termguicolors
+set mouse=a
 """"""""""""
 """ PLUGINS 
 """"""""""""
@@ -294,7 +295,6 @@ lua <<EOF
       { name = 'cmdline' }
     })
   })
-
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
@@ -303,17 +303,16 @@ lua <<EOF
   }
   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
-
-
 -- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
 cmp_autopairs.lisp[#cmp_autopairs.lisp+1] = "racket"
 EOF
+
 "  lsp
 lua <<EOF
 require'lspconfig'.pyright.setup{} -- Install language server: npm i -g pyright
 require'lspconfig'.bashls.setup{} --Install language server: npm i -g bash-language-server
-require'lspconfig'.vimls.setup{} --In Language server npm install -g vim-language-server
-
+require'lspconfig'.vimls.setup{} --Install Language server npm install -g vim-language-server
+require'lspconfig'.sumneko_lua.setup{} --Install server from https://github.com/sumneko/lua-language-server/releases
 EOF
 " Brackets
 lua require('nvim-autopairs').setup{}
@@ -390,12 +389,10 @@ nnoremap <leader>J :wincmd J<CR>
 nnoremap <leader>K :wincmd K<CR>
 nnoremap <leader>L :wincmd L<CR>
 nnoremap <leader>R :wincmd R<CR>
-
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <leader>wv :vnew<CR>
 nnoremap <leader>wh :split<CR>
-
 nnoremap <leader>wo :only<CR>
 nnoremap <leader>wc :close<CR>
 
@@ -403,21 +400,20 @@ nnoremap <leader>wc :close<CR>
 nnoremap <leader>t :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
+
 " buffers
-nnoremap <silent><leader>nb :enew<CR>
-nnoremap <silent><leader>bd :bd<CR>
-
-nnoremap <silent><C-t>l :BufferLineCycleNext<CR>
-nnoremap <silent><C-t>h :BufferLineCyclePrev<CR>
-
+nnoremap <silent><C-t> :enew<CR>
+nnoremap <silent><C-w> :bd<CR>
+nnoremap <silent><leader>tl :BufferLineCycleNext<CR>
+nnoremap <silent><leader>th :BufferLineCyclePrev<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><C-t>L :BufferLineMoveNext<CR>
 nnoremap <silent><C-t>H :BufferLineMovePrev<CR>
-
 " These commands will sort buffers by directory, language, or a custom criteria
 nnoremap <silent>be :BufferLineSortByExtension<CR>
 nnoremap <silent>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><C-t>s :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
+
 " Completion
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -425,19 +421,25 @@ nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <C-N> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-P> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
 " UNDOTREE
 nnoremap <leader>u :UndotreeShow<CR>
+
 " SEARCHING
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({hidden=true,cwd='~'})<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').find_files({hidden=true,cwd='/'})<cr>
+nnoremap <leader>f. <cmd>lua require('telescope.builtin').find_files({hidden=true})<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 " LINE NUMBERING
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>an :set nu!<CR>
+
 " TERMINAL
 nnoremap <leader>sh :vert term<CR>
 nnoremap <silent> <C-w>+ :vertical resize +5<CR>
@@ -448,12 +450,15 @@ nnoremap <leader>q :wqall<CR>
 nnoremap <leader>q! :wqall!<CR>
 nnoremap <leader>qq :qall!<CR>
 nnoremap src :w<bar>so %<CR>
+
 " Nice to Haves
  nnoremap <Leader>o o<Esc>0"_D
  nnoremap <Leader>O O<Esc>0"_D
+
  " Indents
  nnoremap <S-Tab> <<
  inoremap <S-Tab> <C-d>
+
 " PDF
  nnoremap <leader>pv :PandocPreview<cr>
 """"""""""""""
@@ -486,4 +491,4 @@ set autochdir
 " auto-format
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre .py lua vim.lsp.buf.formatting_sync(nil, 100)
