@@ -441,9 +441,11 @@ nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>an :set nu!<CR>
 
 " TERMINAL
-nnoremap <leader>sh :vert term<CR>
+nnoremap <leader>sh :term<CR>
 nnoremap <silent> <C-w>+ :vertical resize +5<CR>
 nnoremap <silent> <C-w>- :vertical resize -5<CR>
+tnoremap <Esc> <C-/><C-n>
+
 
 " WRITING AND QUITTING
 nnoremap <leader>q :wqall<CR>
@@ -454,9 +456,11 @@ nnoremap src :w<bar>so %<CR>
 " Nice to Haves
  nnoremap <Leader>o o<Esc>0"_D
  nnoremap <Leader>O O<Esc>0"_D
+ cnoremap <leader>w! :w !sudo tee % >/dev/null
 
  " Indents
  nnoremap <S-Tab> <<
+ nnoremap <Tab> >>
  inoremap <S-Tab> <C-d>
 
 " PDF
@@ -486,7 +490,6 @@ let g:vim_markdown_json_frontmatter=1
 """ STARTUPS
 """""""""""""
 autocmd WinNew :term  wincmd L
-autocmd VimEnter * NvimTreeToggle
 set autochdir
 " auto-format
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)

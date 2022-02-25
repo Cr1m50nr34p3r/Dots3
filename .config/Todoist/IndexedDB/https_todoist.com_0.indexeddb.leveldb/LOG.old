@@ -1,15 +1,3 @@
-2021/11/20-21:43:57.952 3151 Reusing MANIFEST /home/sh1n164m1/.config/Todoist/IndexedDB/https_todoist.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/11/20-21:43:57.953 3151 Recovering log #79
-2021/11/20-21:43:57.953 3151 Reusing old log /home/sh1n164m1/.config/Todoist/IndexedDB/https_todoist.com_0.indexeddb.leveldb/000079.log 
-2021/11/20-21:44:04.059 314f Level-0 table #84: started
-2021/11/20-21:44:04.068 314f Level-0 table #84: 1251 bytes OK
-2021/11/20-21:44:04.084 314f Delete type=0 #79
-2021/11/20-21:44:04.085 314f Manual compaction at level-0 from (begin) .. (end); will stop at (end)
-2021/11/20-21:44:04.085 314f Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01 \x03\x00\xf0S\x03\xe2\xd3wB\x00\x01[\x00s\x00t\x00a\x00t\x00i\x00c\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00d\x003\x00p\x00t\x00y\x00y\x00x\x00y\x002\x00a\x00t\x009\x00u\x00i\x00.\x00c\x00l\x00o\x00u\x00d\x00f\x00r\x00o\x00n\x00t\x00.\x00n\x00e\x00t\x00/\x00a\x00s\x00s\x00e\x00t\x00s\x00/\x00t\x00h\x00e\x00m\x00e\x00_\x00d\x00a\x00r\x00k\x00.\x00s\x00v\x00g\x00s\x00.\x008\x001\x005\x001\x005\x00d\x00f\x003\x003\x00e\x00f\x00a\x00d\x005\x00e\x001\x001\x00a\x007\x000\x00.\x00j\x00s' @ 615 : 1
-2021/11/20-21:44:04.085 314f Compacting 1@1 + 1@2 files
-2021/11/20-21:44:04.094 314f Generated table #85@1: 38 keys, 1964 bytes
-2021/11/20-21:44:04.094 314f Compacted 1@1 + 1@2 files => 1964 bytes
-2021/11/20-21:44:04.110 314f compacted to: files[ 0 0 1 0 0 0 0 ]
-2021/11/20-21:44:04.110 314f Delete type=2 #81
-2021/11/20-21:44:04.110 314f Delete type=2 #84
-2021/11/20-21:44:04.111 314f Manual compaction at level-1 from '\x00\x01\x01 \x03\x00\xf0S\x03\xe2\xd3wB\x00\x01[\x00s\x00t\x00a\x00t\x00i\x00c\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00d\x003\x00p\x00t\x00y\x00y\x00x\x00y\x002\x00a\x00t\x009\x00u\x00i\x00.\x00c\x00l\x00o\x00u\x00d\x00f\x00r\x00o\x00n\x00t\x00.\x00n\x00e\x00t\x00/\x00a\x00s\x00s\x00e\x00t\x00s\x00/\x00t\x00h\x00e\x00m\x00e\x00_\x00d\x00a\x00r\x00k\x00.\x00s\x00v\x00g\x00s\x00.\x008\x001\x005\x001\x005\x00d\x00f\x003\x003\x00e\x00f\x00a\x00d\x005\x00e\x001\x001\x00a\x007\x000\x00.\x00j\x00s' @ 615 : 1 .. (end); will stop at (end)
+2022/02/21-00:25:28.038 67a5 Reusing MANIFEST /home/cr1m50nr34p3r/.config/Todoist/IndexedDB/https_todoist.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/02/21-00:25:28.038 67a5 Recovering log #91
+2022/02/21-00:25:28.042 67a5 Reusing old log /home/cr1m50nr34p3r/.config/Todoist/IndexedDB/https_todoist.com_0.indexeddb.leveldb/000091.log 

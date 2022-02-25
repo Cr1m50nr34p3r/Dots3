@@ -1,0 +1,9 @@
+#!/bin/bash
+run () {
+    (setsid "$@" &)
+}
+find "$HOME" -iname ".git" | sed 's/\(.*\)\/.git/\1/g'
+if (( $ROFI_RETV == 1 ))
+then
+    coproc (run tmux new-session > /dev/null 2>1) 
+fi

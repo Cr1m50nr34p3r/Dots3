@@ -1,0 +1,9 @@
+2022/02/21-00:08:22.837 505c Reusing MANIFEST /home/cr1m50nr34p3r/.config/notion-app/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
+2022/02/21-00:08:22.839 505c Recovering log #215
+2022/02/21-00:08:22.840 505c Level-0 table #218: started
+2022/02/21-00:08:22.843 505c Level-0 table #218: 125533 bytes OK
+2022/02/21-00:08:22.843 505c Recovering log #217
+2022/02/21-00:08:22.845 505c Level-0 table #219: started
+2022/02/21-00:08:22.847 505c Level-0 table #219: 123057 bytes OK
+2022/02/21-00:08:22.848 505c Delete type=0 #217
+2022/02/21-00:08:22.848 505c Delete type=0 #215

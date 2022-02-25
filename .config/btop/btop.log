@@ -1,0 +1,23 @@
+
+2022/02/06 (10:43:56) | ===> btop++ v.1.2.0
+2022/02/06 (10:43:56) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2022/02/06 (10:44:09) | ===> btop++ v.1.2.0
+2022/02/06 (10:44:09) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2022/02/06 (10:44:26) | ERROR: Invalid RGB decimal value: "2"
+2022/02/06 (10:44:27) | ERROR: Invalid RGB decimal value: "2"
+2022/02/06 (10:44:56) | INFO: Logger set to INFO
+2022/02/06 (10:44:57) | INFO: Logger set to DEBUG
+2022/02/06 (10:45:00) | INFO: Logger set to INFO
+2022/02/06 (10:45:01) | INFO: Logger set to DEBUG
+2022/02/06 (10:45:03) | INFO: Logger set to INFO
+2022/02/06 (10:45:06) | INFO: Logger set to DEBUG
+2022/02/06 (10:45:07) | INFO: Logger set to INFO
+
+2022/02/07 (10:33:03) | ===> btop++ v.1.2.0
+2022/02/07 (10:33:03) | ERROR: Invalid RGB decimal value: "2"
+
+2022/02/14 (11:36:52) | ===> btop++ v.1.2.0
+2022/02/14 (11:36:52) | ERROR: Invalid RGB decimal value: "2"
+2022/02/14 (11:36:54) | ERROR: Invalid RGB decimal value: "2"

@@ -1,15 +1,12 @@
-2021/11/16-21:55:38.949 1c9b Reusing MANIFEST /home/sh1n164m1/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
-2021/11/16-21:55:38.949 1c9b Recovering log #24
-2021/11/16-21:55:38.975 1c9b Reusing old log /home/sh1n164m1/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/000024.log 
-2021/11/16-23:41:51.460 414d Level-0 table #29: started
-2021/11/16-23:41:51.479 414d Level-0 table #29: 237560 bytes OK
-2021/11/16-23:41:51.495 414d Delete type=0 #24
-2021/11/16-23:41:51.496 5f7b Manual compaction at level-0 from (begin) .. (end); will stop at (end)
-2021/11/16-23:41:51.496 5f7b Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x02"\x01$\x007\x006\x007\x00f\x009\x006\x00e\x001\x00-\x000\x00d\x00c\x005\x00-\x004\x00d\x002\x003\x00-\x00b\x006\x006\x007\x00-\x00b\x00a\x00d\x00c\x003\x008\x004\x005\x004\x00d\x003\x001\x00\x03\x00\x00\x00\x00\x00\xa0`@' @ 262427 : 1
-2021/11/16-23:41:51.496 5f7b Compacting 1@1 + 1@2 files
-2021/11/16-23:41:51.513 5f7b Generated table #30@1: 533 keys, 18572 bytes
-2021/11/16-23:41:51.513 5f7b Compacted 1@1 + 1@2 files => 18572 bytes
-2021/11/16-23:41:51.536 5f7b compacted to: files[ 0 0 1 0 0 0 0 ]
-2021/11/16-23:41:51.537 5f7b Delete type=2 #26
-2021/11/16-23:41:51.537 5f7b Delete type=2 #29
-2021/11/16-23:41:51.537 5f7b Manual compaction at level-1 from '\x00\x02\x02"\x01$\x007\x006\x007\x00f\x009\x006\x00e\x001\x00-\x000\x00d\x00c\x005\x00-\x004\x00d\x002\x003\x00-\x00b\x006\x006\x007\x00-\x00b\x00a\x00d\x00c\x003\x008\x004\x005\x004\x00d\x003\x001\x00\x03\x00\x00\x00\x00\x00\xa0`@' @ 262427 : 1 .. (end); will stop at (end)
+2022/02/20-23:55:44.784 4252 Reusing MANIFEST /home/cr1m50nr34p3r/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2022/02/20-23:55:44.784 4252 Recovering log #36
+2022/02/20-23:55:44.799 4252 Reusing old log /home/cr1m50nr34p3r/.config/notion-app/Partitions/notion/IndexedDB/notion_www.notion.so_0.indexeddb.leveldb/000036.log 
+2022/02/21-00:05:40.704 4253 Level-0 table #41: started
+2022/02/21-00:05:40.720 4253 Level-0 table #41: 1040304 bytes OK
+2022/02/21-00:05:40.722 4253 Delete type=0 #36
+2022/02/21-00:05:54.637 4dfb Compacting 1@1 + 1@2 files
+2022/02/21-00:05:54.644 4dfb Generated table #42@1: 1783 keys, 178813 bytes
+2022/02/21-00:05:54.644 4dfb Compacted 1@1 + 1@2 files => 178813 bytes
+2022/02/21-00:05:54.645 4dfb compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/02/21-00:05:54.645 4dfb Delete type=2 #41
+2022/02/21-00:05:54.645 4dfb Delete type=2 #38

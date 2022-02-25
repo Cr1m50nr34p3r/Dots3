@@ -1,4 +1,4 @@
----------------------------------------------------                                              
+---------------------------------------------------------------------------------------------                                              
 ----------------------  __ ___      _____  ___  ___  _ __ ___   ___ -------------------------
 ---------------------- / _` \ \ /\ / / _ \/ __|/ _ \| '_ ` _ \ / _ \-------------------------
 --------------------- | (_| |\ V  V /  __/\__ \ (_) | | | | | |  __/-------------------------
@@ -12,7 +12,7 @@
 -- Requirements:  awesomewm
 --                jetbrains mono
 --
---         Bugs:  Remove HTOP class attr as they do not work
+--         Bugs: 
 --
 --        Notes: clone the following repo into respective folders in $HOME/.config/awesome
 --                  streetturtle/awesome-wm-widgets 
@@ -325,7 +325,7 @@ globalkeys = my_table.join(
 
     -- Screenshot entire screen
     awful.key({modkey},'Print', function () awful.spawn.with_shell( "maim  | tee ~/Media/Pictures/Screenshots/$(date +%s).png | xclip -select clipboard -t image/png") end,
-        {description = "Screen shot selected area", group = "Utilities"}),
+        {description = "Screen shot  entire area", group = "Utilities"}),
     awful.key({modkey,'Mod1'},'c', function () awful.spawn.with_shell( "~/Scripts/CheatSheet/cheat.sh r") end,
         {description = "Cheat Sheat Script", group = "Utilities"}),
     awful.key({modkey,'Mod1'},'p', function () awful.spawn.with_shell( "~/Scripts/Pirate/pirate.sh") end,
@@ -365,7 +365,7 @@ globalkeys = my_table.join(
         {description = "discord", group = "apps"}),
     
     -- Rofi / run a program
-    awful.key({ modkey }, "r", function () awful.util.spawn( "rofi -show drun" ) end,
+    awful.key({ modkey }, "r", function () awful.util.spawn( "rofi -show " ) end,
         {description = "Run program with rofi", group = "apps"}),
      
     -- Telegram
