@@ -10,6 +10,8 @@
 """"""""""""""""""
 syntax on
 set background=dark
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set modifiable
 set noerrorbells
 set tabstop=4
@@ -40,6 +42,9 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'Lyuts/vim-rtags'
+" Zen Mode 
+Plug 'folke/zen-mode.nvim'
+
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -70,21 +75,20 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'ervandew/supertab'
 " Bracket Handling
 Plug 'windwp/nvim-autopairs'
-" Tab handling
-Plug 'godlygeek/tabular'
 " Markdown
 Plug 'plasticboy/vim-markdown'
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+Plug 'godlygeek/tabular'
+Plug 'elzr/vim-json'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'ellisonleao/glow.nvim'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Syntax Highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" PDF
-Plug 'lynnard/pandoc-preview.vim'
-Plug 'makerj/vim-pdf'
 call plug#end()
 """""""""""""""""""""
 """ SETTING UP UTILS 
@@ -108,12 +112,9 @@ augroup END
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"" INDENTS
 
-" PDF PREVIEW
- let g:pandoc_preview_pdf_cmd = "zathura"  
  " nvim-tree
 let g:nvim_tree_add_trailing = 0 
 let g:nvim_tree_git_hl = 0
@@ -368,6 +369,35 @@ require("indent_blankline").setup {
 }
 EOF
 
+" nvim-treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  -- One of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "maintained",
+
+  -- Install languages synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- List of parsers to ignore installing
+  ignore_install = { "javascript" },
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+    -- list of language that will be disabled
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = true,
+  },
+}
+EOF
+
+" Zen Mode
+lua require("zen-mode").setup {}
 """""""""""""""
 """ BASIC VARS
 """""""""""""""
@@ -456,13 +486,17 @@ nnoremap src :w<bar>so %<CR>
 " Nice to Haves
  nnoremap <Leader>o o<Esc>0"_D
  nnoremap <Leader>O O<Esc>0"_D
- cnoremap <leader>w! :w !sudo tee % >/dev/null
 
- " Indents
+" Zen
+nnoremap <Leader>Z :ZenMode<CR>
+
+" INDENTS
  nnoremap <S-Tab> <<
  nnoremap <Tab> >>
  inoremap <S-Tab> <C-d>
-
+" Markdown
+noremap <leader>p :Glow<CR>
+noremap <C-w>z <C-w>\|<C-w>\_
 " PDF
  nnoremap <leader>pv :PandocPreview<cr>
 """"""""""""""
@@ -474,18 +508,25 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " BASH
 nnoremap bs i#!/bin/bash<ESC>o
 nnoremap sh :!chmod +x % && source %
-" MARKDOWN
-set conceallevel=2
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_new_list_item_indent = 2
-let g:vim_markdown_no_extensions_in_markdown = 1
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_math = 1
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_toml_frontmatter=1
-let g:vim_markdown_json_frontmatter=1
+" disable header folding
+let g:vim_markdown_folding_disabled = 1
 
+" do not use conceal feature, the implementation is not so good
+let g:vim_markdown_conceal = 0
+
+" disable math tex conceal feature
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+
+" support front matter of various format
+let g:vim_markdown_frontmatter = 1  " for YAML format
+let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+let g:vim_markdown_json_frontmatter = 1  " for JSON format
+augroup pandoc_syntax
+    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
+let g:glow_border = "rounded"
+let g:glow_use_pager = v:true
 """""""""""""
 """ STARTUPS
 """""""""""""
