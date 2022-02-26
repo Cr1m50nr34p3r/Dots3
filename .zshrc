@@ -12,7 +12,7 @@
 export winroot="/mnt/Windows/Users/aksha"
 export MAKEFLAGS="-j$(( $(nproc)+1 ))"
 export FZF_DEFAULT_COMMAND="find -L -type f -exec readlink -f {} +;"
-export EDITOR="vim"
+export EDITOR="nvim"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 export TERM=xterm-256color
