@@ -33,6 +33,7 @@ set signcolumn=yes
 set completeopt=menu,menuone,noselect
 set termguicolors
 set mouse=a
+set spelllang=en_us
 """"""""""""
 """ PLUGINS 
 """"""""""""
