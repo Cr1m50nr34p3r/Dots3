@@ -4,9 +4,11 @@
 """"\ V /| | | | | | |""""
 """""\_/ |_|_| |_| |_|""""
 """"""""""""""""""""""""""
+
 """"""""""""""""""
 """ BASIC OPTIONS
 """"""""""""""""""
+set autochdir
 syntax on
 set background=dark
 set modifiable
@@ -28,61 +30,81 @@ set relativenumber
 set nu
 set nohlsearch
 set signcolumn=yes
+
 """"""""""""
 """ PLUGINS 
 """"""""""""
 call plug#begin('~/.vim/plugged')
+
 " basic
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'Lyuts/vim-rtags'
+
 " FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 " Undo tree
 Plug 'mbbill/undotree'
+
 " File Tree
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+
 " Commenter
 Plug 'preservim/nerdcommenter'
+
 " Therme
 Plug 'arcticicestudio/nord-vim'
+
 " Status Bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Indents
 Plug 'yggdroot/indentline'
+
 " Code Completions
 Plug 'valloric/youcompleteme'
 Plug 'leafgarland/typescript-vim'
 Plug 'ervandew/supertab'
+
 " Bash
 Plug 'kovetskiy/vim-bash'
+
 " Lua
 Plug 'wolfgangmehner/lua-support'
+
 " Python
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
+
 " Bracket Handling
 Plug 'raimondi/delimitmate'
+
 " Tab handling
 Plug 'godlygeek/tabular'
+
 " Markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+
 " Snippets
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+
 " PDF
 Plug 'lynnard/pandoc-preview.vim'
 Plug 'makerj/vim-pdf'
+
 call plug#end()
 """""""""""""""""""""
 """ SETTING UP UTILS 
 """""""""""""""""""""
+
 " NORD THEME
 "set termguicolors
 colorscheme nord
@@ -98,18 +120,20 @@ augroup nord-theme-overrides
   " Use 'nord7' as foreground color for Vim comment titles.
   autocmd ColorScheme nord highlight vimCommentTitle ctermfg=14 guifg=#8FBCBB
 augroup END
+
 " YOUCOMPLETEME
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo <CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
 " INDENTS
 let g:indentLine_char = '|'
 
@@ -125,6 +149,7 @@ endif
 """""""""""""""""""""
 """ BASIC KEYBINDINGS
 """""""""""""""""""""
+
 "PANES
 nnoremap <leader>h :wincmd h<CR> 
 nnoremap <leader>j :wincmd j<CR>
@@ -136,26 +161,28 @@ nnoremap <leader>J :wincmd J<CR>
 nnoremap <leader>K :wincmd K<CR>
 nnoremap <leader>L :wincmd L<CR>
 nnoremap <leader>R :wincmd R<CR>
-
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <leader>wv :vnew<CR>
 nnoremap <leader>wh :split<CR>
-
 nnoremap <leader>wo :only<CR>
 nnoremap <leader>wc :close<CR>
 
 " NERDTREE
 nnoremap <leader>t :NERDTree<CR>
 nnoremap <leader>tc :NERDTreeClose<CR>
+
 " UNDOTREE
 nnoremap <leader>u :UndotreeShow<CR>
+
 " SEARCHING
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>f  :FZF ~<CR>
+
 " LINE NUMBERING
 nnoremap <leader>rn :set rnu!<CR>
 nnoremap <leader>an :set nu!<CR>
+
 " TERMINAL
 nnoremap <leader>sh :vert term<CR>
 nnoremap <silent> <C-w>+ :vertical resize +5<CR>
@@ -166,9 +193,11 @@ nnoremap <leader>q :wqall<CR>
 nnoremap <leader>q! :wqall!<CR>
 nnoremap <leader>qq :qall!<CR>
 nnoremap src :w<bar>so %<CR>
+
 " Nice to Haves
  nnoremap <Leader>o o<Esc>0"_D
  nnoremap <Leader>O O<Esc>0"_D
+
  " Indents
  nnoremap <S-Tab> <<
  inoremap <S-Tab> <C-d>
@@ -242,5 +271,5 @@ let g:vim_markdown_json_frontmatter=1
 """""""""""""
 autocmd WinNew :term  wincmd L
 autocmd VimEnter * NERDTree | wincmd p
-set autochdir
-
+" Spell check
+autocmd BufWritePre *.txt md org set spell
