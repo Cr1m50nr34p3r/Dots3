@@ -440,6 +440,7 @@ nnoremap <leader>n :NvimTreeFindFile<CR>
 " github
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gp :Git push<CR>
 
 " buffers
 nnoremap <silent><C-t> :enew<CR>
@@ -496,7 +497,8 @@ nnoremap src :w<bar>so %<CR>
 " Nice to Haves
  nnoremap <Leader>o o<Esc>0"_D
  nnoremap <Leader>O O<Esc>0"_D
- nnoremap <Leader>hd :r!figlet %<CR>
+ nnoremap <Leader>hd :r!figlet -S %<CR>
+ nnoremap <Leader>hp :r!figlet -S -f lean %
 
 " Zen
 nnoremap <Leader>Z :ZenMode<CR>
