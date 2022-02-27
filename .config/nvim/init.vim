@@ -501,7 +501,7 @@ nnoremap src :w<bar>so %<CR>
  nnoremap <Leader>hd :r!figlet -S %<CR>
  nnoremap <Leader>hp :r!figlet -S -f lean %
  nnoremap <Leader>wr :set wrap!<CR>
- nnoremap <Leader>ts :put =strftime(\"@%X\")<CR>
+ nnoremap <Leader>ts :put =strftime(\"`%X`\")<CR>
 " Zen
 nnoremap <Leader>Z :ZenMode<CR>
 
