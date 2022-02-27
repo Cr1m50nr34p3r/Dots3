@@ -1,3 +1,4 @@
+
 ##############################          _              
 ###________| |__  _ __ ___ ###
 ###|_  / __| '_ \| '__/ __|###
@@ -115,6 +116,7 @@ alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1
 alias zathura="zathura --fork"
 alias dr="df -h | head -n 1 && df -h | grep nvme"
 alias btop="btop --utf-force"
+alias wlog='nvim ~/.dlogs/.Personal/$(date +%Y)/$(date +%b)/$(date +%d-%m-%Y).md'
 # verbose
 alias rm='rm -v'
 alias mv='mv -v'
@@ -132,7 +134,7 @@ fzd () {
 	 cd "$(find $HOME . -type d| fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')"
 }
 fzv () {
-	 vim "$(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview')"
+	 nvim "$(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview')"
 }
 i () {
 	paru -S $(paru -F $@ | head -n 1 | cut -d '/' -f2 | cut -d ' ' -f1)
