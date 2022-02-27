@@ -318,6 +318,7 @@ require'lspconfig'.pyright.setup{} -- Install language server: npm i -g pyright
 require'lspconfig'.bashls.setup{} --Install language server: npm i -g bash-language-server
 require'lspconfig'.vimls.setup{} --Install Language server npm install -g vim-language-server
 require'lspconfig'.sumneko_lua.setup{} --Install server from https://github.com/sumneko/lua-language-server/releases
+require'lspconfig'.zeta_note.setup{} -- Install binary from https://github.com/artempyanykh/zeta-note/releases
 EOF
 " Brackets
 lua require('nvim-autopairs').setup{}
@@ -499,14 +500,15 @@ nnoremap src :w<bar>so %<CR>
  nnoremap <Leader>O O<Esc>0"_D
  nnoremap <Leader>hd :r!figlet -S %<CR>
  nnoremap <Leader>hp :r!figlet -S -f lean %
-
+ nnoremap <Leader>wr :set wrap!<CR>
+ nnoremap <Leader>ts :put =strftime(\"@%X\")<CR>
 " Zen
 nnoremap <Leader>Z :ZenMode<CR>
 
 " INDENTS
- nnoremap <S-Tab> <<
- nnoremap <Tab> >>
- inoremap <S-Tab> <C-d>
+nnoremap <S-Tab> <<
+nnoremap <Tab> >>
+inoremap <S-Tab> <C-d>
 " Markdown
 noremap <leader>p :Glow<CR>
 noremap <C-w>z <C-w>\|<C-w>\_
