@@ -1,4 +1,5 @@
 
+
 """""""""""""""""""""""""""""""""""""""""
 """" _       _ _         _           """"
 """"(_)_ __ (_) |___   _(_)_ __ ___  """"
@@ -473,7 +474,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({hidden=true,cwd='~'})<cr>
 nnoremap <leader>fr <cmd>lua require('telescope.builtin').find_files({hidden=true,cwd='/'})<cr>
-nnoremap <leader>f. <cmd>lua require('telescope.builtin').find_files({hidden=true})<cr>
+nnoremap <leader>f. <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
@@ -503,7 +504,7 @@ nnoremap src :w<bar>so %<CR>
  nnoremap <Leader>wr :set wrap!<CR>
  nnoremap <Leader>ts :put =strftime(\"`%X`\")<CR>
 " Zen
-nnoremap <Leader>Z :ZenMode<CR>
+nnoremap <Leader>Z :ZenMode<CR>:set nornu<CR>:set nonu<CR> 
 
 " INDENTS
 nnoremap <S-Tab> <<
