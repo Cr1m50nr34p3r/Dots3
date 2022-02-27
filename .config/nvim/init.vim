@@ -551,12 +551,9 @@ autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 " Text Editing
-autocmd BufWritePre,BufWinEnter,BufWritePost *.txt set spell nonu nornu
-autocmd BufWritePre,BufWinEnter,BufWritePost *.md set spell nonu nornu
-autocmd BufWritePre,BufWinEnter,BufWritePost *.org set spell nonu nornu
-autocmd BufWritePre,BufWinEnter,BufWritePost *.md :ZenMode
-autocmd BufWritePre,BufWinEnter,BufWritePost *.txt :ZenMode
-autocmd BufWritePre,BufWinEnter,BufWritePost *,org :ZenMode
-autocmd BufWinLeave *.txt set nospell nu rnu
-autocmd BufWinLeave *.md set nospell nu rnu
-autocmd BufWinLeave *.org set nospell nu rnu
+autocmd BufWritePre,BufWinEnter,BufWritePost *.txt set spell nonu nornu wrap
+autocmd BufWritePre,BufWinEnter,BufWritePost *.md set spell nonu nornu wrap
+autocmd BufWritePre,BufWinEnter,BufWritePost *.org set spell nonu nornu wrap
+autocmd BufWinLeave *.txt set nospell nu rnu nowrap
+autocmd BufWinLeave *.md set nospell nu rnu nowrap
+autocmd BufWinLeave *.org set nospell nu rnu nowrap
