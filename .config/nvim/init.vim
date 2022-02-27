@@ -480,8 +480,8 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " LINE NUMBERING
-nnoremap <leader>rn :set rnu!<CR>
-nnoremap <leader>an :set nu!<CR>
+nnoremap <leader>rnu :set rnu!<CR>
+nnoremap <leader>anu :set nu!<CR>
 
 " TERMINAL
 nnoremap <leader>sh :term<CR>
@@ -551,4 +551,9 @@ autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre .py lua vim.lsp.buf.formatting_sync(nil, 100)
 " spell check
-autocmd BufWritePre *.txt md org set spell
+autocmd BufWritePre,BufWinEnter,BufWritePost *.txt set spell nonu nornu
+autocmd BufWritePre,BufWinEnter,BufWritePost *.md set spell nonu nornu
+autocmd BufWritePre,BufWinEnter,BufWritePost *.org set spell nonu nornu
+autocmd BufWinLeave *.txt set nospell nu rnu
+autocmd BufWinLeave *.md set nospell nu rnu
+autocmd BufWinLeave *.org set nospell nu rnu
