@@ -1,5 +1,3 @@
-
-
 """""""""""""""""""""""""""""""""""""""""
 """" _       _ _         _           """"
 """"(_)_ __ (_) |___   _(_)_ __ ___  """"
@@ -162,61 +160,61 @@ lua require'nvim-tree'.setup {}
 " Telescope
 lua <<EOF
 require('telescope').setup{
-   defaults = {
-      vimgrep_arguments = {
-         "rg",
-         "--color=never",
-         "--no-heading",
-         "--with-filename",
-         "--line-number",
-         "--column",
-         "--smart-case",
-      },
-      prompt_prefix = "   ",
-      selection_caret = "  ",
-      entry_prefix = "  ",
-      initial_mode = "insert",
-      selection_strategy = "reset",
-      sorting_strategy = "ascending",
-      layout_strategy = "horizontal",
-      layout_config = {
-         horizontal = {
-            prompt_position = "top",
-            preview_width = 0.55,
-            results_width = 0.8,
-         },
-         vertical = {
-            mirror = false,
-         },
-         width = 0.87,
-         height = 0.80,
-         preview_cutoff = 120,
-      },
-      file_sorter = require("telescope.sorters").get_fuzzy_file,
-      file_ignore_patterns = { "node_modules" },
-      generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-      path_display = { "truncate" },
-      winblend = 0,
-      border = {},
-      borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-      color_devicons = true,
-      use_less = true,
-      set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-      file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-      grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-      qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+	defaults = {
+		vimgrep_arguments = {
+         	"rg",
+         	"--color=never",
+         	"--no-heading",
+         	"--with-filename",
+         	"--line-number",
+        	"--column",
+         	"--smart-case",
+      	},
+		prompt_prefix = "   ",
+		selection_caret = "  ",
+		entry_prefix = "  ",
+		initial_mode = "insert",
+		selection_strategy = "reset",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = {
+			horizontal = {
+            	prompt_position = "top",
+            	preview_width = 0.55,
+            	results_width = 0.8,
+         	},
+         	vertical = {
+            	mirror = false,
+         	},
+         	width = 0.87,
+         	height = 0.80,
+         	preview_cutoff = 120,
+      	},
+    	file_sorter = require("telescope.sorters").get_fuzzy_file,
+		file_ignore_patterns = { "node_modules" },
+		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+		path_display = { "truncate" },
+		winblend = 0,
+		border = {},
+		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		color_devicons = true,
+		use_less = true,
+		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
       -- Developer configurations: Not meant for general override
-      buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
    },
-   mappings = {
-      i = {
+	mappings = {
+		i = {
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
-      }
-    },
-  pickers = {
+			["<C-h>"] = "which_key"
+			}
+		},
+	pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -225,17 +223,17 @@ require('telescope').setup{
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
   },
-  extensions = {
+	extensions = {
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-	fzy_native = {
-		override_generic_sorter = false,
-		override_file_sorter	= true
-	},
-  }
+		fzy_native = {
+			override_generic_sorter = false,
+			override_file_sorter	= true
+		},
+	}
 }
 
 require('telescope').load_extension('fzy_native')
@@ -243,72 +241,72 @@ EOF
 " COmp
 lua <<EOF
   -- Setup nvim-cmp.
-  local cmp = require'cmp'
+local cmp = require'cmp'
 
-  cmp.setup({
-    snippet = {
+cmp.setup({
+	snippet = {
       -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+		expand = function(args)
+		--	vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        	vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
     mapping = {
-      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-      ['<C-e>'] = cmp.mapping({
-        i = cmp.mapping.abort(),
-        c = cmp.mapping.close(),
-      }),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+		['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		['<C-e>'] = cmp.mapping({
+			i = cmp.mapping.abort(),
+			c = cmp.mapping.close(),
+		}),
+		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
     sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
+		{ name = 'nvim_lsp' },
+	--	{ name = 'vsnip' }, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
+		{ name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
-      { name = 'buffer' },
+		{ name = 'buffer' },
     })
   })
 
   -- Set configuration for specific filetype.
-  cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it. 
+cmp.setup.filetype('gitcommit', {
+	sources = cmp.config.sources({
+		{ name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it. 
     }, {
-      { name = 'buffer' },
+		{ name = 'buffer' },
     })
-  })
+})
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
-    }
-  })
+cmp.setup.cmdline('/', {
+	sources = {
+		{ name = 'buffer' }
+	}
+})
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-      { name = 'path' }
+cmp.setup.cmdline(':', {
+	sources = cmp.config.sources({
+		{ name = 'path' }
     }, {
-      { name = 'cmdline' }
+		{ name = 'cmdline' }
     })
-  })
+})
   -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-    capabilities = capabilities
-  }
-  local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-  cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+	capabilities = capabilities
+}
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
 -- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
 cmp_autopairs.lisp[#cmp_autopairs.lisp+1] = "racket"
 EOF
@@ -327,51 +325,51 @@ lua require('nvim-autopairs').setup{}
 lua <<EOF
 require('bufferline').setup {
 	options = {
-      offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-      buffer_close_icon = "",
-      modified_icon = "",
-      close_icon = "",
-      show_close_icon = true,
-      left_trunc_marker = "",
-      right_trunc_marker = "",
-      max_name_length = 14,
-      max_prefix_length = 13,
-      tab_size = 20,
-      show_tab_indicators = true,
-      enforce_regular_tabs = false,
-      view = "multiwindow",
-      show_buffer_close_icons = true,
-      separator_style = "thin",
-      always_show_bufferline = true,
-      diagnostics = false,
-      custom_filter = function(buf_number)
+		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+		buffer_close_icon = "",
+		modified_icon = "",
+		close_icon = "",
+		show_close_icon = true,
+		left_trunc_marker = "",
+		right_trunc_marker = "",
+		max_name_length = 14,
+		max_prefix_length = 13,
+		tab_size = 20,
+		show_tab_indicators = true,
+		enforce_regular_tabs = false,
+		view = "multiwindow",
+		show_buffer_close_icons = true,
+		separator_style = "thin",
+		always_show_bufferline = true,
+		diagnostics = false,
+		custom_filter = function(buf_number)
          -- Func to filter out our managed/persistent split terms
-         local present_type, type = pcall(function()
-            return vim.api.nvim_buf_get_var(buf_number, "term_type")
+			local present_type, type = pcall(function()
+            	return vim.api.nvim_buf_get_var(buf_number, "term_type")
          end)
 
-         if present_type then
-            if type == "vert" then
-               return false
-            elseif type == "hori" then
-               return false
-            end
-            return true
-         end
+			if present_type then
+				if type == "vert" then
+				   return false
+				elseif type == "hori" then
+				   return false
+				end
+				return true
+			end
 
-         return true
-      end,
-   },
+			return true
+		end,
+	},
 
-	}
+}
 
 EOF
 " indent-blankline
 lua <<EOF
 require("indent_blankline").setup {
     -- for example, context is off by default, use this to turn it on
-    show_current_context = true,
-    show_current_context_start = true,
+	show_current_context = true,
+	show_current_context_start = true,
 }
 EOF
 
@@ -379,25 +377,25 @@ EOF
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = "maintained",
+	ensure_installed = "maintained",
 
-  -- Install languages synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+	-- Install languages synchronously (only applied to `ensure_installed`)
+	sync_install = false,
 
-  -- List of parsers to ignore installing
-  ignore_install = { "javascript" },
+	-- List of parsers to ignore installing
+	ignore_install = { "javascript" },
 
-  highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
+	highlight = {
+	-- `false` will disable the whole extension
+	enable = true,
 
-    -- list of language that will be disabled
+	-- list of language that will be disabled
 
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = true,
+	-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+	-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+	-- Using this option may slow down your editor, and you may see some duplicate highlights.
+	-- Instead of true it can also be a list of languages
+	additional_vim_regex_highlighting = true,
   },
 }
 EOF
@@ -497,14 +495,14 @@ nnoremap <leader>qq :qall!<CR>
 nnoremap src :w<bar>so %<CR>
 
 " Nice to Haves
- nnoremap <Leader>o o<Esc>0"_D
- nnoremap <Leader>O O<Esc>0"_D
- nnoremap <Leader>hd :r!figlet -S %<CR>
- nnoremap <Leader>hp :r!figlet -S -f lean %
- nnoremap <Leader>wr :set wrap!<CR>
- nnoremap <Leader>ts :put =strftime(\"`%X`\")<CR>
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
+nnoremap <Leader>hd :r!figlet -S %<CR>
+nnoremap <Leader>hp :r!figlet -S -f lean %
+nnoremap <Leader>wr :set wrap!<CR>
+nnoremap <Leader>ts :put =strftime(\"`%X`\")<CR>
 " Zen
-nnoremap <Leader>Z :ZenMode<CR>:set nornu<CR>:set nonu<CR> 
+nnoremap <Leader>Z :ZenMode<CR>
 
 " INDENTS
 nnoremap <S-Tab> <<
