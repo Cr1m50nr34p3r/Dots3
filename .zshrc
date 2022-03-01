@@ -116,7 +116,6 @@ alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1
 alias zathura="zathura --fork"
 alias dr="df -h | head -n 1 && df -h | grep nvme"
 alias btop="btop --utf-force"
-alias wlog='nvim ~/.dlogs/.Personal/$(date +%Y)/$(date +%b)/$(date +%d-%m-%Y).md'
 # verbose
 alias rm='rm -v'
 alias mv='mv -v'
