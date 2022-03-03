@@ -319,9 +319,6 @@ root.buttons(my_table.join(
 
 -- {{{ Key bindings
 globalkeys = my_table.join(
-    -- Open searched file with zathura
-    awful.key({modkey,'Shift'},'z', function () awful.spawn.with_shell("~/Scripts/ZOpen/zopen.sh r") end,
-        {description = "Open searched file with zathura", group = "apps"}),
 
     -- Screenshot entire screen
     awful.key({modkey},'Print', function () awful.spawn.with_shell( "maim  | tee ~/Media/Pictures/Screenshots/$(date +%s).png | xclip -select clipboard -t image/png") end,
@@ -330,6 +327,9 @@ globalkeys = my_table.join(
         {description = "Cheat Sheat Script", group = "Utilities"}),
     awful.key({modkey,'Mod1'},'p', function () awful.spawn.with_shell( "~/Scripts/Pirate/pirate.sh") end,
         {description = "Pirating Script", group = "Utilities"}),
+    -- Open searched file with zathura
+    awful.key({modkey,'Mod1'},'z', function () awful.spawn.with_shell( "~/Scripts/ZOpen/zopen.sh r") end,
+        {description = "Open PDF", group = "Utilities"}),
     
 
     -- Shutdown
@@ -346,9 +346,6 @@ globalkeys = my_table.join(
         {description = "Screen shot selected area", group = "Utilities"}),
     
 
-    -- Zathura
-    awful.key({ modkey ,'Mod1'}, "z", function () awful.util.spawn( "zathura" ) end,
-        {description = "zathura", group = "apps"}),
     
 
     -- emacs
