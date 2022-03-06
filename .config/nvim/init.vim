@@ -13,10 +13,11 @@ syntax on
 set background=dark
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set tabstop=4 
+set shiftwidth=4 
+set noexpandtab
 set modifiable
 set noerrorbells
-set tabstop=4
-set shiftwidth=4
 set smartindent
 set nowrap
 set smartcase
@@ -92,6 +93,8 @@ Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Syntax Highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Debugger
+Plug 'puremourning/vimspector'
 call plug#end()
 """""""""""""""""""""
 """ SETTING UP UTILS 
@@ -117,6 +120,10 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"" INDENTS
+
+" VimSpector 
+let g:vimspector_enable_mappings = 'HUMAN'
+" Install debugpy by VimSpectorInstall debugpy
 
  " nvim-tree
 let g:nvim_tree_add_trailing = 0 
@@ -465,6 +472,17 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-N> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-P> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
+" Debugger
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStepOver
+
 " UNDOTREE
 nnoremap <leader>u :UndotreeShow<CR>
 
@@ -500,7 +518,16 @@ nnoremap <Leader>O O<Esc>0"_D
 nnoremap <Leader>hd :r!figlet -S %<CR>
 nnoremap <Leader>hp :r!figlet -S -f lean %
 nnoremap <Leader>wr :set wrap!<CR>
-nnoremap <Leader>ts :put =strftime(\"`%X`\")<CR>
+nnoremap <Leader>ts o<Esc>:put =strftime(\"`%X`\")<CR>o<CR>
+nnoremap <Leader>tt o- [ ] 
+nnoremap <leader>td V:s/\[ \]/\[x\]/g<CR>
+nnoremap <Leader>tu V:s/\[x\]/\[ \]/g<CR>
+nnoremap 2o o<Esc>o
+" Insert Mode
+inoremap ts<C-a> <Esc>:put =strftime(\"`%X`\")<CR>o<CR>
+inoremap tt<C-a> - [ ] 
+inoremap <C-a>td <Esc>V:s/\[ \]/\[x\]/g<CR>i
+inoremap <C-a>tu <Esc>V:s/\[x\]/\[ \]/g<CR>i
 " Zen
 nnoremap <Leader>Z :ZenMode<CR>
 
@@ -545,9 +572,11 @@ let g:glow_use_pager = v:true
 autocmd WinNew :term  wincmd L
 set autochdir
 " auto-format
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+"autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
+"autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
+"autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+
+
 " Text Editing
 autocmd BufWritePre,BufWinEnter,BufWritePost *.txt set spell nonu nornu wrap
 autocmd BufWritePre,BufWinEnter,BufWritePost *.md set spell nonu nornu wrap
