@@ -25,7 +25,7 @@ set smartcase
 set noswapfile
 set nobackup
 set completeopt-=preview
-set undodir=~/.config/nvim/cache/undodir
+set undodir=~/.config/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
@@ -35,7 +35,7 @@ set nu
 set nohlsearch
 set signcolumn=yes
 set completeopt=menu,menuone,noselect
-"set termguicolors
+set termguicolors
 set mouse=a
 set spelllang=en_us
 """"""""""""
@@ -48,11 +48,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'vim-utils/vim-man'
 Plug 'Lyuts/vim-rtags'
-Plug 'chrisbra/Colorizer'
-Plug 'ap/vim-css-color'
 " Zen Mode 
 Plug 'folke/zen-mode.nvim'
-Plug 'xiyaowong/nvim-transparent'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -71,7 +68,6 @@ Plug 'akinsho/bufferline.nvim'
 " Commenter
 Plug 'preservim/nerdcommenter'
 " Therme
-Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 " Status Bar
 Plug 'vim-airline/vim-airline'
@@ -115,6 +111,7 @@ call plug#end()
 """""""""""""""""""""
 " NORD THEME
 "set termguicolors
+colorscheme nord
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_bold_vertical_split_line = 1
@@ -421,36 +418,16 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-" Transpirancy
 
-lua <<EOF
-require("transparent").setup({
-  enable = true, -- boolean: enable transparent
-  extra_groups = { -- table/string: additional groups that should be clear
-    -- In particular, when you set it to 'all', that means all avaliable groups
-
-    -- example of akinsho/nvim-bufferline.lua
-    "BufferLineTabClose",
-    "BufferlineBufferSelected",
-    "BufferLineFill",
-    "BufferLineBackground",
-    "BufferLineSeparator",
-    "BufferLineIndicatorSelected",
-  },
-  exclude = {}, -- table: groups you don't want to clear
-})
-EOF
 " Zen Mode
 lua require("zen-mode").setup {}
 """""""""""""""
 """ BASIC VARS
 """""""""""""""
-
 let mapleader = " "
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-colorscheme gruvbox
 """""""""""""""""""""
 """ BASIC KEYBINDINGS
 """""""""""""""""""""
@@ -546,7 +523,6 @@ nnoremap <leader>qq :qall!<CR>
 nnoremap src :w<bar>so %<CR>
 
 " Nice to Haves
-
 nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
 nnoremap <Leader>hd :r!figlet -S %<CR>
@@ -557,25 +533,19 @@ nnoremap <Leader>tt o- [ ]
 nnoremap <leader>td V:s/\[ \]/\[x\]/g<CR>
 nnoremap <Leader>tu V:s/\[x\]/\[ \]/g<CR>
 nnoremap 2o o<Esc>o
-nnoremap <Leader>sc o\| Time \| Name \|<CR>\| :---: \| :---: \|<CR><Esc>VG:s/\([0-9]\{2\}\:[0-9]\{2\}\) \: \(.*\)/\| \1 \| \2 \|/g<CR>
-nnoremap <leader>cs :colorscheme 
-nnoremap <leader>tr :TransparentToggle<CR>
 " Insert Mode
-
 inoremap <C-s> <Esc>:put =strftime(\"`%X`\")<CR>o<CR>
 inoremap <C-a> - [ ] 
 inoremap <C-d> <Esc>V:s/\[ \]/\[x\]/g<CR>i
 inoremap <C-u> <Esc>V:s/\[x\]/\[ \]/g<CR>i
 " Zen
-
 nnoremap <Leader>Z :ZenMode<CR>
-" INDENTS
 
+" INDENTS
 nnoremap <S-Tab> <<
 nnoremap <Tab> >>
 inoremap <S-Tab> <C-d>
 " Markdown
-
 noremap <leader>p :Glow<CR>
 noremap <C-w>z <C-w>\|<C-w>\_
 """"""""""""""
@@ -609,6 +579,7 @@ let g:glow_use_pager = v:true
 """""""""""""
 """ STARTUPS
 """""""""""""
+
 autocmd WinNew :term  wincmd L
 set autochdir
 autocmd FileType python setlocal omnifunc=v:lua.vim.lsp.omnifunc
