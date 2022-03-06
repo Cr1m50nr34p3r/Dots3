@@ -5,10 +5,10 @@
 """"| | | | | | |_ \ V /| | | | | | |""""
 """"|_|_| |_|_|\__(_)_/ |_|_| |_| |_|""""
 """""""""""""""""""""""""""""""""""""""""
-                                 
 """"""""""""""""""
 """ BASIC OPTIONS
 """"""""""""""""""
+
 syntax on
 set background=dark
 set foldmethod=expr
@@ -557,7 +557,7 @@ nnoremap <Leader>tt o- [ ]
 nnoremap <leader>td V:s/\[ \]/\[x\]/g<CR>
 nnoremap <Leader>tu V:s/\[x\]/\[ \]/g<CR>
 nnoremap 2o o<Esc>o
-nnoremap <Leader>sc o\| Time \| Name \|<CR>\| :---: \| :---: \|<CR><Esc>VG:s/\([0-9]\{2\}\:[0-9]\{2\}\) \: \(.*\)/\| \1 \| \2 \|/g<CR>
+nnoremap <Leader>sc o\| Time \| Name \|<CR>\| :---: \| :---: \|<Esc>jVG:s/\([0-9]\{2\}\:[0-9]\{2\}\) \: \(.*\)/\| \1 \| \2 \|/g<CR>
 nnoremap <leader>cs :colorscheme 
 nnoremap <leader>tr :TransparentToggle<CR>
 " Insert Mode
