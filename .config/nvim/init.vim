@@ -1,3 +1,6 @@
+
+
+
 """""""""""""""""""""""""""""""""""""""""
 """" _       _ _         _           """"
 """"(_)_ __ (_) |___   _(_)_ __ ___  """"
@@ -13,9 +16,10 @@ syntax on
 set background=dark
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set autoindent
 set tabstop=4 
 set shiftwidth=4 
-set noexpandtab
+set expandtab
 set modifiable
 set noerrorbells
 set smartindent
@@ -23,6 +27,7 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
+set completeopt-=preview
 set undodir=~/.config/.vim/undodir
 set undofile
 set incsearch
@@ -64,7 +69,7 @@ Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 " Plug 'ryanoasis/vim-devicons' Icons without colours
 Plug 'akinsho/bufferline.nvim'
 " Commenter
-Plug 'terrortylor/nvim-comment'
+Plug 'preservim/nerdcommenter'
 " Therme
 Plug 'arcticicestudio/nord-vim'
 " Status Bar
@@ -81,20 +86,28 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'ervandew/supertab'
 " Bracket Handling
+
 Plug 'windwp/nvim-autopairs'
 " Markdown
+
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'ellisonleao/glow.nvim'
 " Snippets
+
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Syntax Highlighting
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Debugger
+
 Plug 'puremourning/vimspector'
+" Extra Functionality
+
+Plug 'tmhedberg/matchit'
 call plug#end()
 """""""""""""""""""""
 """ SETTING UP UTILS 
@@ -320,12 +333,14 @@ EOF
 
 "  lsp
 lua <<EOF
-require'lspconfig'.pyright.setup{} -- Install language server: npm i -g pyright
+require("lspconfig").pylsp.setup{} -- Install pip install 'python-lsp-server[all]'
+--require'lspconfig'.pyright.setup{} -- Install language server: npm i -g pyright
 require'lspconfig'.bashls.setup{} --Install language server: npm i -g bash-language-server
 require'lspconfig'.vimls.setup{} --Install Language server npm install -g vim-language-server
 require'lspconfig'.sumneko_lua.setup{} --Install server from https://github.com/sumneko/lua-language-server/releases
 require'lspconfig'.zeta_note.setup{} -- Install binary from https://github.com/artempyanykh/zeta-note/releases
 EOF
+
 " Brackets
 lua require('nvim-autopairs').setup{}
 " BUFFERLINE 
@@ -410,8 +425,6 @@ EOF
 " Zen Mode
 lua require("zen-mode").setup {}
 """""""""""""""
-" COmment 
-lua require('nvim_comment').setup()
 """ BASIC VARS
 """""""""""""""
 let mapleader = " "
@@ -524,10 +537,10 @@ nnoremap <leader>td V:s/\[ \]/\[x\]/g<CR>
 nnoremap <Leader>tu V:s/\[x\]/\[ \]/g<CR>
 nnoremap 2o o<Esc>o
 " Insert Mode
-inoremap ts<C-a> <Esc>:put =strftime(\"`%X`\")<CR>o<CR>
-inoremap tt<C-a> - [ ] 
-inoremap <C-a>td <Esc>V:s/\[ \]/\[x\]/g<CR>i
-inoremap <C-a>tu <Esc>V:s/\[x\]/\[ \]/g<CR>i
+inoremap <C-s> <Esc>:put =strftime(\"`%X`\")<CR>o<CR>
+inoremap <C-a> - [ ] 
+inoremap <C-d> <Esc>V:s/\[ \]/\[x\]/g<CR>i
+inoremap <C-u> <Esc>V:s/\[x\]/\[ \]/g<CR>i
 " Zen
 nnoremap <Leader>Z :ZenMode<CR>
 
@@ -542,21 +555,21 @@ noremap <C-w>z <C-w>\|<C-w>\_
 """ LANGUAGES
 """"""""""""""
 " PYTHON
+
 let python_highlight_all=1
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+autocmd FileType python,c,cpp match BadWhitespace /\s\+$/
 " BASH
+
 nnoremap bs i#!/bin/bash<ESC>o
 nnoremap sh :!chmod +x % && source %
+" Markdown
 " disable header folding
 let g:vim_markdown_folding_disabled = 1
-
 " do not use conceal feature, the implementation is not so good
 let g:vim_markdown_conceal = 0
-
 " disable math tex conceal feature
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
-
 " support front matter of various format
 let g:vim_markdown_frontmatter = 1  " for YAML format
 let g:vim_markdown_toml_frontmatter = 1  " for TOML format
@@ -569,18 +582,15 @@ let g:glow_use_pager = v:true
 """""""""""""
 """ STARTUPS
 """""""""""""
+
 autocmd WinNew :term  wincmd L
 set autochdir
-" auto-format
-"autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-"autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-"autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
-
+autocmd FileType python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 " Text Editing
-autocmd BufWritePre,BufWinEnter,BufWritePost *.txt set spell nonu nornu wrap
-autocmd BufWritePre,BufWinEnter,BufWritePost *.md set spell nonu nornu wrap
-autocmd BufWritePre,BufWinEnter,BufWritePost *.org set spell nonu nornu wrap
-autocmd BufWinLeave *.txt set nospell nu rnu nowrap
-autocmd BufWinLeave *.md set nospell nu rnu nowrap
-autocmd BufWinLeave *.org set nospell nu rnu nowrap
+autocmd FileType txt setlocal spell nonu nornu wrap
+autocmd FileType markdown.pandoc setlocal spell nonu nornu wrap
+autocmd FileType org setlocal spell nonu nornu wrap
+"autocmd BufWinLeave *.txt set nospell nu rnu nowrap
+"autocmd BufWinLeave *.md set nospell nu rnu nowrap
+"autocmd BufWinLeave *.org set nospell nu rnu nowrap
