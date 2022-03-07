@@ -8,7 +8,6 @@
 """"""""""""""""""
 """ BASIC OPTIONS
 """"""""""""""""""
-
 syntax on
 set background=dark
 set foldmethod=expr
@@ -50,9 +49,12 @@ Plug 'vim-utils/vim-man'
 Plug 'Lyuts/vim-rtags'
 Plug 'chrisbra/Colorizer'
 Plug 'ap/vim-css-color'
+Plug 'xiyaowong/nvim-transparent'
 " Zen Mode 
 Plug 'folke/zen-mode.nvim'
-Plug 'xiyaowong/nvim-transparent'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -128,17 +130,18 @@ augroup nord-theme-overrides
   autocmd ColorScheme nord highlight vimCommentTitle ctermfg=14 guifg=#8FBCBB
 augroup END
 " Snippets
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"" INDENTS
-
 " VimSpector 
+
 let g:vimspector_enable_mappings = 'HUMAN'
 " Install debugpy by VimSpectorInstall debugpy
-
  " nvim-tree
+
 let g:nvim_tree_add_trailing = 0 
 let g:nvim_tree_git_hl = 0
 let g:nvim_tree_highlight_opened_files = 0
@@ -146,7 +149,6 @@ let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_quit_on_open = 0 
 let g:nvim_tree_respect_buf_cwd = 1
 let g:nvim_tree_root_folder_modifier = "?:gs?^??"
-
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
@@ -177,6 +179,26 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 lua require'nvim-tree'.setup {}
+" Limelight
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 1
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
 " Telescope
 lua <<EOF
 require('telescope').setup{
@@ -560,6 +582,8 @@ nnoremap 2o o<Esc>o
 nnoremap <Leader>sc o\| Time \| Name \|<CR>\| :---: \| :---: \|<Esc>jVG:s/\([0-9]\{2\}\:[0-9]\{2\}\) \: \(.*\)/\| \1 \| \2 \|/g<CR>
 nnoremap <leader>cs :colorscheme 
 nnoremap <leader>tr :TransparentToggle<CR>
+nnoremap <leader>bl :set background=light<CR>:TransparentDisable<CR>: set termguicolors<CR>
+nnoremap <leader>bd :set background=dark<CR>set notermguicolors<CR>
 " Insert Mode
 
 inoremap <C-s> <Esc>:put =strftime(\"`%X`\")<CR>o<CR>
@@ -568,7 +592,7 @@ inoremap <C-d> <Esc>V:s/\[ \]/\[x\]/g<CR>i
 inoremap <C-u> <Esc>V:s/\[x\]/\[ \]/g<CR>i
 " Zen
 
-nnoremap <Leader>Z :ZenMode<CR>
+nnoremap <leader>z :Goyo<CR>
 " INDENTS
 
 nnoremap <S-Tab> <<
@@ -617,6 +641,5 @@ autocmd FileType python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 autocmd FileType txt setlocal spell nonu nornu wrap
 autocmd FileType markdown.pandoc setlocal spell nonu nornu wrap
 autocmd FileType org setlocal spell nonu nornu wrap
-"autocmd BufWinLeave *.txt set nospell nu rnu nowrap
-"autocmd BufWinLeave *.md set nospell nu rnu nowrap
-"autocmd BufWinLeave *.org set nospell nu rnu nowrap
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!

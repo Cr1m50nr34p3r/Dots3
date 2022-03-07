@@ -8,20 +8,24 @@
 """"""""""""""""""
 """ BASIC OPTIONS
 """"""""""""""""""
-set autochdir
+
 syntax on
 set background=dark
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set autoindent
+set tabstop=4 
+set shiftwidth=4 
+set expandtab
 set modifiable
 set noerrorbells
-set tabstop=4
-set shiftwidth=4
-set expandtab
 set smartindent
 set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.config/.vim/undodir
+set completeopt-=preview
+set undodir=~/.config/nvim/cache/undodir
 set undofile
 set incsearch
 set encoding=utf-8
@@ -30,22 +34,32 @@ set relativenumber
 set nu
 set nohlsearch
 set signcolumn=yes
-
+set completeopt=menu,menuone,noselect
+"set termguicolors
+set mouse=a
+set spelllang=en_us
+set autochdir
 """"""""""""
 """ PLUGINS 
 """"""""""""
 call plug#begin('~/.vim/plugged')
-
 " basic
+
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'Lyuts/vim-rtags'
+Plug 'chrisbra/Colorizer'
+Plug 'ap/vim-css-color'
+" Zen Mode 
 
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 " FZF
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Undo tree
+
 Plug 'mbbill/undotree'
 
 " File Tree
@@ -57,10 +71,15 @@ Plug 'preservim/nerdcommenter'
 
 " Therme
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 
 " Status Bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Zen Mode 
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Indents
 Plug 'yggdroot/indentline'
@@ -107,7 +126,6 @@ call plug#end()
 
 " NORD THEME
 "set termguicolors
-colorscheme nord
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_bold_vertical_split_line = 1
@@ -138,10 +156,36 @@ let g:UltiSnipsEditSplit="vertical"
 let g:indentLine_char = '|'
 
 " PDF PREVIEW
- let g:pandoc_preview_pdf_cmd = "zathura"  
+let g:pandoc_preview_pdf_cmd = "zathura"  
+
+" Limelight
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 1
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
 """""""""""""""
 """ BASIC VARS
 """""""""""""""
+colorscheme gruvbox
 let mapleader = " "
 if executable('rg')
     let g:rg_derive_root='true'
@@ -167,21 +211,28 @@ nnoremap <leader>wv :vnew<CR>
 nnoremap <leader>wh :split<CR>
 nnoremap <leader>wo :only<CR>
 nnoremap <leader>wc :close<CR>
-
 " NERDTREE
+
 nnoremap <leader>t :NERDTree<CR>
 nnoremap <leader>tc :NERDTreeClose<CR>
+" Github
 
+nnoremap <leader>gp :Git push<CR>
 " UNDOTREE
-nnoremap <leader>u :UndotreeShow<CR>
 
+nnoremap <leader>u :UndotreeShow<CR>
+" Buffers
+
+nnoremap <silent><C-t> :enew<CR>
+nnoremap <silent><C-w> :bd<CR>
 " SEARCHING
+
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>f  :FZF ~<CR>
 
 " LINE NUMBERING
-nnoremap <leader>rn :set rnu!<CR>
-nnoremap <leader>an :set nu!<CR>
+nnoremap <leader>rnu :set rnu!<CR>
+nnoremap <leader>anu :set nu!<CR>
 
 " TERMINAL
 nnoremap <leader>sh :vert term<CR>
@@ -195,54 +246,32 @@ nnoremap <leader>qq :qall!<CR>
 nnoremap src :w<bar>so %<CR>
 
 " Nice to Haves
- nnoremap <Leader>o o<Esc>0"_D
- nnoremap <Leader>O O<Esc>0"_D
 
- " Indents
- nnoremap <S-Tab> <<
- inoremap <S-Tab> <C-d>
-" Bracket Handling
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
+nnoremap <Leader>hd :r!figlet -S %<CR>
+nnoremap <Leader>hp :r!figlet -S -f lean %
+nnoremap <Leader>wr :set wrap!<CR>
+nnoremap <Leader>ts o<Esc>:put =strftime(\"`%X`\")<CR>o<CR>
+nnoremap <Leader>tt o- [ ] 
+nnoremap <leader>td V:s/\[ \]/\[x\]/g<CR>
+nnoremap <Leader>tu V:s/\[x\]/\[ \]/g<CR>
+nnoremap 2o o<Esc>o
+nnoremap <Leader>sc o\| Time \| Name \|<CR>\| :---: \| :---: \|<Esc>jVG:s/\([0-9]\{2\}\:[0-9]\{2\}\) \: \(.*\)/\| \1 \| \2 \|/g<CR>
+nnoremap <leader>cs :colorscheme 
+" Insert Mode
 
-"inoremap ( ()<Esc>i
-"inoremap [ []<Esc>i
-"inoremap { {<CR>}<Esc>O
-"autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
-"inoremap ) <c-r>=ClosePair(')')<CR>
-"inoremap ] <c-r>=ClosePair(']')<CR>
-"inoremap } <c-r>=CloseBracket()<CR>
-"inoremap " <c-r>=QuoteDelim('"')<CR>
-"inoremap ' <c-r>=QuoteDelim("'")<CR>
+inoremap <C-s> <Esc>:put =strftime(\"`%X`\")<CR>o<CR>
+inoremap <C-a> - [ ] 
+inoremap <C-d> <Esc>V:s/\[ \]/\[x\]/g<CR>i
+inoremap <C-u> <Esc>V:s/\[x\]/\[ \]/g<CR>i
+" Zen Mode
 
-"function ClosePair(char)
- "if getline('.')[col('.') - 1] == a:char
- "return "\<Right>"
- "else
- "return a:char
- "endif
-"endf
+nnoremap <leader>z :Goyo<CR>
+" Indents
 
-"function CloseBracket()
- "if match(getline(line('.') + 1), '\s*}') < 0
- "return "\<CR>}"
- "else
- "return "\<Esc>j0f}a"
- "endif
-"endf
-
-"function QuoteDelim(char)
- "let line = getline('.')
- "let col = col('.')
- "if line[col - 2] == "\\"
- ""Inserting a quoted quotation mark into the string
- "return a:char
- "elseif line[col - 1] == a:char
- ""Escaping out of the string
- "return "\<Right>"
- "else
- ""Starting a string
- "return a:char.a:char."\<Esc>i"
- "endif
-"endf
+nnoremap <S-Tab> <<
+inoremap <S-Tab> <C-d>
 " PDF
  nnoremap <leader>pv :PandocPreview<cr>
 """"""""""""""
@@ -272,4 +301,10 @@ let g:vim_markdown_json_frontmatter=1
 autocmd WinNew :term  wincmd L
 autocmd VimEnter * NERDTree | wincmd p
 " Spell check
-autocmd BufWritePre *.txt md org set spell
+autocmd WinNew :term  wincmd L
+" Text Editing
+autocmd FileType txt setlocal spell nonu nornu wrap
+autocmd FileType markdown.pandoc setlocal spell nonu nornu wrap
+autocmd FileType org setlocal spell nonu nornu wrap
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
