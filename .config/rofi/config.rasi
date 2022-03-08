@@ -1,6 +1,6 @@
 configuration {
     combi-modi: "drun";
-	modi: "combi,windowcd,test:~/.config/rofi/test.sh";
+	modi: "combi,windowcd";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
@@ -123,4 +123,4 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "nord"
+@theme "gruvbox"
