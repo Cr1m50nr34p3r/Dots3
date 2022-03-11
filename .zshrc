@@ -1,4 +1,3 @@
-
 ##############################          _              
 ###________| |__  _ __ ___ ###
 ###|_  / __| '_ \| '__/ __|###
@@ -94,6 +93,8 @@ alias la='exa -la --color=always --group-directories-first --icons'  # all files
 alias ll='exa -l --color=always --group-directories-first --icons'  # long format
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
+# Image
+alias rotate-img="echo $1 | xargs -n1 | xargs -i convert {} -rotate 90 {}"
 # misc
 alias cat='bat --style header --style rules --style snip --style changes --style header'
 alias clock='tty-clock -cs'
@@ -103,7 +104,7 @@ alias mount-sd='sudo mount /dev/sda1 /mnt/SD'
 alias git-token="cat ~/.token.md  | tr -d '\n' | xclip -select clipboard"
 alias cln="clear && neofetch"
 alias srczsh="source ~/.zshrc"
-alias mtrx="unimatrix -u 10 -l u"
+alias mtrx="unimatrix -u $USER -l u -c red"
 alias encrypt="gpg --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo AES256 --symmetric --digest-algo sha512 --compress-algo none -z 0 --force-mdc --pinentry-mode loopback --armor --no-symkey-cache --output $1.enc $1"
 alias decrypt="gpg --decrypt --pinentry-mode loopback --armor "
 alias cht="~/Scripts/CheatSheet/cheat.sh f"
@@ -116,6 +117,8 @@ alias tdate="timedatectl | grep Local | sed 's/ *Local time: \(.*\) .*/Today: \1
 alias zathura="zathura --fork"
 alias dr="df -h | head -n 1 && df -h | grep nvme"
 alias btop="btop --utf-force"
+alias disable-sleep="sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl restart systemd-logind.service"
+alias enable-sleep="sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl restart systemd-logind.service"
 # verbose
 alias rm='rm -v'
 alias mv='mv -v'
@@ -130,7 +133,10 @@ alias startvm="vbox startvm "
 ### FUNCTIONS ###
 #################
 fzd () {
-	 cd "$(find $HOME . -type d| fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')"
+	 cd "$(find $HOME -type d| fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')"
+}
+fzwd () {
+	 cd "$(find . -type d| fzf --tac --preview='tree -L 1 {}' --bind='?:toggle-preview')"
 }
 fzv () {
 	 nvim "$(find $HOME . -type f | fzf --tac --preview='cat {}' --bind='?:toggle-preview')"
@@ -155,10 +161,20 @@ fzpdf () {
 study () {
     run todoist >>/dev/null
     run notion-snap >>/dev/null
-    fzpdf 
-    cln 
+    $HOME/Scripts/ZOpen/zopen.sh r 
     track -s 1 -n $1
     exit
+}
+hold () {
+    $@ && while true ; do sleep 1 ; done
+}
+loop () {
+    while true 
+    do 
+        $@
+        sleep 5
+        clear
+    done
 }
 # VM Alias
 vmoff () {
