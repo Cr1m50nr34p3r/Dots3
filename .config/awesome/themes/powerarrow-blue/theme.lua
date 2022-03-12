@@ -596,7 +596,7 @@ function theme.at_screen_connect(s)
               wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)),
               h.dark_gray
             ),
-            --wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), h.orange),
+            wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), h.orange),
 
             round_bg_widget(
 				wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)),
