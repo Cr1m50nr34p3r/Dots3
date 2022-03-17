@@ -49,8 +49,10 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ervandew/supertab'
 Plug 'williamboman/nvim-lsp-installer'
+Plug 'github/copilot.vim'
 " Bracket Handling
 
 Plug 'windwp/nvim-autopairs'
